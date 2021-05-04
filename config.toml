@@ -1,4 +1,4 @@
-baseURL = "https://depechie.github.io/depblog/"
+baseURL = "https://blog.depechie.com/"
 languageCode = "en-us"
 title = "Noteworthy"
 theme = "noteworthy"
