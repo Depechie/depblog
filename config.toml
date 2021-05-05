@@ -17,7 +17,7 @@ disqusShortname = ""
   tag = "tags"
 
 [author]
-	name = "kimcc"
+	name = "Glenn Versweyveld"
 
 # Set to false to disallow raw HTML in markdown files
 [markup.goldmark.renderer]
@@ -36,43 +36,43 @@ disqusShortname = ""
 
 	# Add links to your accounts. Remove the ones you don't want to include.
 	# Main
-	email = "#"
-    facebook = "#"
-    twitter = "#"
-	instagram = "#"
-	tumblr = "#"
-	reddit = "#"
-	pinterest = "#"
-	youtube = "#"
-    vimeo = "#"
-	weibo = "#"
-	vk = "#"
-	linkedin = "#"
+	# email = "#"
+  # facebook = "#"
+  twitter = "https://twitter.com/depechie"
+	# instagram = "#"
+	# tumblr = "#"
+	# reddit = "#"
+	# pinterest = "#"
+	# youtube = "#"
+  # vimeo = "#"
+	# weibo = "#"
+	# vk = "#"
+	linkedin = "https://www.linkedin.com/in/depechie/"
 
 	# Writing
-    medium = "#"
-	blogger = "#"
-	wordpress = "#"
+  # medium = "#"
+	# blogger = "#"
+	# wordpress = "#"
 
 	# Creative & Visual
-    dribbble = "#"
-	behance = "#"
-	deviantart = "#"
-	flickr = "#"
+  # dribbble = "#"
+	# behance = "#"
+	# deviantart = "#"
+	# flickr = "#"
 
-    # Audio & Music
-    soundcloud = "#"
+  # Audio & Music
+  # soundcloud = "#"
 
 	# Programming
-    github = "#"
-	stackoverflow = "#"
-	gitlab = "#"
-	codepen = "#"
+  github = "https://github.com/Depechie"
+	stackoverflow = "https://stackoverflow.com/users/613087/depechie"
+	# gitlab = "#"
+	# codepen = "#"
 
-    # Academic
-    googlescholar = "#"
-    impactstory = "#"
-    orcid = "#"  
+  # Academic
+  # googlescholar = "#"
+  # impactstory = "#"
+  # orcid = "#"  
 
 # Menu links along the sidebar navigation.
 [[menu.main]]
