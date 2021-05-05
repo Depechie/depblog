@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Noteworthy</title>
-    <link>https://blog.depechie.com/</link>
-    <description>Recent content on Noteworthy</description>
+    <title>Posts on Noteworthy</title>
+    <link>https://blog.depechie.com/posts/</link>
+    <description>Recent content in Posts on Noteworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 May 2021 22:33:07 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 May 2021 22:33:07 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test1</title>
       <link>https://blog.depechie.com/posts/test1/</link>
