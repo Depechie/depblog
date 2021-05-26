@@ -2,13 +2,12 @@
 
 <html lang="en-us">
     <head>
-	<meta name="generator" content="Hugo 0.83.1" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Depechie’s outing</title>
+    <title>Xamarin Forms - Custom Visual State triggers and Control Templates | Depechie’s outing</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -29,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://blog.depechie.com/index.xml" title="Depechie’s outing" />
     </head>
 
     <body>
@@ -144,116 +141,221 @@
 
         <div id="content" class="content-container">
         
-<div class = "article-content">
-        
-        <div class="description">
-            <p>‘SH10151’ this is the serial number of our orbital gun</p>
-        </div>
-        
-        
-        
-        
-        <article>
-            <h2>
-                <a href="https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/">
-                    Xamarin Forms staggered view - Masonry
-                </a>
-            </h2>
-            <div>
-                <p>Some story background When developing mobile apps, you&rsquo;ll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.</p>
-                
-                <p><a href="/posts/2021-05-26-xf-staggered-view/">Read more...</a></p>
-                
-            </div>
-            <div class="post-footer">
-            <time>May 26, 2021</time>
 
-            
-            
-                
-                    <a class="tag" href="/tags/masonry">#masonry</a>
-                
-                    <a class="tag" href="/tags/staggered-view">#staggered view</a>
-                
-                    <a class="tag" href="/tags/html">#html</a>
-                
-                    <a class="tag" href="/tags/javascript">#javascript</a>
-                
-                    <a class="tag" href="/tags/css">#css</a>
-                
-                    <a class="tag" href="/tags/xamarin-forms">#xamarin forms</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/">
-                    Xamarin Forms – Set entry clear icon color on iOS
-                </a>
-            </h2>
-            <div>
-                <p>Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.</p>
-                
-                <p><a href="/posts/2021-03-28-xf-clear-icon-color/">Read more...</a></p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 28, 2021</time>
+<h1 class="post-title">Xamarin Forms - Custom Visual State triggers and Control Templates</h1>
+    
+    <time>October 19, 2020</time>
+    
+    <div>
+        <p>
+        <p>Not so long ago there was this little online event called [Xamarin Expert Day(https://expertday.forxamarin.com/) that featured a bunch of awesome speakers.
+Now one talk got my full attention, it was the one from <a href="https://twitter.com/hussainnabbasi">Hussain Abbasi</a> about Supercharge You Custom Controls With Control Templates ( <a href="https://youtu.be/YwdD7THttkw">re-watch it here&hellip;</a> ).</p>
+<p>When I developed apps uniquely for Windows with UWP, I used <strong>Control Templates</strong> often. But with Xamarin Forms I never took the time to get much into it&hellip; Hussain did a great job explaining the principals on how and why to use them and with that it spiked my interest again to try something out with Xamarin Forms.
+The fact I did not yet used them often, is because the <strong>Visual State Manager</strong> in Xamarin Forms is still not up to par with the one we have in UWP. But since the VSM evolved a bit in Xamarin Forms, I thought the time was ripe to try something with it again.</p>
+<p>So one example Hussain highlighted in his talk, was how you could show a different view of some data by swapping the style of a <strong>ContentView</strong> while using Control Templates. He did this in code while using <strong>Xamarin Essentials</strong> to detect landscape or portrait mode of your phone.
+Let me show you another way of doing a similar thing, but this time all declared from markup XAML.
+This is not 100% true, because this whole process will only work because we first need to create our own <strong>StateTrigger</strong> in code, that we can use with the VSM, but using it is done all from XAML.</p>
+<p>The setup of our example is as follows. You have a certain data structure that you need to present to the user, but each data element is of a certain category. In our case we are using Animal types ( Cat, Dog, Bird ).
+If we want to have a different view depending on the animal type, we can leverage control templates and swap the style of our ContentView based on our data. And because we are going to do it from XAML this should all be done through <strong>Data Binding</strong>.</p>
+<p>Let&rsquo;s start with the basics, how does our data look like.</p>
+<pre><code>public class AnimalModel
+{
+    public AnimalType Animal { get; set; }
+    public string AnimalName { get; set; }
+    public string AnimalDescription { get; set; }
+}
+</code></pre><p>It&rsquo;s a simple class that could hold several data points, most important part for our demo is the <strong>AnimalType</strong> enum, this categorizes our data.
+Currently it consists of 3 types.</p>
+<pre><code>public enum AnimalType
+{
+    Dog,
+    Cat,
+    Bird
+}
+</code></pre><p>Depending on this enum we would like to present the data differently, a control template is a fine choice for this. You can have some layout depending on what type of animal it is and still show your regular content inside of it.
+For this to work, we need to create a ContentView that will act as host container for our Control Templates.</p>
+<pre><code>&lt;ContentView xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             xmlns:models=&quot;clr-namespace:VisualStateTriggers.Models&quot;
+             xmlns:triggers=&quot;clr-namespace:VisualStateTriggers.Triggers&quot;
+             x:Class=&quot;VisualStateTriggers.Controls.AnimalView&quot;
+             x:Name=&quot;AnimalViewName&quot;
+             Padding=&quot;0,0,0,5&quot;&gt;
+    &lt;VisualStateManager.VisualStateGroups&gt;
+        &lt;VisualStateGroupList&gt;
+            &lt;VisualStateGroup&gt;
+                &lt;VisualState x:Name=&quot;CatVisualState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;triggers:EnumStateTrigger EnumType=&quot;{x:Type models:AnimalType}&quot; EnumValue=&quot;{x:Static models:AnimalType.Cat}&quot; Value=&quot;{Binding Animal}&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Property=&quot;Style&quot; Value=&quot;{StaticResource CatTemplateStyle}&quot; /&gt;
+                    &lt;/VisualState.Setters&gt;
+                &lt;/VisualState&gt;
+                &lt;VisualState x:Name=&quot;DogVisualState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;triggers:EnumStateTrigger EnumType=&quot;{x:Type models:AnimalType}&quot; EnumValue=&quot;{x:Static models:AnimalType.Dog}&quot; Value=&quot;{Binding Animal}&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Property=&quot;Style&quot; Value=&quot;{StaticResource DogTemplateStyle}&quot; /&gt;
+                    &lt;/VisualState.Setters&gt;
+                &lt;/VisualState&gt;
+                &lt;VisualState x:Name=&quot;BirdVisualState&quot;&gt;
+                    &lt;VisualState.StateTriggers&gt;
+                        &lt;triggers:EnumStateTrigger EnumType=&quot;{x:Type models:AnimalType}&quot; EnumValue=&quot;{x:Static models:AnimalType.Bird}&quot; Value=&quot;{Binding Animal}&quot; /&gt;
+                    &lt;/VisualState.StateTriggers&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Property=&quot;Style&quot; Value=&quot;{StaticResource BirdTemplateStyle}&quot; /&gt;
+                    &lt;/VisualState.Setters&gt;
+                &lt;/VisualState&gt;
+            &lt;/VisualStateGroup&gt;
+        &lt;/VisualStateGroupList&gt;
+    &lt;/VisualStateManager.VisualStateGroups&gt;
+&lt;/ContentView&gt;
+</code></pre><p>There is a lot going on in this host container, so let&rsquo;s break it down a bit.
+First thing to notice here, is that we are only using XAML to handle the different views, we leverage the <strong>Visual State Manager</strong> for this. It will, depending on the AnimalType enum, select the correct Control Template and apply it as <strong>Style</strong> to the ContentView!</p>
+<p>For the Visual State Manager to be able to know what Control Template to use, we use a <strong>Custom State Trigger</strong>, we will pass the enum type, 1 target enum value of that type and the actual enum value of the data item to the trigger.
+Inside this Custom State Trigger we will validate these parameters and set the trigger active or not if the needed criteria matches. In this case, if the current data item enum value equals the target enum value given in XAML.</p>
+<pre><code>public class EnumStateTrigger : StateTriggerBase
+{
+    public static readonly BindableProperty EnumTypeProperty = BindableProperty.Create(nameof(EnumType), typeof(Type), typeof(EnumStateTrigger), null);
 
-            
-            
-                
-                    <a class="tag" href="/tags/ios">#iOS</a>
-                
-                    <a class="tag" href="/tags/effects">#effects</a>
-                
-                    <a class="tag" href="/tags/entry">#entry</a>
-                
-                    <a class="tag" href="/tags/xamarin-forms">#xamarin forms</a>
-                
-            
-            </div> 
-           
-        </article>
-        
-        <article>
-            <h2>
-                <a href="https://blog.depechie.com/posts/2020-10-19-xf-custom-visualstate-triggers/">
-                    Xamarin Forms - Custom Visual State triggers and Control Templates
-                </a>
-            </h2>
-            <div>
-                <p>Not so long ago there was this little online event called [Xamarin Expert Day(https://expertday.</p>
-                
-                <p><a href="/posts/2020-10-19-xf-custom-visualstate-triggers/">Read more...</a></p>
-                
-            </div>
-            <div class="post-footer">
-            <time>October 19, 2020</time>
+    public static readonly BindableProperty EnumValueProperty = BindableProperty.Create(nameof(EnumValue), typeof(object), typeof(EnumStateTrigger), null, propertyChanged: OnBindablePropertyChanged);
 
-            
-            
-                
-                    <a class="tag" href="/tags/visual-state-trigger">#visual state trigger</a>
-                
-                    <a class="tag" href="/tags/control-template">#control template</a>
-                
-                    <a class="tag" href="/tags/xamarin-forms">#xamarin forms</a>
-                
-            
-            </div> 
-           
-        </article>
-        
+    public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value), typeof(object), typeof(EnumStateTrigger), null, propertyChanged: OnBindablePropertyChanged);
+
+    public Type EnumType
+    {
+        get =&gt; (Type)GetValue(EnumTypeProperty);
+        set =&gt; SetValue(EnumTypeProperty, value);
+    }
+
+    public object EnumValue
+    {
+        get =&gt; (object)GetValue(EnumValueProperty);
+        set =&gt; SetValue(EnumValueProperty, value);
+    }
+
+    public object Value
+    {
+        get =&gt; (object)GetValue(ValueProperty);
+        set =&gt; SetValue(ValueProperty, value);
+    }
+
+    private static void OnBindablePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+        var trigger = bindable as EnumStateTrigger;
+        trigger.UpdateTrigger();
+    }
+
+    private void UpdateTrigger()
+    {
+        if (EnumType is null || EnumValue is null || Value is null || !EnumType.IsEnum || !EnumType.IsEnumDefined(EnumValue) || !EnumType.IsEnumDefined(Value))
+            SetActive(false);
+        else
+            SetActive(Enum.Equals(EnumValue, Value));
+    }
+}
+</code></pre><p>Passing the actual enum type is not mandatory, but I wanted to show you how this could be done, so that you can also validate if the enum values are indeed contained in the given enum type.
+Creating your own Custom State Triggers is not that difficult, you only need to inherit from <strong>StateTriggerBase</strong> and call the SetActive() method with true or false if your criteria is reached, inside the <strong>UpdateTrigger</strong>.</p>
+<p>The other thing to notice in the Visual State Manager code in the ContentView above, was the fact we can actually swap the way the ContentView is composed by applying a certain style!
+Each style is a Control Template on his own, where we can use the <strong>ContentPresenter</strong> tag to embed the XAML layout we defined in our <strong>CollectionView</strong> for our list item. Each ControlTemplate in this example, almost looks the same, I only changed the background color and the category image.</p>
+<pre><code>&lt;ContentView xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             xmlns:markupextensions=&quot;clr-namespace:VisualStateTriggers.MarkupExtensions&quot;
+             x:Class=&quot;VisualStateTriggers.ControlTemplates.CatView&quot;
+             BackgroundColor=&quot;#ed675a&quot;&gt;
+    &lt;ContentView.Content&gt;
+        &lt;Grid ColumnSpacing=&quot;10&quot; RowSpacing=&quot;0&quot;
+              Margin=&quot;10&quot;&gt;
+            &lt;Grid.ColumnDefinitions&gt;
+                &lt;ColumnDefinition Width=&quot;50&quot; /&gt;
+                &lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+            &lt;/Grid.ColumnDefinitions&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;*&quot; /&gt;
+                &lt;RowDefinition Height=&quot;*&quot; /&gt;
+            &lt;/Grid.RowDefinitions&gt;
+
+            &lt;Image Source=&quot;{markupextensions:ImageResourceExtension VisualStateTriggers.bird.png}&quot;
+                   Grid.Column=&quot;0&quot; Grid.Row=&quot;0&quot; Grid.RowSpan=&quot;2&quot; /&gt;
+
+            &lt;ContentPresenter Grid.Column=&quot;1&quot; Grid.Row=&quot;0&quot; /&gt;
+            &lt;Label Text=&quot;{TemplateBinding AnimalDescription}&quot;
+                   Grid.Column=&quot;1&quot; Grid.Row=&quot;1&quot; /&gt;
+        &lt;/Grid&gt;
+    &lt;/ContentView.Content&gt;
+&lt;/ContentView&gt;
+</code></pre><p>Only thing left out, is how we now use the Content View container host in our list&hellip; in our MainPage we define a <strong>CollectionView</strong>, assign a List of AnimalModel items and use data binding to pass along the data points.</p>
+<pre><code>&lt;CollectionView ItemsSource=&quot;{Binding Animals}&quot;&gt;
+    &lt;CollectionView.ItemTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;controls:AnimalView Animal=&quot;{Binding Animal}&quot; AnimalDescription=&quot;{Binding AnimalDescription}&quot;&gt;
+                &lt;Label Text=&quot;{Binding AnimalName}&quot; /&gt;
+            &lt;/controls:AnimalView&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/CollectionView.ItemTemplate&gt;
+&lt;/CollectionView&gt;
+</code></pre><p>The definition of the actual styles is done in the App.xaml, we set these as <strong>StaticResources</strong> in the global resource dictionary.</p>
+<pre><code>&lt;Application.Resources&gt;
+    &lt;ControlTemplate x:Key=&quot;CatTemplate&quot;&gt;
+        &lt;controlTemplates:CatView /&gt;
+    &lt;/ControlTemplate&gt;
+
+    &lt;ControlTemplate x:Key=&quot;BirdTemplate&quot;&gt;
+        &lt;controlTemplates:BirdView /&gt;
+    &lt;/ControlTemplate&gt;
+
+    &lt;ControlTemplate x:Key=&quot;DogTemplate&quot;&gt;
+        &lt;controlTemplates:DogView /&gt;
+    &lt;/ControlTemplate&gt;
+
+    &lt;Style TargetType=&quot;controls:AnimalView&quot; x:Key=&quot;CatTemplateStyle&quot;&gt;
+        &lt;Setter Property=&quot;ControlTemplate&quot;
+                Value=&quot;{StaticResource CatTemplate}&quot; /&gt;
+    &lt;/Style&gt;
+
+    &lt;Style TargetType=&quot;controls:AnimalView&quot; x:Key=&quot;BirdTemplateStyle&quot;&gt;
+        &lt;Setter Property=&quot;ControlTemplate&quot;
+                Value=&quot;{StaticResource BirdTemplate}&quot; /&gt;
+    &lt;/Style&gt;
+
+    &lt;Style TargetType=&quot;controls:AnimalView&quot; x:Key=&quot;DogTemplateStyle&quot;&gt;
+        &lt;Setter Property=&quot;ControlTemplate&quot;
+                Value=&quot;{StaticResource DogTemplate}&quot; /&gt;
+    &lt;/Style&gt;
+&lt;/Application.Resources&gt;
+</code></pre><p>And with that, you&rsquo;ll have following layout:</p>
+
+
+
+    <img class="article-image" src="/posts/2020-10-19-xf-custom-visualstate-triggers/images/customvisualstatetrigger.png" alt="entry clear icon color screenshot">
+    
+
+
+<p>I know this was a longer post than usual, but it&rsquo;s because several different components are in play here!
+The potential they have is huge, so I would encourage you to try them out.</p>
+<p>As always the actual example can be found <a href="https://github.com/Depechie/VisualStateManagerControlTemplates">on my GitHub here&hellip;</a></p>
+
+        </p>
     </div>
+    
+
+    
+
+    <div class="page-footer">
         
-        <div class="paginator">
+        <hr class="footer-divider">
         
+            <a class="tag" href="/tags/visual-state-trigger">#visual state trigger</a>
         
+            <a class="tag" href="/tags/control-template">#control template</a>
+        
+            <a class="tag" href="/tags/xamarin-forms">#xamarin forms</a>
+        
+      
     </div>
+
 
         
 

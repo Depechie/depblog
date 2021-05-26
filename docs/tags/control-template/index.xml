@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>control template on Depechie’s outing</title>
+    <link>https://blog.depechie.com/tags/control-template/</link>
+    <description>Recent content in control template on Depechie’s outing</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Oct 2020 17:32:45 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/tags/control-template/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xamarin Forms - Custom Visual State triggers and Control Templates</title>
+      <link>https://blog.depechie.com/posts/2020-10-19-xf-custom-visualstate-triggers/</link>
+      <pubDate>Mon, 19 Oct 2020 17:32:45 +0000</pubDate>
+      
+      <guid>https://blog.depechie.com/posts/2020-10-19-xf-custom-visualstate-triggers/</guid>
+      <description>Not so long ago there was this little online event called [Xamarin Expert Day(https://expertday.</description>
+    </item>
+    
+  </channel>
+</rss>
