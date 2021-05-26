@@ -179,7 +179,7 @@ In my example I called them InvokeCSharpFromJS and InvokeJSFromCSharp.
 It is this InvokeCSharpFromJS method that needs to be injected into the custom WebView through the **RegisterAction** method that you saw earlier. Once that is done, you can call it from you JavaScript.
 
 In our case we want to tell the C# code when new images need to be loaded in. Remember the first images will already be presented, thanks to our HTML we generated and set as source of the WebView. But when the user scrolls down, we need to dynamically load extra pictures.  
-To get this going, we listen for the Scroll event in our JavaScript and use the bride to signal back to our C# code that new pictures are requested.
+To get this going, we listen for the Scroll event in our JavaScript and use the bridge to signal back to our C# code that new pictures are requested.
 
 The complete inline JavaScript looks like this.
 
