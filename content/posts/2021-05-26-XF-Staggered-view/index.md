@@ -34,7 +34,7 @@ After that, together with my friend and also Xamarin Forms developer, [Konrad MÃ
 Konrad had already done some work on this while helping out with the [Xappy project](https://github.com/davidortinau/Xappy) by [David Ortinau](https://twitter.com/davidortinau), the original blog posts page had a design spec for this as you can see here [https://github.com/davidortinau/Xappy/issues/6](https://github.com/davidortinau/Xappy/issues/6). He already had the **Android** version up and running and I had an implementation example in SwiftUI that we wanted to try to port to the collectionview. But after an evening of trial and error, the collectionview was too much to handle.  
 The way it is implemented internally in Xamarin Forms makes it difficult to adapt.
 
-So I was back to square one and had no idea on how to tackle it correctly. So this got me thinking, we have so many nice implementation of this layout ready available through use of **HTML** and **CSS**, couldn't we leverage this power in our Xamarin Forms app too?
+So I was back to square one and had no idea on how to tackle it correctly. So this got me thinking, we have so many nice implementations of this layout already available through use of **HTML** and **CSS**, couldn't we leverage this power in our Xamarin Forms app too?
 Well it seems we can, with some tweaks and adjustments. Get ready for a lengthy post!
 
 ### Coding the view
