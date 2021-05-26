@@ -95,7 +95,7 @@ private string InitHTMLSource()
 
 > **Spoiler alert: I'm NOT the actual photographer of the demo pictures!**
 
-We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL's pointing to some pictures online. We then use regular find and replace to inject that list of into the above provided HTML.
+We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL's pointing to some pictures online. We then use regular find and replace to inject that list into the above provided HTML.
 
 ```
 public static string GenerateItemSource(IEnumerable<string> items)
