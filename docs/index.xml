@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Noteworthy</title>
+    <title>Depechie’s outing</title>
     <link>https://blog.depechie.com/</link>
-    <description>Recent content on Noteworthy</description>
+    <description>Recent content on Depechie’s outing</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 04 May 2021 22:33:07 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test1</title>
-      <link>https://blog.depechie.com/posts/test1/</link>
-      <pubDate>Tue, 04 May 2021 22:33:07 +0000</pubDate>
+      <title></title>
+      <link>https://blog.depechie.com/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.depechie.com/posts/test1/</guid>
-      <description>Testing the posts</description>
+      <guid>https://blog.depechie.com/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://blog.depechie.com/about/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.depechie.com/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.</description>
     </item>
     
   </channel>

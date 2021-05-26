@@ -1,6 +1,6 @@
 baseURL = "https://blog.depechie.com/"
 languageCode = "en-us"
-title = "Noteworthy"
+title = "Depechie’s outing"
 theme = "noteworthy"
 enableRobotsTXT = true
 paginate = 4 # Set the number of posts to show before overflowing to the next page.
@@ -26,7 +26,7 @@ disqusShortname = ""
 [params]
 	math = true
 	# Blog description at the top of the homepage. Supports markdown.
-	description = "Noteworthy is a minimalist Hugo theme, perfect for writers and bloggers."
+	description = "‘SH10151’ this is the serial number of our orbital gun"
 
     showReadMore = false
 
@@ -76,22 +76,16 @@ disqusShortname = ""
 
 # Menu links along the sidebar navigation.
 [[menu.main]]
-	identifier = "about"
-	name = "About"
-	url = "/about/"
-	weight = 1 # Weight is an integer used to sort the menu items. The sorting goes from smallest to largest numbers. If weight is not defined for each menu entry, Hugo will sort the entries alphabetically.
-
-[[menu.main]]
 	identifier = "tags"
 	name = "Tags"
 	url = "/tags/"
-	weight = 2
+	weight = 1
 
 [[menu.main]]
 	name = "Archives"
 	identifier = "archives"
 	url = "/archives/"
-	weight = 3
+	weight = 2
 
 # Privacy configurations: https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
