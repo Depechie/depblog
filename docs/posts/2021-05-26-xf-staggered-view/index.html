@@ -226,7 +226,7 @@ There are also 2 other tags, one for adding custom CSS and one for adding extra 
 </code></pre><blockquote>
 <p><strong>Spoiler alert: I&rsquo;m NOT the actual photographer of the demo pictures!</strong></p>
 </blockquote>
-<p>We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL&rsquo;s pointing to some pictures online. When then use regular find and replace to inject that list of into the above provided HTML.</p>
+<p>We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL&rsquo;s pointing to some pictures online. We then use regular find and replace to inject that list of into the above provided HTML.</p>
 <pre><code>public static string GenerateItemSource(IEnumerable&lt;string&gt; items)
 {
     StringBuilder itemSource = new StringBuilder();
