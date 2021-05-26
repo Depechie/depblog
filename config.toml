@@ -28,7 +28,7 @@ disqusShortname = ""
 	# Blog description at the top of the homepage. Supports markdown.
 	description = "‘SH10151’ this is the serial number of our orbital gun"
 
-    showReadMore = false
+    showReadMore = true
 
     # Set enableKofi to true to enable the Ko-fi support button. Add your Ko-fi ID to link to your account.
     enableKofi = false
