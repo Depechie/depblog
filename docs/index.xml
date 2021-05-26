@@ -5,7 +5,17 @@
     <link>https://blog.depechie.com/</link>
     <description>Recent content on Depechie’s outing</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 May 2021 12:01:17 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xamarin Forms staggered view - Masonry</title>
+      <link>https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</link>
+      <pubDate>Wed, 26 May 2021 12:01:17 +0000</pubDate>
+      
+      <guid>https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</guid>
+      <description>Some story background When developing mobile apps, you&amp;rsquo;ll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.</description>
+    </item>
+    
     <item>
       <title></title>
       <link>https://blog.depechie.com/archives/</link>
@@ -13,15 +23,6 @@
       
       <guid>https://blog.depechie.com/archives/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://blog.depechie.com/about/</link>
-      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.depechie.com/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache License 2.</description>
     </item>
     
   </channel>

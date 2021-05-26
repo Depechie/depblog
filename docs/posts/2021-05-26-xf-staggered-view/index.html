@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no"/>
+
+    <title>Xamarin Forms staggered view - Masonry | Depechie’s outing</title>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF3DB4">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    
+    
+    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.f964b4242f94fe00c756dd99f89ad35685628056ad2c5f4c52c4a84a4cbf9726.css"/>
+
+    
+    
+    
+
+    
+    
+ 
+    </head>
+
+    <body>
+        
+<nav>
+  <header>
+    <div class="site-title">
+        <a href="/">Depechie’s outing</a>
+    </div>  
+</header>
+
+  <div class="nav-menu">
+  
+    <a class="color-link nav-link" href="/tags/">Tags</a>
+  
+    <a class="color-link nav-link" href="/archives/">Archives</a>
+  
+  <a class="color-link nav-link" href="https://blog.depechie.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+</div>
+<footer class="footer">
+	<div class="social-icons">
+        
+
+    
+
+    
+    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a class="social-icon" href="https://www.linkedin.com/in/depechie/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M2,3.654102 C2,2.69908141 2.79442509,1.92397846 3.77383592,1.92397846 L24.2261641,1.92397846 C25.2058917,1.92397846 26,2.69908141 26,3.654102 L26,24.3462148 C26,25.3015521 25.2058917,26.0760215 24.2261641,26.0760215 L3.77383592,26.0760215 C2.79442509,26.0760215 2,25.3015521 2,24.3465315 L2,3.65378524 L2,3.654102 Z M9.27526132,22.1415901 L9.27526132,11.2356668 L5.65030092,11.2356668 L5.65030092,22.1415901 L9.27557808,22.1415901 L9.27526132,22.1415901 Z M7.46341463,9.74691162 C8.72727273,9.74691162 9.51409566,8.90940767 9.51409566,7.86284447 C9.49033893,6.79252455 8.72727273,5.97846056 7.48748812,5.97846056 C6.24675325,5.97846056 5.43649034,6.79252455 5.43649034,7.86284447 C5.43649034,8.90940767 6.22299652,9.74691162 7.4396579,9.74691162 L7.46309788,9.74691162 L7.46341463,9.74691162 Z M11.2815965,22.1415901 L14.9062401,22.1415901 L14.9062401,16.0519481 C14.9062401,15.7263225 14.9299968,15.4000634 15.0256573,15.1675641 C15.2876148,14.5159962 15.8840672,13.8416218 16.8856509,13.8416218 C18.1970225,13.8416218 18.7218879,14.8416218 18.7218879,16.3078872 L18.7218879,22.1415901 L22.3465315,22.1415901 L22.3465315,15.8885017 C22.3465315,12.5388027 20.5584416,10.9800443 18.1735825,10.9800443 C16.2182452,10.9800443 15.3595185,12.072854 14.8824834,12.8172315 L14.9065569,12.8172315 L14.9065569,11.2359835 L11.2819132,11.2359835 C11.3291099,12.2591067 11.2815965,22.1419069 11.2815965,22.1419069 L11.2815965,22.1415901 Z"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <a class="social-icon" href="https://github.com/Depechie" target="_blank" rel="noopener" title="GitHub">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M13.9988029,1.32087331 C6.82105037,1.32087331 1,7.14112562 1,14.3212723 C1,20.0649109 4.72454649,24.9370678 9.89038951,26.6560892 C10.5408085,26.7757983 10.7778323,26.374374 10.7778323,26.0296121 C10.7778323,25.7215609 10.7666595,24.9035493 10.760275,23.8189856 C7.14426471,24.6042767 6.38131925,22.0760223 6.38131925,22.0760223 C5.78995672,20.5740732 4.93762853,20.1742451 4.93762853,20.1742451 C3.75729765,19.3682044 5.02701126,19.3841656 5.02701126,19.3841656 C6.33183953,19.4759425 7.01817121,20.7241085 7.01817121,20.7241085 C8.17775254,22.7104801 10.0611744,22.1366749 10.8017741,21.8038838 C10.919887,20.9643246 11.2558703,20.3913175 11.6269683,20.066507 C8.74038491,19.7385043 5.70536235,18.6228163 5.70536235,13.6413251 C5.70536235,12.2223743 6.21213051,11.0611968 7.04370914,10.1530044 C6.90963504,9.82420367 6.46351945,8.50181809 7.17139875,6.71256734 C7.17139875,6.71256734 8.26234691,6.36301702 10.7459099,8.04532771 C11.78259,7.75642995 12.8950858,7.61277914 14.000399,7.60719272 C15.1049142,7.61277914 16.2166119,7.75642995 17.2548881,8.04532771 C19.736855,6.36301702 20.8262071,6.71256734 20.8262071,6.71256734 C21.5356825,8.50181809 21.0895669,9.82420367 20.9562909,10.1530044 C21.7894656,11.0611968 22.2922435,12.2223743 22.2922435,13.6413251 C22.2922435,18.6355852 19.2524325,19.734514 16.3570705,20.0561322 C16.8231376,20.4575564 17.2389269,21.2508282 17.2389269,22.4638795 C17.2389269,24.2012564 17.2229657,25.603448 17.2229657,26.0296121 C17.2229657,26.3775663 17.4575954,26.7821827 18.116793,26.6552912 C23.2786458,24.9322794 27,20.0633148 27,14.3212723 C27,7.14112562 21.1789496,1.32087331 13.9988029,1.32087331"></path>
+        </svg>
+    </a>
+    
+
+    
+    <a class="social-icon" href="https://stackoverflow.com/users/613087/depechie" target="_blank" rel="noopener" title="Stack Overflow">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M20.8863636,23.7090909 L20.8863636,17.3818182 L22.9863636,17.3818182 L22.9863636,25.8090909 L4.03181818,25.8090909 L4.03181818,17.3818182 L6.13181818,17.3818182 L6.13181818,23.7090909 L20.8863636,23.7090909 Z M8.45,16.7818182 L8.88636364,14.7090909 L19.1954545,16.8636364 L18.7590909,18.9363636 L8.45,16.7818182 Z M9.81363636,11.8727273 L10.6863636,9.93636364 L20.2318182,14.4090909 L19.3590909,16.3181818 L9.81363636,11.8727273 Z M12.4590909,7.18181818 L13.7954545,5.57272727 L21.8954545,12.3090909 L20.5590909,13.9181818 L12.4590909,7.18181818 Z M17.6954545,2.19090909 L23.9681818,10.6454545 L22.2772727,11.9 L16.0045455,3.44545455 L17.6954545,2.19090909 Z M8.23181818,21.5818182 L8.23181818,19.4818182 L18.7590909,19.4818182 L18.7590909,21.5818182 L8.23181818,21.5818182 Z"></path>
+        </svg>
+    </a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+
+	<script src="https://blog.depechie.com/js/main.min.c1aee25a817e9beb1f9c4afd9d62311227a7f5e46720e404dc1dda97281f47f2.js" integrity="sha256-wa7iWoF+m+sfnEr9nWIxEien9eRnIOQE3B3alygfR/I=" crossorigin="anonymous"></script>
+</footer>
+</nav>
+
+        <div id="content" class="content-container">
+        
+
+<h1 class="post-title">Xamarin Forms staggered view - Masonry</h1>
+    
+    <time>May 26, 2021</time>
+    
+    <div>
+        <p>
+        <h3 id="some-story-background">Some story background</h3>
+<p>When developing mobile apps, you&rsquo;ll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.</p>
+<p>For me one of those iconic design trends that I always wanted to try out in an app, was the staggered view.
+I you look at any kind of portfolio website template or go search for photo related mobile app designs, the staggered view will for sure be featured multiple times!</p>
+<p>The overall look and feel is shown in the following image:</p>
+
+
+
+    <img class="article-image" src="/posts/2021-05-26-xf-staggered-view/images/masonry-layout.png" alt="masonry layout">
+    
+
+
+<p>In general it presents all items on the page in a <strong>staggered</strong> layout, this has many different names depending in what development/design environment you are in.
+Some examples are <strong>waterfall, masonry, flexbox, flow layout, cascading grid</strong> and maybe many others that I do not know about.</p>
+<p>But the overall idea is always the same, flow items from left to right and top to bottom, but if needed give each items it&rsquo;s own width and/or height.
+This way not all items will be presented in the same fixed width/height square or rectangular shape. Resulting in a more natural pleasing view.</p>
+<h3 id="the-road-to-success">The road to success</h3>
+<p>Of course I wanted to try this view out in a mobile app and that means I needed to find a way to get it rendered through Xamarin Forms.<br>
+But this somehow seemed more difficult than first assessed&hellip;</p>
+<p>My first stab, was trying to use one of the latest views we received in Xamarin Forms, the <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/layouts/flex-layout?WT.mc_id=DT-MVP-5000533">flex layout</a>. Even though the item positioning was correct, the sizing was not dynamic, so each item was contained in a same fixed width/height area.</p>
+<p>After that, together with my friend and also Xamarin Forms developer, <a href="https://twitter.com/konmue">Konrad Müller</a>, we tried to forge custom renderers for the Xamarin Forms <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/collectionview/layout?WT.mc_id=DT-MVP-5000533">collectionview layout</a>.<br>
+Konrad had already done some work on this while helping out with the <a href="https://github.com/davidortinau/Xappy">Xappy project</a> by <a href="https://twitter.com/davidortinau">David Ortinau</a>, the original blog posts page had a design spec for this as you can see here <a href="https://github.com/davidortinau/Xappy/issues/6">https://github.com/davidortinau/Xappy/issues/6</a>. He already had the <strong>Android</strong> version up and running and I had an implementation example in SwiftUI that we wanted to try to port to the collectionview. But after an evening of trial and error, the collectionview was to much to handle.<br>
+The way it is implemented internally in Xamarin Forms makes it difficult to adapt.</p>
+<p>So I was back to square one and had no idea on how to tackle it correctly. So this got me thinking, we have so many nice implementation of this layout ready available through use of <strong>HTML</strong> and <strong>CSS</strong>, couldn&rsquo;t we leverage this power in our Xamarin Forms app too?
+Well it seems we can, with some tweaks and adjustments. Get ready for a lengthy post!</p>
+<h3 id="coding-the-view">Coding the view</h3>
+<p>Let me first show you how our app will look like when all code is correctly implemented:</p>
+
+
+
+    <img class="article-image" src="/posts/2021-05-26-xf-staggered-view/images/masonry.png" alt="masonry app layout screenshot">
+    
+
+
+<p>I first drafted up a list of must have features that needed to be addressed while creating this layout</p>
+<ul>
+<li>Items should be presented in a staggered layout</li>
+<li>Items should be loaded through C# code and preferable making use of MVVM patterns</li>
+<li>The layout should have infinite scroll capabilities</li>
+</ul>
+<p>To help out with the layout, I took a look at some <strong>JavaScript</strong> libraries and decided to use <strong>Masonry js</strong> which is available here <a href="https://masonry.desandro.com/">https://masonry.desandro.com/</a>. It has great documentation is open source and is already used by many websites.
+Also one of the key features it has, is the ability to handle dynamic addition of new items to the layout! This will be needed for the infinite scroll option.<br>
+You as a user of this js lib, need to provide at least 3 elements; some HTML with the items that need to be placed in the layout, some JavaScript to initialize Masonry and set some options, and if you want, some CSS to adjust the styling of the layout.</p>
+<p>First the HTML.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' /&gt;
+        &lt;style type='text/css'&gt;##CSS##&lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class='grid are-images-unloaded'&gt;
+            &lt;div class='grid__col-sizer'&gt;&lt;/div&gt;
+            ##ITEMS##
+        &lt;/div&gt;
+
+        &lt;script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'&gt;&lt;/script&gt;
+        &lt;script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js'&gt;&lt;/script&gt;
+        &lt;script id='render-js'&gt;##INLINEJS##&lt;/script&gt;
+    &lt;/body&gt;    
+&lt;/html&gt;
+</code></pre><p>This is a very basic HTML body with only a few key elements needed to get things working.
+At the bottom you&rsquo;ll notice we need to make a reference to 2 external JavaScript libraries, <strong>Masonry</strong> and <strong>ImagesLoaded</strong>. These 2 will do the heavy lifting for us.<br>
+At the middle we have a <strong>div</strong> that uses the CSS class <strong>grid</strong>, this is the element Masonry will look for to load the items in the view.
+Inside that grid we will be placing our elements, to be able to do this from Xamarin Forms with C#, string replacing will be performed, hence why we added the <strong>##ITEMS##</strong> tag.<br>
+There are also 2 other tags, one for adding custom CSS and one for adding extra inline JavaScript. ( more info on this later )</p>
+<p>Adding the first items to render inside the grid, is done with C# at the start of our application.</p>
+<pre><code>private string InitHTMLSource()
+{
+    IEnumerable&lt;string&gt; artistPictures = _dataService.GetPhotos(Artists.Depechie, 0);
+    var body = MasonryHelper.GenerateHTMLSource();
+    var items = MasonryHelper.GenerateItemSource(artistPictures);
+
+    return MasonryHelper.InsertItems(body, items);
+}
+</code></pre><blockquote>
+<p><strong>Spoiler alert: I&rsquo;m NOT the actual photographer of the demo pictures!</strong></p>
+</blockquote>
+<p>We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL&rsquo;s pointing to some pictures online. When then use regular find and replace to inject that list of into the above provided HTML.</p>
+<pre><code>public static string GenerateItemSource(IEnumerable&lt;string&gt; items)
+{
+    StringBuilder itemSource = new StringBuilder();
+    foreach (var item in items)
+    {
+        itemSource.AppendLine(_gridItem.Replace(SEARCHKEY_ITEMSOURCE, item));
+    }
+
+    return itemSource.ToString();
+}
+
+public static string InsertItems(string htmlSource, string itemSource)
+{
+    return htmlSource.Replace(SEARCHKEY_ITEMS, itemSource);
+}
+</code></pre><p>With that in place, we now have our full HTML source that we want to load into the WebView control we are using in our Xamarin Forms page.</p>
+<pre><code>protected override void OnAppearing()
+{
+    base.OnAppearing();
+
+    webViewElement.RegisterAction(InvokeCSharpFromJS);
+    webViewElement.Source = new HtmlWebViewSource()
+    {
+        Html = InitHTMLSource()
+    };
+}
+</code></pre><p>You&rsquo;ll notice some extra code here as well, the <strong>RegisterAction</strong>. This is needed for the JavaScript bridge, but more on this later.
+First let me show you the page XAML itself.</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;ContentPage xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             xmlns:controls=&quot;clr-namespace:Masonry.Controls&quot;
+             x:Class=&quot;Masonry.MainPage&quot;&gt;
+
+    &lt;Grid RowDefinitions=&quot;auto, auto, *&quot;&gt;
+        &lt;Grid.Margin&gt;
+            &lt;OnPlatform x:TypeArguments=&quot;Thickness&quot;&gt;
+                &lt;On Platform=&quot;iOS&quot; Value=&quot;0,30,0,0&quot; /&gt;
+                &lt;On Platform=&quot;Android&quot; Value=&quot;0,10,0,0&quot; /&gt;
+            &lt;/OnPlatform&gt;
+        &lt;/Grid.Margin&gt;
+
+        &lt;StackLayout Orientation=&quot;Horizontal&quot;
+                     Margin=&quot;18,10,18,5&quot;
+                     HorizontalOptions=&quot;FillAndExpand&quot;
+                     Grid.Row=&quot;1&quot;&gt;
+            &lt;Label Text=&quot;Porfolio&quot;
+                   FontFamily=&quot;JosefinRegular&quot;
+                   FontSize=&quot;20&quot;
+                   TextColor=&quot;#4d4d4d&quot;
+                   HorizontalOptions=&quot;StartAndExpand&quot; VerticalOptions=&quot;End&quot;/&gt;
+
+            &lt;Label Text=&quot;Glenn Versweyveld&quot;
+                   FontFamily=&quot;JosefinRegular&quot;
+                   FontSize=&quot;16&quot;
+                   HorizontalOptions=&quot;EndAndExpand&quot; VerticalOptions=&quot;End&quot; /&gt;
+        &lt;/StackLayout&gt;
+
+        &lt;controls:HybridWebView x:Name=&quot;webViewElement&quot;
+                                Grid.Row=&quot;2&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/ContentPage&gt;
+</code></pre><p>Big thing to notice here is the fact that we are using a custom WebView control called HybridWebView. This is needed to enable the JavaScript interaction from the WebView to Xamarin Forms and the other way around.<br>
+I followed the great guide by <a href="https://github.com/UdaraAlwis">Udara Alwis</a>, he explained everything in his article about creating a bi-directional interop with a WebView here <a href="https://theconfuzedsourcecode.wordpress.com/2020/01/19/building-a-bi-directional-interop-bridge-with-webview-in-xamarin-forms/">https://theconfuzedsourcecode.wordpress.com/2020/01/19/building-a-bi-directional-interop-bridge-with-webview-in-xamarin-forms/</a>.<br>
+Although Microsoft also has posted an intro article about the same technique on their docs site here <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/hybridwebview?WT.mc_id=DT-MVP-5000533">https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/hybridwebview</a>.</p>
+<p>In short, you need to create a custom WebView renderer on iOS and Android to enable the cross invoking functionality. Meaning you&rsquo;ll be able to call a C# function from within JavaScript but also call a JavaScript function from your C# code.
+In my example I called them InvokeCSharpFromJS and InvokeJSFromCSharp.<br>
+It is this InvokeCSharpFromJS method that needs to be injected into the custom WebView through the <strong>RegisterAction</strong> method that you saw earlier. Once that is done, you can call it from you JavaScript.</p>
+<p>In our case we want to tell the C# code when new images need to be loaded in. Remember the first images will already be presented, thanks to our HTML we generated and set as source of the WebView. But when the user scrolls down, we need to dynamically load extra pictures.<br>
+To get this going, we listen for the Scroll event in our JavaScript and use the bride to signal back to our C# code that new pictures are requested.</p>
+<p>The complete inline JavaScript looks like this.</p>
+<pre><code>let pageIndex = 0;
+let loadNext = false;
+
+window.addEventListener('scroll', () =&gt; {
+    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+    if(clientHeight + scrollTop &gt;= scrollHeight - 100 &amp;&amp; loadNext) {
+        loadNext = false;
+        invokeCSharpAction(pageIndex);
+        pageIndex++;
+	}
+});
+
+var grid = document.querySelector('.grid');
+var msnry = new Masonry( grid, {
+    columnWidth: '.grid__col-sizer',
+    itemSelector: 'none',
+    percentPosition: true,
+    stagger: 30,
+    visibleStyle: { transform: 'translateY(0)', opacity: 1 },
+    hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },  
+});
+
+imagesLoaded( grid, function() {
+    grid.classList.remove('are-images-unloaded');
+    msnry.options.itemSelector = '.grid__item';
+    let items = grid.querySelectorAll('.grid__item');
+    loadNext = true;
+    msnry.appended(items);
+});
+
+function invokeJSFromCSharp(data) {
+    var images = data.split('#');
+    var elems = [];
+    var fragment = document.createDocumentFragment();
+    var i;
+    for (i = 0; i &lt; images.length; i++) {
+        var elem = getItemElement(images[i]);
+        fragment.appendChild(elem);
+        elems.push(elem);
+    }
+
+    grid.appendChild(fragment);
+    var imageLoad = imagesLoaded(grid);
+    imageLoad.on( 'progress', function() {  msnry.layout(); });
+    loadNext = true;
+    msnry.appended(elems);
+}
+
+function getItemElement(content) {
+  var elem = document.createElement('div');
+  elem.className = 'grid__item';
+  elem.innerHTML = '&lt;img class=&quot;&quot;image-grid__item&quot;&quot; src=&quot;&quot;' + content + '&quot;&quot;&gt;';
+  return elem;
+}
+</code></pre><p>There is small part for the Masonry grid initialization and options, the new Masonry call. At the top you&rsquo;ll notice the <strong>window.addEventListener</strong>, here the magic callback to C# will happen. As soon as the user has scrolled down and we are roughly 100px from the bottom, we request more images and pass in a <strong>pageIndex</strong> representing how many times the user has reached the bottom of our WebView.<br>
+That way we enable the infinite scroll feature, as long as we are able to request a next set of images, the user will be able to keep scrolling down. The actual C# code to handle that request is show below.</p>
+<pre><code>private void InvokeCSharpFromJS(string data)
+{
+    if (!string.IsNullOrWhiteSpace(data) &amp;&amp; int.Parse(data) is int pageIndex)
+    {
+        IEnumerable&lt;string&gt; artistPictures = _dataService.GetPhotos(Artists.Depechie, ++pageIndex);
+        if (artistPictures.Any())
+        {
+            var items = string.Join(&quot;#&quot;, artistPictures);
+            Device.BeginInvokeOnMainThread(async () =&gt;
+            {
+                string result = await webViewElement.EvaluateJavaScriptAsync($&quot;invokeJSFromCSharp('{items}')&quot;);
+            });
+        }
+    }
+}
+</code></pre><p>When we get a result back from the DataService with a potential new set of images for the requested pageIndex and artist, we will call back into JavaScript and pass that result list as one joined string. You can see in the inline JavaScript function invokeJSFromCSharp, that we unpack that string and use the Masonry <strong>appended</strong> function to dynamically add those new images.</p>
+<h3 id="final-result">Final result</h3>
+<p>With that everything is set and the final result looks like this ( notice the nice fade in animation provided by Masonry ):</p>
+<p><img src="images/masonry.gif" alt="alt text"></p>
+<p>Overall I think this solution is great, because while using the WebView and HTML you&rsquo;ll notice no design difference between iOS and Android, what is a big plus!</p>
+<blockquote>
+<p><strong>Warning: don&rsquo;t try this on the Android simulator</strong></p>
+</blockquote>
+<p>Somehow using this on the Android simulator with a debug build is very laggy. But deploying a release build to an actual device works like a charm!!</p>
+<p>As always you can find a fully working example on GitHub here <a href="https://github.com/Depechie/Masonry">https://github.com/Depechie/Masonry</a>.</p>
+<p>Enjoy.</p>
+
+        </p>
+    </div>
+    
+
+    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/masonry">#masonry</a>
+        
+            <a class="tag" href="/tags/staggered-view">#staggered view</a>
+        
+            <a class="tag" href="/tags/html">#html</a>
+        
+            <a class="tag" href="/tags/javascript">#javascript</a>
+        
+            <a class="tag" href="/tags/css">#css</a>
+        
+            <a class="tag" href="/tags/xamarin-forms">#xamarin forms</a>
+        
+      
+    </div>
+
+
+        
+
+<link rel="stylesheet" type="text/css" href="/css/katex.min.css" crossorigin="anonymous">
+<script type="text/javascript" src="/js/katex.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/auto-render.min.js"onload="renderMathInElement(document.body);" crossorigin="anonymous"></script>
+
+        </div>
+        <footer class="footer-mobile">
+	<div class="social-icons">
+        
+
+    
+
+    
+    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <a class="social-icon" href="https://www.linkedin.com/in/depechie/" target="_blank" rel="noopener" title="LinkedIn">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M2,3.654102 C2,2.69908141 2.79442509,1.92397846 3.77383592,1.92397846 L24.2261641,1.92397846 C25.2058917,1.92397846 26,2.69908141 26,3.654102 L26,24.3462148 C26,25.3015521 25.2058917,26.0760215 24.2261641,26.0760215 L3.77383592,26.0760215 C2.79442509,26.0760215 2,25.3015521 2,24.3465315 L2,3.65378524 L2,3.654102 Z M9.27526132,22.1415901 L9.27526132,11.2356668 L5.65030092,11.2356668 L5.65030092,22.1415901 L9.27557808,22.1415901 L9.27526132,22.1415901 Z M7.46341463,9.74691162 C8.72727273,9.74691162 9.51409566,8.90940767 9.51409566,7.86284447 C9.49033893,6.79252455 8.72727273,5.97846056 7.48748812,5.97846056 C6.24675325,5.97846056 5.43649034,6.79252455 5.43649034,7.86284447 C5.43649034,8.90940767 6.22299652,9.74691162 7.4396579,9.74691162 L7.46309788,9.74691162 L7.46341463,9.74691162 Z M11.2815965,22.1415901 L14.9062401,22.1415901 L14.9062401,16.0519481 C14.9062401,15.7263225 14.9299968,15.4000634 15.0256573,15.1675641 C15.2876148,14.5159962 15.8840672,13.8416218 16.8856509,13.8416218 C18.1970225,13.8416218 18.7218879,14.8416218 18.7218879,16.3078872 L18.7218879,22.1415901 L22.3465315,22.1415901 L22.3465315,15.8885017 C22.3465315,12.5388027 20.5584416,10.9800443 18.1735825,10.9800443 C16.2182452,10.9800443 15.3595185,12.072854 14.8824834,12.8172315 L14.9065569,12.8172315 L14.9065569,11.2359835 L11.2819132,11.2359835 C11.3291099,12.2591067 11.2815965,22.1419069 11.2815965,22.1419069 L11.2815965,22.1415901 Z"></path>
+        </svg>
+    </a>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <a class="social-icon" href="https://github.com/Depechie" target="_blank" rel="noopener" title="GitHub">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M13.9988029,1.32087331 C6.82105037,1.32087331 1,7.14112562 1,14.3212723 C1,20.0649109 4.72454649,24.9370678 9.89038951,26.6560892 C10.5408085,26.7757983 10.7778323,26.374374 10.7778323,26.0296121 C10.7778323,25.7215609 10.7666595,24.9035493 10.760275,23.8189856 C7.14426471,24.6042767 6.38131925,22.0760223 6.38131925,22.0760223 C5.78995672,20.5740732 4.93762853,20.1742451 4.93762853,20.1742451 C3.75729765,19.3682044 5.02701126,19.3841656 5.02701126,19.3841656 C6.33183953,19.4759425 7.01817121,20.7241085 7.01817121,20.7241085 C8.17775254,22.7104801 10.0611744,22.1366749 10.8017741,21.8038838 C10.919887,20.9643246 11.2558703,20.3913175 11.6269683,20.066507 C8.74038491,19.7385043 5.70536235,18.6228163 5.70536235,13.6413251 C5.70536235,12.2223743 6.21213051,11.0611968 7.04370914,10.1530044 C6.90963504,9.82420367 6.46351945,8.50181809 7.17139875,6.71256734 C7.17139875,6.71256734 8.26234691,6.36301702 10.7459099,8.04532771 C11.78259,7.75642995 12.8950858,7.61277914 14.000399,7.60719272 C15.1049142,7.61277914 16.2166119,7.75642995 17.2548881,8.04532771 C19.736855,6.36301702 20.8262071,6.71256734 20.8262071,6.71256734 C21.5356825,8.50181809 21.0895669,9.82420367 20.9562909,10.1530044 C21.7894656,11.0611968 22.2922435,12.2223743 22.2922435,13.6413251 C22.2922435,18.6355852 19.2524325,19.734514 16.3570705,20.0561322 C16.8231376,20.4575564 17.2389269,21.2508282 17.2389269,22.4638795 C17.2389269,24.2012564 17.2229657,25.603448 17.2229657,26.0296121 C17.2229657,26.3775663 17.4575954,26.7821827 18.116793,26.6552912 C23.2786458,24.9322794 27,20.0633148 27,14.3212723 C27,7.14112562 21.1789496,1.32087331 13.9988029,1.32087331"></path>
+        </svg>
+    </a>
+    
+
+    
+    <a class="social-icon" href="https://stackoverflow.com/users/613087/depechie" target="_blank" rel="noopener" title="Stack Overflow">
+        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
+            <path d="M20.8863636,23.7090909 L20.8863636,17.3818182 L22.9863636,17.3818182 L22.9863636,25.8090909 L4.03181818,25.8090909 L4.03181818,17.3818182 L6.13181818,17.3818182 L6.13181818,23.7090909 L20.8863636,23.7090909 Z M8.45,16.7818182 L8.88636364,14.7090909 L19.1954545,16.8636364 L18.7590909,18.9363636 L8.45,16.7818182 Z M9.81363636,11.8727273 L10.6863636,9.93636364 L20.2318182,14.4090909 L19.3590909,16.3181818 L9.81363636,11.8727273 Z M12.4590909,7.18181818 L13.7954545,5.57272727 L21.8954545,12.3090909 L20.5590909,13.9181818 L12.4590909,7.18181818 Z M17.6954545,2.19090909 L23.9681818,10.6454545 L22.2772727,11.9 L16.0045455,3.44545455 L17.6954545,2.19090909 Z M8.23181818,21.5818182 L8.23181818,19.4818182 L18.7590909,19.4818182 L18.7590909,21.5818182 L8.23181818,21.5818182 Z"></path>
+        </svg>
+    </a>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+</div>
+
+
+
+
+	<div class="footer-mobile-links">
+		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+		<span class="divider-bar">|</span>
+		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+	</div>
+
+	<script src="https://blog.depechie.com/js/main.min.c1aee25a817e9beb1f9c4afd9d62311227a7f5e46720e404dc1dda97281f47f2.js" integrity="sha256-wa7iWoF+m+sfnEr9nWIxEien9eRnIOQE3B3alygfR/I=" crossorigin="anonymous"></script>
+</footer>
+    </body>
+</html>

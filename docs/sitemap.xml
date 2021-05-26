@@ -2,14 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.depechie.com/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.depechie.com/about/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <loc>https://blog.depechie.com/tags/css/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
   </url><url>
     <loc>https://blog.depechie.com/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/tags/html/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/tags/javascript/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/tags/masonry/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/posts/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/tags/staggered-view/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
   </url><url>
     <loc>https://blog.depechie.com/tags/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/tags/xamarin-forms/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</loc>
+    <lastmod>2021-05-26T12:01:17+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url>
 </urlset>
