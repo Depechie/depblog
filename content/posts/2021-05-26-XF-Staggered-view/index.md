@@ -269,7 +269,7 @@ With that everything is set and the final result looks like this ( notice the ni
 
  ![alt text](images/masonry.gif)
 
- Overall I think this solution is great, because while using the WebView and HTML you'll notice no design difference between iOS and Android, what is a big plus!
+ Overall I think this solution is great, because while using the WebView and HTML you'll notice no design difference between iOS and Android, which is a big plus!
 
  > **Warning: don't try this on the Android simulator**
 
