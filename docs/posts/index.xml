@@ -16,5 +16,14 @@
       <description>Some story background When developing mobile apps, you&amp;rsquo;ll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.</description>
     </item>
     
+    <item>
+      <title>Xamarin Forms – Set entry clear icon color on iOS</title>
+      <link>https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/</link>
+      <pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
+      
+      <guid>https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/</guid>
+      <description>Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.</description>
+    </item>
+    
   </channel>
 </rss>

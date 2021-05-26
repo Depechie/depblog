@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>xamarin forms | Depechie’s outing</title>
+    <title>Xamarin Forms – Set entry clear icon color on iOS | Depechie’s outing</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,8 +28,6 @@
     
     
  
-    
-    <link rel="alternate" type="application/rss+xml" href="https://blog.depechie.com/tags/xamarin-forms/index.xml" title="Depechie’s outing" />
     </head>
 
     <body>
@@ -144,42 +142,56 @@
         <div id="content" class="content-container">
         
 
-  <h1>Tagged "xamarin forms"</h1>
-  
-  
+<h1 class="post-title">Xamarin Forms – Set entry clear icon color on iOS</h1>
     
-    <article>
-            <h2>
-                <a href="https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/">
-                    Xamarin Forms staggered view - Masonry
-                </a>
-            </h2>
-            <div>
-                <p>Some story background When developing mobile apps, you&rsquo;ll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>May 26, 2021</time>
-            </div> 
-        </article>
+    <time>March 28, 2021</time>
     
-  
+    <div>
+        <p>
+        <p>Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.
+It allows changing the color of the clear icon that is available inside the native entry control of iOS ( when enabled ).</p>
+<pre><code>if (Control is UITextField textField)
+{
+    //Enable the clear icon
+    textField.ClearButtonMode = UITextFieldViewMode.WhileEditing;
+    //Get hold of the clear icon inside the text field
+    UIButton clearButton = textField.ValueForKey(new Foundation.NSString(&quot;clearButton&quot;)) as UIButton;
+    //Set the desired color
+    clearButton.TintColor = UIColor.Red;
+    UIImage clearImage = UIImage.GetSystemImage(&quot;xmark.circle.fill&quot;);
+    //Override the regular image with the colored one
+    clearButton.SetImage(clearImage.ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), UIControlState.Normal);
+}
+</code></pre><p>With this platform specific code, we can get a hold of the UIButton inside the UITextField and set a color. Than again pasting it into the UIButton.</p>
+
+
+
+    <img class="article-image" src="/posts/2021-03-28-xf-clear-icon-color/images/entryclear.png" alt="entry clear icon color screenshot">
     
-    <article>
-            <h2>
-                <a href="https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/">
-                    Xamarin Forms – Set entry clear icon color on iOS
-                </a>
-            </h2>
-            <div>
-                <p>Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.</p>
-                
-            </div>
-            <div class="post-footer">
-            <time>March 28, 2021</time>
-            </div> 
-        </article>
+
+
+<p>As always a full example can be found here <a href="https://github.com/Depechie/EntryClearIconColor">https://github.com/Depechie/EntryClearIconColor</a>.</p>
+
+        </p>
+    </div>
     
+
+    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/ios">#iOS</a>
+        
+            <a class="tag" href="/tags/effects">#effects</a>
+        
+            <a class="tag" href="/tags/entry">#entry</a>
+        
+            <a class="tag" href="/tags/xamarin-forms">#xamarin forms</a>
+        
+      
+    </div>
 
 
         
