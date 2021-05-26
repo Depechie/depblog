@@ -11,7 +11,7 @@ draft: false
 When developing mobile apps, you'll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.
 
 For me one of those iconic design trends that I always wanted to try out in an app, was the staggered view.
-I you look at any kind of portfolio website template or go search for photo related mobile app designs, the staggered view will for sure be featured multiple times!
+If you look at any kind of portfolio website template or go search for photo related mobile app designs, the staggered view will for sure be featured multiple times!
 
 The overall look and feel is shown in the following image:
 
@@ -20,7 +20,7 @@ The overall look and feel is shown in the following image:
 In general it presents all items on the page in a **staggered** layout, this has many different names depending in what development/design environment you are in.
 Some examples are **waterfall, masonry, flexbox, flow layout, cascading grid** and maybe many others that I do not know about.
 
-But the overall idea is always the same, flow items from left to right and top to bottom, but if needed give each items it's own width and/or height.
+But the overall idea is always the same, flow items from left to right and top to bottom, but if needed give each item it's own width and/or height.
 This way not all items will be presented in the same fixed width/height square or rectangular shape. Resulting in a more natural pleasing view.
 
 ### The road to success
