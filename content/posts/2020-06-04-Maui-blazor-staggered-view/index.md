@@ -1,7 +1,7 @@
 ---
 title: "Maui Blazor Staggered View"
 date: 2021-06-04T13:02:12Z
-categories: [development,maui, blazor]
+categories: [development,maui,blazor]
 tags: [masonry,staggered view,html,javascript,css,maui,blazor]
 draft: false
 ---
