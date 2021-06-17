@@ -6,7 +6,16 @@
     <description>Recent content on Depechie’s outing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jun 2021 13:02:12 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 13:49:55 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Maui Blazor Mobile Template</title>
+      <link>https://blog.depechie.com/posts/2021-06-17-maui-blazor-mobiletemplate/</link>
+      <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
+      
+      <guid>https://blog.depechie.com/posts/2021-06-17-maui-blazor-mobiletemplate/</guid>
+      <description>When you want to try out the .Net MAUI Blazor template, you will be able to run the standard Blazor test website on your mobile phone without any issues.</description>
+    </item>
+    
     <item>
       <title>Maui Blazor Staggered View</title>
       <link>https://blog.depechie.com/posts/2020-06-04-maui-blazor-staggered-view/</link>
