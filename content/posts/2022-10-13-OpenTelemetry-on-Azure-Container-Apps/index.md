@@ -8,9 +8,9 @@ draft: false
 
 Lately I've been working with `OpenTelemetry` to setup an observability environment for our running api services. Currently everything is deployed on-premises through use of `docker compose` and is working perfectly, but of course we also wanted to try out a cloud hosted solution on `Azure`.
 
-So as an experiment I decided to try out `Azure Container Apps` to see how it would work with `OpenTelemetry`. But truth be told the experience was not as smooth as I had hoped for. The Microsoft documentation is very basic when it comes to what kind of containers you can setup with `Azure Container Apps` and it's not very clear what kind of limitations there are.
+So as an experiment I decided to try out `Azure Container Apps` to see how it would work with `OpenTelemetry`. But truth be told the experience was not as smooth as I had hoped for. The Microsoft documentation is very basic when it comes to what kind of container mounts you can setup with `Azure Container Apps` and it's not very clear what kind of limitations there are.
 
-Thankfully [Martin Thwaites](https://twitter.com/MartinDotNet), a Developer Advocate at [@honeycombio](https://twitter.com/honeycombio) and also an `OpenTelemetry` enthouisast, had already done some work on this and had a [blog post](https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps) on the subject. So I decided to follow his guide and see if I could get it to work.
+Thankfully [Martin Thwaites](https://twitter.com/MartinDotNet), a Developer Advocate at [@honeycombio](https://twitter.com/honeycombio) and also an `OpenTelemetry` enthousiast, had already done some work on this and had a [blog post](https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps) on the subject. So I decided to follow his guide and see if I could get it to work.
 
 Have to say, without this guide, I would have been lost. So thanks Martin!
 
@@ -22,7 +22,7 @@ There are 2 things that I had to change in reference to the original blog post, 
 
 #### OpenTelemetry Collector Configuration file
 
-Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I'm used to using a command line command with and argument defined in the docker comopse file to indicate what configuration file `OpenTelemetry` needs at startup, I needed a way to replicate this setup in with `Azure Container Apps`.
+Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I'm used to using a command line command with and argument defined in the docker compose file to indicate what configuration file `OpenTelemetry` needs at startup, I needed a way to replicate this setup in with `Azure Container Apps`.
 
 What Martin already pointed out in his blogpost, is the fact that we need to download the container app configuration once it has been created to edit this manually for hooking up the file container mounts. Details are here [https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container](https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container).
 
