@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Maui Blazor Staggered View | Depechie’s outing</title>
+    <title>opentelemetry | Depechie’s outing</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,6 +28,8 @@
     
     
  
+    
+    <link rel="alternate" type="application/rss+xml" href="https://blog.depechie.com/tags/opentelemetry/index.xml" title="Depechie’s outing" />
     </head>
 
     <body>
@@ -147,143 +149,27 @@
         <div id="content" class="content-container">
         
 
-<h1 class="post-title">Maui Blazor Staggered View</h1>
+  <h1>Tagged "opentelemetry"</h1>
+  
+  
     
-    <time>June 4, 2021</time>
+    <article>
+            <h2>
+                <a href="https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/">
+                    OpenTelemetry on Azure Container Apps
+                </a>
+            </h2>
+            <div>
+                <p>Lately I&rsquo;ve been working with OpenTelemetry to setup an observability environment for our running api services.</p>
+                
+                <p><a href="/posts/2022-10-13-opentelemetry-on-azure-container-apps/">Read more...</a></p>
+                
+            </div>
+            <div class="post-footer">
+            <time>October 13, 2022</time>
+            </div> 
+        </article>
     
-    <div>
-        <p>
-        <p>Do you remember my staggered view solution for Xamarin Forms? If not, I blogged about it here: <a href="https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/">https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</a>.</p>
-<p>But since we have preview 4 of .Net 6 we are able to do something even better! We can now create full HTML apps with <strong>.Net MAUI Blazor</strong> ( more details here: <a href="https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-4/#net-maui-blazor-apps">https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-4/#net-maui-blazor-apps</a>).</p>
-<p>So why is this good you could ask yourself&hellip; well several reasons, but the major one, is the fact that our staggered view solution relies upon HTML and JavaScript. So having a development environment with the same target would suit us more then mixing XAML and HTML.<br>
-Secondly we will now have a fully working app on iOS and Android but also a Mac OS app too! Ow and let&rsquo;s not forget we also get a Windows desktop version with WinUI 3.<br>
-Without any hassle, this is just mind blowing. And thanks to CSS media queries, we can tailor the view of our staggered view automatically.<br>
-In these desktop cases, when we go over 768 pixels in width, we change from a 2 column to a 3 column masonry view. You can see the result below in the video.</p>
-<p>I can&rsquo;t stress this enough that having 1 dev environment for all possible targets is a big plus with .Net MAUI and now with all the web power thanks to Blazor we can create nice solutions.</p>
-<p>The principle of the code is the same as the Xamarin Forms version, our <strong>Index.razor</strong> now contains the setup of the image list.</p>
-<pre tabindex="0"><code>@page &#34;/&#34;
-@inherits IndexViewModel
-@implements IDisposable
-
-&lt;div class=&#34;grid are-images-unloaded&#34;&gt;
-    &lt;div class=&#39;grid__col-sizer&#39;&gt;&lt;/div&gt;
-    @foreach (var image in Images)
-    {
-        &lt;div class=&#34;grid__item&#34;&gt;&lt;img src=&#34;@image&#34;&gt;&lt;/div&gt;
-    }
-&lt;/div&gt;
-</code></pre><p>And the companion ViewModel handles the interaction with <strong>JavaScript</strong> and image loading.</p>
-<pre tabindex="0"><code>using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using masonrymauiblazor.Data;
-
-namespace masonrymauiblazor.ViewModels
-{
-    public class IndexViewModel : ComponentBase
-    {
-        protected string result;
-        private DotNetObjectReference&lt;IndexViewModel&gt; _objRef;
-        protected bool IsScrollTrackingEnabled { get; set; } = false;
-        protected List&lt;string&gt; Images { get; set;}
-
-        [Inject]
-        protected IJSRuntime JS { get; set; }
-
-        [Inject]
-        protected DataService DataService { get; set; }
-
-        public void Dispose()
-        {
-            _objRef?.Dispose();
-        }
-
-        [JSInvokable]
-        public bool IsAtWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
-        {
-            bool retVal = (contentScrollTop + contentHeight) &gt;= containerHeight;
-            return retVal;
-        }
-
-        [JSInvokable]
-        public bool IsNearWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
-        {
-            bool retVal = (contentScrollTop + contentHeight) &gt; (containerHeight - 100);
-            return retVal;
-        }
-
-        [JSInvokable]
-        public async Task LoadMoreImages(int pageIndex)
-        {
-            var newImages = DataService.GetPhotos(Artists.Depechie, pageIndex);
-
-            //TODO: Glenn - This list of new images should be added to the Blazor list with Images.AddRange(newImages)
-            //TODO: Glenn - But this will have the bad positioning effect, we need to trigger the imagesloaded function
-            //TODO: Glenn - Also this should be doable according to https://stackoverflow.com/questions/64593058/blazor-force-full-render-instead-of-differential-render
-            //TODO: Glenn - But I was not able to get it working correctly, hence the roundtrip and pushing the string to JavaScript
-            if (newImages != null &amp;&amp; newImages.Any())
-                _ = await JS.InvokeAsync&lt;string&gt;(&#34;blazorExtensions.triggerMasonry&#34;, string.Join(&#34;#&#34;, newImages));
-        }
-
-        public async Task ToggleDotNetTrackScroll()
-        {
-            _ = await JS.InvokeAsync&lt;string&gt;(&#34;blazorExtensions.toggleTrackScroll&#34;, _objRef);
-        }
-
-        [JSInvokable]
-        public bool ToggleTrackScroll() { IsScrollTrackingEnabled = !IsScrollTrackingEnabled; return IsScrollTrackingEnabled; }
-
-        protected override async Task OnInitializedAsync()
-        {
-            Images = DataService.GetPhotos(Artists.Depechie, 0);
-        }
-
-        protected async override Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                _objRef = DotNetObjectReference.Create(this);
-                await JS.InvokeVoidAsync(&#34;blazorExtensions.toggleTrackScroll&#34;, _objRef);
-                StateHasChanged();
-
-                await JS.InvokeVoidAsync(&#34;blazorExtensions.initMasonry&#34;, _objRef);
-            }
-        }
-    }
-}
-</code></pre><p>You can see there is one small issue with the loading more images. I had to go with the same Xamarin Forms solution and let JavaScript add the newer images, due to the imagesloaded function of Masonry. But I&rsquo;m sure someone with more <strong>Blazor</strong> knowledge than me could fix this and have the image adding functionality purely in the ViewModel.</p>
-<p>All the code is up on my GitHub here <a href="https://github.com/Depechie/Masonry/tree/main/src/mauiblazor">https://github.com/Depechie/Masonry/tree/main/src/mauiblazor</a>.</p>
-<p>Major thanks to <a href="https://twitter.com/PaulBSchroeder">Paul Schroeder</a> and <a href="https://twitter.com/tossnet1">Christophe Peugnet</a> for their guidance on some of the Blazor code, without that I would have been lost ;)</p>
-<p><img src="images/masonrymauiblazor.gif" alt="alt text"></p>
-
-        </p>
-    </div>
-    
-
-    
-
-    <div class="page-footer">
-        
-        <hr class="footer-divider">
-        
-            <a class="tag" href="/tags/masonry">#masonry</a>
-        
-            <a class="tag" href="/tags/staggered-view">#staggered view</a>
-        
-            <a class="tag" href="/tags/html">#html</a>
-        
-            <a class="tag" href="/tags/javascript">#javascript</a>
-        
-            <a class="tag" href="/tags/css">#css</a>
-        
-            <a class="tag" href="/tags/maui">#maui</a>
-        
-            <a class="tag" href="/tags/blazor">#blazor</a>
-        
-      
-    </div>
 
 
         

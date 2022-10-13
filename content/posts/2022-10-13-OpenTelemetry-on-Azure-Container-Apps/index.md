@@ -1,6 +1,6 @@
 ---
 title: "OpenTelemetry on Azure Container Apps"
-date: 2022-10-13T22:40:34Z
+date: 2022-10-13T21:48:17Z
 categories: [development,observability]
 tags: [opentelemetry,azure,containerapps]
 draft: false

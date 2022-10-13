@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.f964b4242f94fe00c756dd99f89ad35685628056ad2c5f4c52c4a84a4cbf9726.css"/>
+    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.e34415025514319010e741089e6920454053855755ba465f66943ad102d2cb08.css"/>
 
     
     
@@ -127,16 +127,21 @@
 
     
 
+    
+
+    
+
 </div>
 
 
 
 
-	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
-	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+    <p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+    <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://blog.depechie.com/js/main.min.c1aee25a817e9beb1f9c4afd9d62311227a7f5e46720e404dc1dda97281f47f2.js" integrity="sha256-wa7iWoF+m+sfnEr9nWIxEien9eRnIOQE3B3alygfR/I=" crossorigin="anonymous"></script>
+	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
+
 </nav>
 
         <div id="content" class="content-container">
@@ -192,21 +197,21 @@ Well it seems we can, with some tweaks and adjustments. Get ready for a lengthy 
 Also one of the key features it has, is the ability to handle dynamic addition of new items to the layout! This will be needed for the infinite scroll option.<br>
 You as a user of this js lib, need to provide at least 3 elements; some HTML with the items that need to be placed in the layout, some JavaScript to initialize Masonry and set some options, and if you want, some CSS to adjust the styling of the layout.</p>
 <p>First the HTML.</p>
-<pre><code>&lt;!DOCTYPE html&gt;
+<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
-        &lt;meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' /&gt;
-        &lt;style type='text/css'&gt;##CSS##&lt;/style&gt;
+        &lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&#39; /&gt;
+        &lt;style type=&#39;text/css&#39;&gt;##CSS##&lt;/style&gt;
     &lt;/head&gt;
     &lt;body&gt;
-        &lt;div class='grid are-images-unloaded'&gt;
-            &lt;div class='grid__col-sizer'&gt;&lt;/div&gt;
+        &lt;div class=&#39;grid are-images-unloaded&#39;&gt;
+            &lt;div class=&#39;grid__col-sizer&#39;&gt;&lt;/div&gt;
             ##ITEMS##
         &lt;/div&gt;
 
-        &lt;script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'&gt;&lt;/script&gt;
-        &lt;script src='https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js'&gt;&lt;/script&gt;
-        &lt;script id='render-js'&gt;##INLINEJS##&lt;/script&gt;
+        &lt;script src=&#39;https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js&#39;&gt;&lt;/script&gt;
+        &lt;script src=&#39;https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js&#39;&gt;&lt;/script&gt;
+        &lt;script id=&#39;render-js&#39;&gt;##INLINEJS##&lt;/script&gt;
     &lt;/body&gt;    
 &lt;/html&gt;
 </code></pre><p>This is a very basic HTML body with only a few key elements needed to get things working.
@@ -215,7 +220,7 @@ At the middle we have a <strong>div</strong> that uses the CSS class <strong>gri
 Inside that grid we will be placing our elements, to be able to do this from Xamarin Forms with C#, string replacing will be performed, hence why we added the <strong>##ITEMS##</strong> tag.<br>
 There are also 2 other tags, one for adding custom CSS and one for adding extra inline JavaScript. ( more info on this later )</p>
 <p>Adding the first items to render inside the grid, is done with C# at the start of our application.</p>
-<pre><code>private string InitHTMLSource()
+<pre tabindex="0"><code>private string InitHTMLSource()
 {
     IEnumerable&lt;string&gt; artistPictures = _dataService.GetPhotos(Artists.Depechie, 0);
     var body = MasonryHelper.GenerateHTMLSource();
@@ -227,7 +232,7 @@ There are also 2 other tags, one for adding custom CSS and one for adding extra 
 <p><strong>Spoiler alert: I&rsquo;m NOT the actual photographer of the demo pictures!</strong></p>
 </blockquote>
 <p>We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL&rsquo;s pointing to some pictures online. We then use regular find and replace to inject that list into the above provided HTML.</p>
-<pre><code>public static string GenerateItemSource(IEnumerable&lt;string&gt; items)
+<pre tabindex="0"><code>public static string GenerateItemSource(IEnumerable&lt;string&gt; items)
 {
     StringBuilder itemSource = new StringBuilder();
     foreach (var item in items)
@@ -243,7 +248,7 @@ public static string InsertItems(string htmlSource, string itemSource)
     return htmlSource.Replace(SEARCHKEY_ITEMS, itemSource);
 }
 </code></pre><p>With that in place, we now have our full HTML source that we want to load into the WebView control we are using in our Xamarin Forms page.</p>
-<pre><code>protected override void OnAppearing()
+<pre tabindex="0"><code>protected override void OnAppearing()
 {
     base.OnAppearing();
 
@@ -255,38 +260,38 @@ public static string InsertItems(string htmlSource, string itemSource)
 }
 </code></pre><p>You&rsquo;ll notice some extra code here as well, the <strong>RegisterAction</strong>. This is needed for the JavaScript bridge, but more on this later.
 First let me show you the page XAML itself.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;ContentPage xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
-             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
-             xmlns:controls=&quot;clr-namespace:Masonry.Controls&quot;
-             x:Class=&quot;Masonry.MainPage&quot;&gt;
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;
+&lt;ContentPage xmlns=&#34;http://xamarin.com/schemas/2014/forms&#34;
+             xmlns:x=&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;
+             xmlns:controls=&#34;clr-namespace:Masonry.Controls&#34;
+             x:Class=&#34;Masonry.MainPage&#34;&gt;
 
-    &lt;Grid RowDefinitions=&quot;auto, auto, *&quot;&gt;
+    &lt;Grid RowDefinitions=&#34;auto, auto, *&#34;&gt;
         &lt;Grid.Margin&gt;
-            &lt;OnPlatform x:TypeArguments=&quot;Thickness&quot;&gt;
-                &lt;On Platform=&quot;iOS&quot; Value=&quot;0,30,0,0&quot; /&gt;
-                &lt;On Platform=&quot;Android&quot; Value=&quot;0,10,0,0&quot; /&gt;
+            &lt;OnPlatform x:TypeArguments=&#34;Thickness&#34;&gt;
+                &lt;On Platform=&#34;iOS&#34; Value=&#34;0,30,0,0&#34; /&gt;
+                &lt;On Platform=&#34;Android&#34; Value=&#34;0,10,0,0&#34; /&gt;
             &lt;/OnPlatform&gt;
         &lt;/Grid.Margin&gt;
 
-        &lt;StackLayout Orientation=&quot;Horizontal&quot;
-                     Margin=&quot;18,10,18,5&quot;
-                     HorizontalOptions=&quot;FillAndExpand&quot;
-                     Grid.Row=&quot;1&quot;&gt;
-            &lt;Label Text=&quot;Porfolio&quot;
-                   FontFamily=&quot;JosefinRegular&quot;
-                   FontSize=&quot;20&quot;
-                   TextColor=&quot;#4d4d4d&quot;
-                   HorizontalOptions=&quot;StartAndExpand&quot; VerticalOptions=&quot;End&quot;/&gt;
+        &lt;StackLayout Orientation=&#34;Horizontal&#34;
+                     Margin=&#34;18,10,18,5&#34;
+                     HorizontalOptions=&#34;FillAndExpand&#34;
+                     Grid.Row=&#34;1&#34;&gt;
+            &lt;Label Text=&#34;Porfolio&#34;
+                   FontFamily=&#34;JosefinRegular&#34;
+                   FontSize=&#34;20&#34;
+                   TextColor=&#34;#4d4d4d&#34;
+                   HorizontalOptions=&#34;StartAndExpand&#34; VerticalOptions=&#34;End&#34;/&gt;
 
-            &lt;Label Text=&quot;Glenn Versweyveld&quot;
-                   FontFamily=&quot;JosefinRegular&quot;
-                   FontSize=&quot;16&quot;
-                   HorizontalOptions=&quot;EndAndExpand&quot; VerticalOptions=&quot;End&quot; /&gt;
+            &lt;Label Text=&#34;Glenn Versweyveld&#34;
+                   FontFamily=&#34;JosefinRegular&#34;
+                   FontSize=&#34;16&#34;
+                   HorizontalOptions=&#34;EndAndExpand&#34; VerticalOptions=&#34;End&#34; /&gt;
         &lt;/StackLayout&gt;
 
-        &lt;controls:HybridWebView x:Name=&quot;webViewElement&quot;
-                                Grid.Row=&quot;2&quot; /&gt;
+        &lt;controls:HybridWebView x:Name=&#34;webViewElement&#34;
+                                Grid.Row=&#34;2&#34; /&gt;
     &lt;/Grid&gt;
 &lt;/ContentPage&gt;
 </code></pre><p>Big thing to notice here is the fact that we are using a custom WebView control called HybridWebView. This is needed to enable the JavaScript interaction from the WebView to Xamarin Forms and the other way around.<br>
@@ -298,10 +303,10 @@ It is this InvokeCSharpFromJS method that needs to be injected into the custom W
 <p>In our case we want to tell the C# code when new images need to be loaded in. Remember the first images will already be presented, thanks to our HTML we generated and set as source of the WebView. But when the user scrolls down, we need to dynamically load extra pictures.<br>
 To get this going, we listen for the Scroll event in our JavaScript and use the bridge to signal back to our C# code that new pictures are requested.</p>
 <p>The complete inline JavaScript looks like this.</p>
-<pre><code>let pageIndex = 0;
+<pre tabindex="0"><code>let pageIndex = 0;
 let loadNext = false;
 
-window.addEventListener('scroll', () =&gt; {
+window.addEventListener(&#39;scroll&#39;, () =&gt; {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
     if(clientHeight + scrollTop &gt;= scrollHeight - 100 &amp;&amp; loadNext) {
         loadNext = false;
@@ -310,26 +315,26 @@ window.addEventListener('scroll', () =&gt; {
 	}
 });
 
-var grid = document.querySelector('.grid');
+var grid = document.querySelector(&#39;.grid&#39;);
 var msnry = new Masonry( grid, {
-    columnWidth: '.grid__col-sizer',
-    itemSelector: 'none',
+    columnWidth: &#39;.grid__col-sizer&#39;,
+    itemSelector: &#39;none&#39;,
     percentPosition: true,
     stagger: 30,
-    visibleStyle: { transform: 'translateY(0)', opacity: 1 },
-    hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },  
+    visibleStyle: { transform: &#39;translateY(0)&#39;, opacity: 1 },
+    hiddenStyle: { transform: &#39;translateY(100px)&#39;, opacity: 0 },  
 });
 
 imagesLoaded( grid, function() {
-    grid.classList.remove('are-images-unloaded');
-    msnry.options.itemSelector = '.grid__item';
-    let items = grid.querySelectorAll('.grid__item');
+    grid.classList.remove(&#39;are-images-unloaded&#39;);
+    msnry.options.itemSelector = &#39;.grid__item&#39;;
+    let items = grid.querySelectorAll(&#39;.grid__item&#39;);
     loadNext = true;
     msnry.appended(items);
 });
 
 function invokeJSFromCSharp(data) {
-    var images = data.split('#');
+    var images = data.split(&#39;#&#39;);
     var elems = [];
     var fragment = document.createDocumentFragment();
     var i;
@@ -341,30 +346,30 @@ function invokeJSFromCSharp(data) {
 
     grid.appendChild(fragment);
     var imageLoad = imagesLoaded(grid);
-    imageLoad.on( 'progress', function() {  msnry.layout(); });
+    imageLoad.on( &#39;progress&#39;, function() {  msnry.layout(); });
     loadNext = true;
     msnry.appended(elems);
 }
 
 function getItemElement(content) {
-  var elem = document.createElement('div');
-  elem.className = 'grid__item';
-  elem.innerHTML = '&lt;img class=&quot;&quot;image-grid__item&quot;&quot; src=&quot;&quot;' + content + '&quot;&quot;&gt;';
+  var elem = document.createElement(&#39;div&#39;);
+  elem.className = &#39;grid__item&#39;;
+  elem.innerHTML = &#39;&lt;img class=&#34;&#34;image-grid__item&#34;&#34; src=&#34;&#34;&#39; + content + &#39;&#34;&#34;&gt;&#39;;
   return elem;
 }
 </code></pre><p>There is small part for the Masonry grid initialization and options, the new Masonry call. At the top you&rsquo;ll notice the <strong>window.addEventListener</strong>, here the magic callback to C# will happen. As soon as the user has scrolled down and we are roughly 100px from the bottom, we request more images and pass in a <strong>pageIndex</strong> representing how many times the user has reached the bottom of our WebView.<br>
 That way we enable the infinite scroll feature, as long as we are able to request a next set of images, the user will be able to keep scrolling down. The actual C# code to handle that request is show below.</p>
-<pre><code>private void InvokeCSharpFromJS(string data)
+<pre tabindex="0"><code>private void InvokeCSharpFromJS(string data)
 {
     if (!string.IsNullOrWhiteSpace(data) &amp;&amp; int.Parse(data) is int pageIndex)
     {
         IEnumerable&lt;string&gt; artistPictures = _dataService.GetPhotos(Artists.Depechie, ++pageIndex);
         if (artistPictures.Any())
         {
-            var items = string.Join(&quot;#&quot;, artistPictures);
+            var items = string.Join(&#34;#&#34;, artistPictures);
             Device.BeginInvokeOnMainThread(async () =&gt;
             {
-                string result = await webViewElement.EvaluateJavaScriptAsync($&quot;invokeJSFromCSharp('{items}')&quot;);
+                string result = await webViewElement.EvaluateJavaScriptAsync($&#34;invokeJSFromCSharp(&#39;{items}&#39;)&#34;);
             });
         }
     }
@@ -494,18 +499,23 @@ That way we enable the infinite scroll feature, as long as we are able to reques
 
     
 
+    
+
+    
+
 </div>
 
 
 
 
 	<div class="footer-mobile-links">
-		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+        <p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 		<span class="divider-bar">|</span>
-		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+        <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://blog.depechie.com/js/main.min.c1aee25a817e9beb1f9c4afd9d62311227a7f5e46720e404dc1dda97281f47f2.js" integrity="sha256-wa7iWoF+m+sfnEr9nWIxEien9eRnIOQE3B3alygfR/I=" crossorigin="anonymous"></script>
+	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
+
     </body>
 </html>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>Maui Blazor Staggered View | Depechie’s outing</title>
+    <title>OpenTelemetry on Azure Container Apps | Depechie’s outing</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -147,116 +147,75 @@
         <div id="content" class="content-container">
         
 
-<h1 class="post-title">Maui Blazor Staggered View</h1>
+<h1 class="post-title">OpenTelemetry on Azure Container Apps</h1>
     
-    <time>June 4, 2021</time>
+    <time>October 13, 2022</time>
     
     <div>
         <p>
-        <p>Do you remember my staggered view solution for Xamarin Forms? If not, I blogged about it here: <a href="https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/">https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</a>.</p>
-<p>But since we have preview 4 of .Net 6 we are able to do something even better! We can now create full HTML apps with <strong>.Net MAUI Blazor</strong> ( more details here: <a href="https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-4/#net-maui-blazor-apps">https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-4/#net-maui-blazor-apps</a>).</p>
-<p>So why is this good you could ask yourself&hellip; well several reasons, but the major one, is the fact that our staggered view solution relies upon HTML and JavaScript. So having a development environment with the same target would suit us more then mixing XAML and HTML.<br>
-Secondly we will now have a fully working app on iOS and Android but also a Mac OS app too! Ow and let&rsquo;s not forget we also get a Windows desktop version with WinUI 3.<br>
-Without any hassle, this is just mind blowing. And thanks to CSS media queries, we can tailor the view of our staggered view automatically.<br>
-In these desktop cases, when we go over 768 pixels in width, we change from a 2 column to a 3 column masonry view. You can see the result below in the video.</p>
-<p>I can&rsquo;t stress this enough that having 1 dev environment for all possible targets is a big plus with .Net MAUI and now with all the web power thanks to Blazor we can create nice solutions.</p>
-<p>The principle of the code is the same as the Xamarin Forms version, our <strong>Index.razor</strong> now contains the setup of the image list.</p>
-<pre tabindex="0"><code>@page &#34;/&#34;
-@inherits IndexViewModel
-@implements IDisposable
+        <p>Lately I&rsquo;ve been working with <code>OpenTelemetry</code> to setup an observability environment for our running api services. Currently everything is deployed on-premises through use of <code>docker compose</code> and is working perfectly, but of course we also wanted to try out a cloud hosted solution on <code>Azure</code>.</p>
+<p>So as an experiment I decided to try out <code>Azure Container Apps</code> to see how it would work with <code>OpenTelemetry</code>. But truth be told the experience was not as smooth as I had hoped for. The Microsoft documentation is very basic when it comes to what kind of containers you can setup with <code>Azure Container Apps</code> and it&rsquo;s not very clear what kind of limitations there are.</p>
+<p>Thankfully <a href="https://twitter.com/MartinDotNet">Martin Thwaites</a>, a Developer Advocate at <a href="https://twitter.com/honeycombio">@honeycombio</a> and also an <code>OpenTelemetry</code> enthouisast, had already done some work on this and had a <a href="https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps">blog post</a> on the subject. So I decided to follow his guide and see if I could get it to work.</p>
+<p>Have to say, without this guide, I would have been lost. So thanks Martin!</p>
+<blockquote>
+<p><strong>Note</strong> Seeing what Martin has done with his blogpost and then noting what I still had to tweak manually, I would think <strong>Microsoft</strong> still has some work to do to make this experience for hosting docker container better.</p>
+</blockquote>
+<p>So why still this blogpost? Well even though the original blog post has a very detailed guide, I still had troubles on making it work for my particular setup. So I decided to write this blogpost to help others that might be in the same situation as me.</p>
+<p>There are 2 things that I had to change in reference to the original blog post, so that my use case would actually work.</p>
+<h4 id="opentelemetry-collector-configuration-file">OpenTelemetry Collector Configuration file</h4>
+<p>Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I&rsquo;m used to using a command line command with and argument defined in the docker comopse file to indicate what configuration file <code>OpenTelemetry</code> needs at startup, I needed a way to replicate this setup in with <code>Azure Container Apps</code>.</p>
+<p>What Martin already pointed out in his blogpost, is the fact that we need to download the container app configuration once it has been created to edit this manually for hooking up the file container mounts. Details are here <a href="https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container">https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container</a>.</p>
+<p>It&rsquo;s this section that I had to further change to reflex the same setup as the one in my docker compose file.
+So my working configuration file looks like this:</p>
+<pre tabindex="0"><code>  template:
+    containers:
+    - image: otel/opentelemetry-collector-contrib:0.61.0
+      name: acaoteltestdev
+      args:
+        - &#34;--config=/etc/otel-config-test.yml&#34;
+      resources:
+        cpu: 0.5
+        ephemeralStorage: &#39;&#39;
+        memory: 1Gi
+      volumeMounts:
+      - mountPath: /etc
+        volumeName: config
+    revisionSuffix: &#39;&#39;
+    scale:
+      maxReplicas: 1
+      minReplicas: 1
+    volumes:
+    - name: config
+      storageName: stsmountoteltestdev
+      storageType: AzureFile
+</code></pre><blockquote>
+<p><strong>Note</strong> The <code>args</code> section is the one that I had to add to make it work and with that I also had to change the <code>volumeMounts</code> section to reflect the same path.</p>
+</blockquote>
+<h4 id="grafana-cloud">Grafana Cloud</h4>
+<p>The other deviation form the original blog post is the fact that I&rsquo;m using <code>Grafana Cloud</code> instead of <code>Honeycomb</code>. So I had to change the <code>OpenTelemetry</code> configuration file to reflect this.</p>
+<p>But this also was not without some setbacks, because the logs from the <code>OpenTelemetry collector</code> container were not always showing an exception, even though I did not receive any data in <code>Grafana Cloud</code>.</p>
+<p>In the end it was a combination of setting up the correct <code>Basic Authentication</code> header and skipping the <code>TLS</code> verification. So my working configuration file looks like this:</p>
+<pre tabindex="0"><code>receivers:
+  otlp:
+    protocols:
+      http:
 
-&lt;div class=&#34;grid are-images-unloaded&#34;&gt;
-    &lt;div class=&#39;grid__col-sizer&#39;&gt;&lt;/div&gt;
-    @foreach (var image in Images)
-    {
-        &lt;div class=&#34;grid__item&#34;&gt;&lt;img src=&#34;@image&#34;&gt;&lt;/div&gt;
-    }
-&lt;/div&gt;
-</code></pre><p>And the companion ViewModel handles the interaction with <strong>JavaScript</strong> and image loading.</p>
-<pre tabindex="0"><code>using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using masonrymauiblazor.Data;
+exporters:
+    otlp:
+      endpoint: &lt;Your Grafana Cloud endpoint&gt;:443
+      headers:
+        authorization: Basic &lt;base64 representation of your Grafana Cloud key&gt;
+      tls:
+        insecure: false
+        insecure_skip_verify: true
 
-namespace masonrymauiblazor.ViewModels
-{
-    public class IndexViewModel : ComponentBase
-    {
-        protected string result;
-        private DotNetObjectReference&lt;IndexViewModel&gt; _objRef;
-        protected bool IsScrollTrackingEnabled { get; set; } = false;
-        protected List&lt;string&gt; Images { get; set;}
-
-        [Inject]
-        protected IJSRuntime JS { get; set; }
-
-        [Inject]
-        protected DataService DataService { get; set; }
-
-        public void Dispose()
-        {
-            _objRef?.Dispose();
-        }
-
-        [JSInvokable]
-        public bool IsAtWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
-        {
-            bool retVal = (contentScrollTop + contentHeight) &gt;= containerHeight;
-            return retVal;
-        }
-
-        [JSInvokable]
-        public bool IsNearWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
-        {
-            bool retVal = (contentScrollTop + contentHeight) &gt; (containerHeight - 100);
-            return retVal;
-        }
-
-        [JSInvokable]
-        public async Task LoadMoreImages(int pageIndex)
-        {
-            var newImages = DataService.GetPhotos(Artists.Depechie, pageIndex);
-
-            //TODO: Glenn - This list of new images should be added to the Blazor list with Images.AddRange(newImages)
-            //TODO: Glenn - But this will have the bad positioning effect, we need to trigger the imagesloaded function
-            //TODO: Glenn - Also this should be doable according to https://stackoverflow.com/questions/64593058/blazor-force-full-render-instead-of-differential-render
-            //TODO: Glenn - But I was not able to get it working correctly, hence the roundtrip and pushing the string to JavaScript
-            if (newImages != null &amp;&amp; newImages.Any())
-                _ = await JS.InvokeAsync&lt;string&gt;(&#34;blazorExtensions.triggerMasonry&#34;, string.Join(&#34;#&#34;, newImages));
-        }
-
-        public async Task ToggleDotNetTrackScroll()
-        {
-            _ = await JS.InvokeAsync&lt;string&gt;(&#34;blazorExtensions.toggleTrackScroll&#34;, _objRef);
-        }
-
-        [JSInvokable]
-        public bool ToggleTrackScroll() { IsScrollTrackingEnabled = !IsScrollTrackingEnabled; return IsScrollTrackingEnabled; }
-
-        protected override async Task OnInitializedAsync()
-        {
-            Images = DataService.GetPhotos(Artists.Depechie, 0);
-        }
-
-        protected async override Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                _objRef = DotNetObjectReference.Create(this);
-                await JS.InvokeVoidAsync(&#34;blazorExtensions.toggleTrackScroll&#34;, _objRef);
-                StateHasChanged();
-
-                await JS.InvokeVoidAsync(&#34;blazorExtensions.initMasonry&#34;, _objRef);
-            }
-        }
-    }
-}
-</code></pre><p>You can see there is one small issue with the loading more images. I had to go with the same Xamarin Forms solution and let JavaScript add the newer images, due to the imagesloaded function of Masonry. But I&rsquo;m sure someone with more <strong>Blazor</strong> knowledge than me could fix this and have the image adding functionality purely in the ViewModel.</p>
-<p>All the code is up on my GitHub here <a href="https://github.com/Depechie/Masonry/tree/main/src/mauiblazor">https://github.com/Depechie/Masonry/tree/main/src/mauiblazor</a>.</p>
-<p>Major thanks to <a href="https://twitter.com/PaulBSchroeder">Paul Schroeder</a> and <a href="https://twitter.com/tossnet1">Christophe Peugnet</a> for their guidance on some of the Blazor code, without that I would have been lost ;)</p>
-<p><img src="images/masonrymauiblazor.gif" alt="alt text"></p>
+service:
+    pipelines:
+        traces:
+        receivers: [otlp]
+        exporters: [otlp]
+</code></pre><p>And with that all in place everything started working as expected!
+Hopefully this post together with the original blog post from Martin will help others that are trying to get <code>OpenTelemetry</code> working with <code>Azure Container Apps</code>.</p>
 
         </p>
     </div>
@@ -268,19 +227,11 @@ namespace masonrymauiblazor.ViewModels
         
         <hr class="footer-divider">
         
-            <a class="tag" href="/tags/masonry">#masonry</a>
+            <a class="tag" href="/tags/opentelemetry">#opentelemetry</a>
         
-            <a class="tag" href="/tags/staggered-view">#staggered view</a>
+            <a class="tag" href="/tags/azure">#azure</a>
         
-            <a class="tag" href="/tags/html">#html</a>
-        
-            <a class="tag" href="/tags/javascript">#javascript</a>
-        
-            <a class="tag" href="/tags/css">#css</a>
-        
-            <a class="tag" href="/tags/maui">#maui</a>
-        
-            <a class="tag" href="/tags/blazor">#blazor</a>
+            <a class="tag" href="/tags/containerapps">#containerapps</a>
         
       
     </div>

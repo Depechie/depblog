@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.f964b4242f94fe00c756dd99f89ad35685628056ad2c5f4c52c4a84a4cbf9726.css"/>
+    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.e34415025514319010e741089e6920454053855755ba465f66943ad102d2cb08.css"/>
 
     
     
@@ -127,16 +127,21 @@
 
     
 
+    
+
+    
+
 </div>
 
 
 
 
-	<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
-	<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+    <p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+    <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://blog.depechie.com/js/main.min.c1aee25a817e9beb1f9c4afd9d62311227a7f5e46720e404dc1dda97281f47f2.js" integrity="sha256-wa7iWoF+m+sfnEr9nWIxEien9eRnIOQE3B3alygfR/I=" crossorigin="anonymous"></script>
+	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
+
 </nav>
 
         <div id="content" class="content-container">
@@ -170,50 +175,50 @@
 So for our mobile version we are going to create 3 selectable items in the bottom tab bar.</p>
 <p>To get this in our blazor environment, we are going to add 3 HTML input elements that we can style using <strong>CSS</strong>. Also each time the user selects one of the input elements, we trigger the correct Blazor navigation using the <strong>NavManager</strong> and as url the value of the input.<br>
 The bottom bar icon elements are rendered with use of <strong>SVG</strong> paths.</p>
-<pre><code>@inject NavigationManager NavManager
+<pre tabindex="0"><code>@inject NavigationManager NavManager
 
-&lt;div class=&quot;content px-4&quot;&gt;
+&lt;div class=&#34;content px-4&#34;&gt;
 	@Body
 &lt;/div&gt;
 
-&lt;div class=&quot;bottombarcontainer&quot;&gt;
-  &lt;div class=&quot;bottombar&quot;&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;tap&quot; id=&quot;t0&quot; checked=&quot;checked&quot; @onchange=&quot;OnChange&quot; value=&quot;&quot;&gt;
-    &lt;label class=&quot;round&quot; for=&quot;t0&quot;&gt;
-    &lt;span class=&quot;icon&quot;&gt;
-		&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-			&lt;path fill=&quot;currentColor&quot; d=&quot;M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z&quot; /&gt;
+&lt;div class=&#34;bottombarcontainer&#34;&gt;
+  &lt;div class=&#34;bottombar&#34;&gt;
+    &lt;input type=&#34;radio&#34; name=&#34;tap&#34; id=&#34;t0&#34; checked=&#34;checked&#34; @onchange=&#34;OnChange&#34; value=&#34;&#34;&gt;
+    &lt;label class=&#34;round&#34; for=&#34;t0&#34;&gt;
+    &lt;span class=&#34;icon&#34;&gt;
+		&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+			&lt;path fill=&#34;currentColor&#34; d=&#34;M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z&#34; /&gt;
 		&lt;/svg&gt;
     &lt;/span&gt;
       &lt;/label&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;tap&quot; id=&quot;t1&quot; @onchange=&quot;OnChange&quot; value=&quot;counter&quot;&gt;
-    &lt;label class=&quot;round&quot; for=&quot;t1&quot;&gt;
-    &lt;span class=&quot;icon&quot;&gt;
-		&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-			&lt;path fill=&quot;currentColor&quot; d=&quot;M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z&quot; /&gt;
+    &lt;input type=&#34;radio&#34; name=&#34;tap&#34; id=&#34;t1&#34; @onchange=&#34;OnChange&#34; value=&#34;counter&#34;&gt;
+    &lt;label class=&#34;round&#34; for=&#34;t1&#34;&gt;
+    &lt;span class=&#34;icon&#34;&gt;
+		&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+			&lt;path fill=&#34;currentColor&#34; d=&#34;M17,13H13V17H11V13H7V11H11V7H13V11H17M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z&#34; /&gt;
 		&lt;/svg&gt;
     &lt;/span&gt;
     &lt;/label&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;tap&quot; id=&quot;t2&quot; @onchange=&quot;OnChange&quot; value=&quot;fetchdata&quot;&gt;
-    &lt;label class=&quot;round&quot; for=&quot;t2&quot;&gt;
-    &lt;span class=&quot;icon&quot;&gt;
-		&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;
-			&lt;path fill=&quot;currentColor&quot; d=&quot;M12.74,5.47C15.1,6.5 16.35,9.03 15.92,11.46C17.19,12.56 18,14.19 18,16V16.17C18.31,16.06 18.65,16 19,16A3,3 0 0,1 22,19A3,3 0 0,1 19,22H6A4,4 0 0,1 2,18A4,4 0 0,1 6,14H6.27C5,12.45 4.6,10.24 5.5,8.26C6.72,5.5 9.97,4.24 12.74,5.47M11.93,7.3C10.16,6.5 8.09,7.31 7.31,9.07C6.85,10.09 6.93,11.22 7.41,12.13C8.5,10.83 10.16,10 12,10C12.7,10 13.38,10.12 14,10.34C13.94,9.06 13.18,7.86 11.93,7.3M13.55,3.64C13,3.4 12.45,3.23 11.88,3.12L14.37,1.82L15.27,4.71C14.76,4.29 14.19,3.93 13.55,3.64M6.09,4.44C5.6,4.79 5.17,5.19 4.8,5.63L4.91,2.82L7.87,3.5C7.25,3.71 6.65,4.03 6.09,4.44M18,9.71C17.91,9.12 17.78,8.55 17.59,8L19.97,9.5L17.92,11.73C18.03,11.08 18.05,10.4 18,9.71M3.04,11.3C3.11,11.9 3.24,12.47 3.43,13L1.06,11.5L3.1,9.28C3,9.93 2.97,10.61 3.04,11.3M19,18H16V16A4,4 0 0,0 12,12A4,4 0 0,0 8,16H6A2,2 0 0,0 4,18A2,2 0 0,0 6,20H19A1,1 0 0,0 20,19A1,1 0 0,0 19,18Z&quot; /&gt;
+    &lt;input type=&#34;radio&#34; name=&#34;tap&#34; id=&#34;t2&#34; @onchange=&#34;OnChange&#34; value=&#34;fetchdata&#34;&gt;
+    &lt;label class=&#34;round&#34; for=&#34;t2&#34;&gt;
+    &lt;span class=&#34;icon&#34;&gt;
+		&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;24&#34; height=&#34;24&#34; viewBox=&#34;0 0 24 24&#34;&gt;
+			&lt;path fill=&#34;currentColor&#34; d=&#34;M12.74,5.47C15.1,6.5 16.35,9.03 15.92,11.46C17.19,12.56 18,14.19 18,16V16.17C18.31,16.06 18.65,16 19,16A3,3 0 0,1 22,19A3,3 0 0,1 19,22H6A4,4 0 0,1 2,18A4,4 0 0,1 6,14H6.27C5,12.45 4.6,10.24 5.5,8.26C6.72,5.5 9.97,4.24 12.74,5.47M11.93,7.3C10.16,6.5 8.09,7.31 7.31,9.07C6.85,10.09 6.93,11.22 7.41,12.13C8.5,10.83 10.16,10 12,10C12.7,10 13.38,10.12 14,10.34C13.94,9.06 13.18,7.86 11.93,7.3M13.55,3.64C13,3.4 12.45,3.23 11.88,3.12L14.37,1.82L15.27,4.71C14.76,4.29 14.19,3.93 13.55,3.64M6.09,4.44C5.6,4.79 5.17,5.19 4.8,5.63L4.91,2.82L7.87,3.5C7.25,3.71 6.65,4.03 6.09,4.44M18,9.71C17.91,9.12 17.78,8.55 17.59,8L19.97,9.5L17.92,11.73C18.03,11.08 18.05,10.4 18,9.71M3.04,11.3C3.11,11.9 3.24,12.47 3.43,13L1.06,11.5L3.1,9.28C3,9.93 2.97,10.61 3.04,11.3M19,18H16V16A4,4 0 0,0 12,12A4,4 0 0,0 8,16H6A2,2 0 0,0 4,18A2,2 0 0,0 6,20H19A1,1 0 0,0 20,19A1,1 0 0,0 19,18Z&#34; /&gt;
 		&lt;/svg&gt;
     &lt;/span&gt;
     &lt;/label&gt;
-    &lt;div class=&quot;div&quot; id=&quot;back&quot;&gt;&lt;/div&gt;
+    &lt;div class=&#34;div&#34; id=&#34;back&#34;&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
 @code {
     private async void OnChange(ChangeEventArgs args)
     {
-		  NavManager.NavigateTo($&quot;/{args.Value.ToString()}&quot;);
+		  NavManager.NavigateTo($&#34;/{args.Value.ToString()}&#34;);
     }
 }
 </code></pre><p>The corresponding <strong>CSS</strong> to enable the nice UI and animations can be seen below. The important thing to note are the special CSS changes for the <strong>checked</strong> value of the input/radio.</p>
-<pre><code>      .bottombarcontainer .bottombar {
+<pre tabindex="0"><code>      .bottombarcontainer .bottombar {
         display: flex;
         position: fixed;
         bottom: 0;
@@ -232,12 +237,12 @@ The bottom bar icon elements are rendered with use of <strong>SVG</strong> paths
         bottom: 0;
         z-index: 0;
       }
-      .bottombarcontainer .bottombar input[type=&quot;radio&quot;]:checked + .round {
+      .bottombarcontainer .bottombar input[type=&#34;radio&#34;]:checked + .round {
         transform: translate(0, -22px);
         background: white;
         border:7px solid #66ccff;
       }
-      .bottombarcontainer .bottombar input[type=&quot;radio&quot;]:checked + .round svg {
+      .bottombarcontainer .bottombar input[type=&#34;radio&#34;]:checked + .round svg {
         color: #66ccff;
       }
       .bottombarcontainer .bottombar input {
@@ -378,18 +383,23 @@ You can see the nice animations in the end result:</p>
 
     
 
+    
+
+    
+
 </div>
 
 
 
 
 	<div class="footer-mobile-links">
-		<p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
+        <p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
 		<span class="divider-bar">|</span>
-		<p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
+        <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://blog.depechie.com/js/main.min.c1aee25a817e9beb1f9c4afd9d62311227a7f5e46720e404dc1dda97281f47f2.js" integrity="sha256-wa7iWoF+m+sfnEr9nWIxEien9eRnIOQE3B3alygfR/I=" crossorigin="anonymous"></script>
+	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
+
     </body>
 </html>
