@@ -163,9 +163,9 @@
 <p>So why still this blogpost? Well even though the original blog post has a very detailed guide, I still had troubles on making it work for my particular setup. So I decided to write this blogpost to help others that might be in the same situation as me.</p>
 <p>There are 2 things that I had to change in reference to the original blog post, so that my use case would actually work.</p>
 <h4 id="opentelemetry-collector-configuration-file">OpenTelemetry Collector Configuration file</h4>
-<p>Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I&rsquo;m used to using a command line command with and argument defined in the docker compose file to indicate what configuration file <code>OpenTelemetry</code> needs at startup, I needed a way to replicate this setup in with <code>Azure Container Apps</code>.</p>
+<p>Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I&rsquo;m used to using a command line command with an argument defined in the docker compose file to indicate what configuration file <code>OpenTelemetry</code> needs at startup, I needed a way to replicate this setup in with <code>Azure Container Apps</code>.</p>
 <p>What Martin already pointed out in his blogpost, is the fact that we need to download the container app configuration once it has been created to edit this manually for hooking up the file container mounts. Details are here <a href="https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container">https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container</a>.</p>
-<p>It&rsquo;s this section that I had to further change to reflex the same setup as the one in my docker compose file.
+<p>It&rsquo;s this section that I had to further change to reflect the same setup as the one in my docker compose file.
 So my working configuration file looks like this:</p>
 <pre tabindex="0"><code>  template:
     containers:
