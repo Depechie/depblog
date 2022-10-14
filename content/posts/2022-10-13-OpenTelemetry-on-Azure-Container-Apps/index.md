@@ -22,11 +22,11 @@ There are 2 things that I had to change in reference to the original blog post, 
 
 #### OpenTelemetry Collector Configuration file
 
-Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I'm used to using a command line command with and argument defined in the docker compose file to indicate what configuration file `OpenTelemetry` needs at startup, I needed a way to replicate this setup in with `Azure Container Apps`.
+Could be this part is not actually needed, but the setup from Martin somehow did not do the trick and since I'm used to using a command line command with an argument defined in the docker compose file to indicate what configuration file `OpenTelemetry` needs at startup, I needed a way to replicate this setup in with `Azure Container Apps`.
 
 What Martin already pointed out in his blogpost, is the fact that we need to download the container app configuration once it has been created to edit this manually for hooking up the file container mounts. Details are here [https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container](https://www.honeycomb.io/blog/opentelemetry-collector-azure-container-apps#step__add_the_container).
 
-It's this section that I had to further change to reflex the same setup as the one in my docker compose file.
+It's this section that I had to further change to reflect the same setup as the one in my docker compose file.
 So my working configuration file looks like this:
 
 ```
