@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>containerapps on Depechie’s outing</title>
+    <title>Containerapps on Depechie’s outing</title>
     <link>https://blog.depechie.com/tags/containerapps/</link>
-    <description>Recent content in containerapps on Depechie’s outing</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Containerapps on Depechie’s outing</description>
+    <generator>Hugo 0.125.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2022 21:48:17 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/tags/containerapps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 21:48:17 +0000</lastBuildDate>
+    <atom:link href="https://blog.depechie.com/tags/containerapps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenTelemetry on Azure Container Apps</title>
       <link>https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/</link>
       <pubDate>Thu, 13 Oct 2022 21:48:17 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/</guid>
       <description>Lately I&amp;rsquo;ve been working with OpenTelemetry to setup an observability environment for our running api services.</description>
     </item>
-    
   </channel>
 </rss>

@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.depechie.com/</loc>
+    <lastmod>2024-04-15T18:43:59+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.depechie.com/posts/</loc>
+    <lastmod>2024-04-15T18:43:59+00:00</lastmod>
+  </url><url>
     <loc>https://blog.depechie.com/tags/azure/</loc>
     <lastmod>2022-10-13T21:48:17+00:00</lastmod>
   </url><url>
     <loc>https://blog.depechie.com/tags/containerapps/</loc>
     <lastmod>2022-10-13T21:48:17+00:00</lastmod>
   </url><url>
-    <loc>https://blog.depechie.com/</loc>
-    <lastmod>2022-10-13T21:48:17+00:00</lastmod>
-  </url><url>
     <loc>https://blog.depechie.com/tags/opentelemetry/</loc>
     <lastmod>2022-10-13T21:48:17+00:00</lastmod>
   </url><url>
     <loc>https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/</loc>
-    <lastmod>2022-10-13T21:48:17+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.depechie.com/posts/</loc>
     <lastmod>2022-10-13T21:48:17+00:00</lastmod>
   </url><url>
     <loc>https://blog.depechie.com/tags/</loc>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en-us">
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no"/>
 
-    <title>404 Page not found | Depechie’s outing</title>
+    <title>OpenTelemetry on Azure Container Apps Revisited | Depechie’s outing</title>
     
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.b7753b1ccb677a4ea5b9901c5cecc7c74b99003571f1e8ceee4bc0773ba94bc6.css"/>
+    <link rel="stylesheet" href="//blog.depechie.com:1313/css/main.min.b7753b1ccb677a4ea5b9901c5cecc7c74b99003571f1e8ceee4bc0773ba94bc6.css"/>
 
     
     
@@ -28,10 +28,7 @@
     
     
  
-    
-  
-
-</head>
+    </head>
 
     <body>
         
@@ -145,16 +142,72 @@
     <p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
     <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
+	<script src="//blog.depechie.com:1313/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 
 </nav>
 
         <div id="content" class="content-container">
         
-    <h1 class="not-found-title">404: Not found</h1>
-    <h2>Sorry, we couldn't find the page you're looking for.</h2>
-    <a href="/">Go back home</a>
+
+<h1 class="post-title">OpenTelemetry on Azure Container Apps Revisited</h1>
+    
+    <time>April 15, 2024</time>
+    
+    <div>
+        <p>
+        <p><a href="https://rimazmohommed523.medium.com/containerize-a-net-core-web-api-app-with-docker-2cdba52a8978">https://rimazmohommed523.medium.com/containerize-a-net-core-web-api-app-with-docker-2cdba52a8978</a></p>
+<p>On the console, inside the src folder, run the <code>docker init</code> command to create a new Dockerfile.</p>
+<p>I added the</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">EXPOSE 5209
+</span></span><span class="line"><span class="cl">ENV ASPNETCORE_URLS=http://+:5209
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>TODO</strong> Check if this is needed! The docker init asks for a port number!</p>
+<p>Removing the docker build cache, run command <code>docker buildx prune -f</code></p>
+<p>To try out the image pushed to your own docker registry</p>
+<p><a href="https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli">https://learn.microsoft.com/en-us/azure/container-registry/container-registry-get-started-docker-cli?tabs=azure-cli</a></p>
+<p>To test pushed images to ACR locally, run the following commands:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">az login
+</span></span><span class="line"><span class="cl">az acr login --name crdevwesteuacaotel
+</span></span><span class="line"><span class="cl">docker pull crdevwesteuacaotel.azurecr.io/apiservice:latest
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>For the ACA build pipeline yaml file, we need to set a variable called azureContainerRegistryPassword in devops! Go to the edit pipeline screen and click on the variables tab.</p>
+<p>The password can be found on the Container Registry in the Access keys section, the bicep file has the correct user name set. It will be the same as the registry name per default.</p>
+
+        </p>
+    </div>
+    
+
+    
+
+    <div class="page-footer">
+        
+        <hr class="footer-divider">
+        
+            <a class="tag" href="/tags/opentelemetry">#opentelemetry</a>
+        
+            <a class="tag" href="/tags/azure">#azure</a>
+        
+            <a class="tag" href="/tags/containerapps">#containerapps</a>
+        
+      
+    </div>
+
 
         
 
@@ -261,7 +314,7 @@
         <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
+	<script src="//blog.depechie.com:1313/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 
     </body>

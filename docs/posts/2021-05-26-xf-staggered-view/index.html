@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.e34415025514319010e741089e6920454053855755ba465f66943ad102d2cb08.css"/>
+    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.b7753b1ccb677a4ea5b9901c5cecc7c74b99003571f1e8ceee4bc0773ba94bc6.css"/>
 
     
     
@@ -28,7 +28,10 @@
     
     
  
-    </head>
+    
+  
+
+</head>
 
     <body>
         
@@ -45,7 +48,7 @@
   
     <a class="color-link nav-link" href="/archives/">Archives</a>
   
-  <a class="color-link nav-link" href="https://blog.depechie.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+  <a class="color-link nav-link" href="" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
 </div>
 <footer class="footer">
 	<div class="social-icons">
@@ -54,10 +57,13 @@
     
 
     
-    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
-        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
-        </svg>
+
+    
+	
+    <a class="social-icon" href="https://dotnet.social/@depechie" target="_blank" rel="me" title="Mastodon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+			<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+		</svg>
     </a>
     
 
@@ -197,104 +203,218 @@ Well it seems we can, with some tweaks and adjustments. Get ready for a lengthy 
 Also one of the key features it has, is the ability to handle dynamic addition of new items to the layout! This will be needed for the infinite scroll option.<br>
 You as a user of this js lib, need to provide at least 3 elements; some HTML with the items that need to be placed in the layout, some JavaScript to initialize Masonry and set some options, and if you want, some CSS to adjust the styling of the layout.</p>
 <p>First the HTML.</p>
-<pre tabindex="0"><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta name=&#39;viewport&#39; content=&#39;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&#39; /&gt;
-        &lt;style type=&#39;text/css&#39;&gt;##CSS##&lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;div class=&#39;grid are-images-unloaded&#39;&gt;
-            &lt;div class=&#39;grid__col-sizer&#39;&gt;&lt;/div&gt;
-            ##ITEMS##
-        &lt;/div&gt;
-
-        &lt;script src=&#39;https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js&#39;&gt;&lt;/script&gt;
-        &lt;script src=&#39;https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js&#39;&gt;&lt;/script&gt;
-        &lt;script id=&#39;render-js&#39;&gt;##INLINEJS##&lt;/script&gt;
-    &lt;/body&gt;    
-&lt;/html&gt;
-</code></pre><p>This is a very basic HTML body with only a few key elements needed to get things working.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;viewport&#39;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#39;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&#39;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">style</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text/css&#39;</span><span class="p">&gt;</span><span class="err">#</span><span class="p">#</span><span class="nn">CSS</span><span class="err">##</span><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;grid are-images-unloaded&#39;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#39;grid__col-sizer&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">            ##ITEMS##
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#39;https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;render-js&#39;</span><span class="p">&gt;</span><span class="err">##</span><span class="nx">INLINEJS</span><span class="err">##</span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This is a very basic HTML body with only a few key elements needed to get things working.
 At the bottom you&rsquo;ll notice we need to make a reference to 2 external JavaScript libraries, <strong>Masonry</strong> and <strong>ImagesLoaded</strong>. These 2 will do the heavy lifting for us.<br>
 At the middle we have a <strong>div</strong> that uses the CSS class <strong>grid</strong>, this is the element Masonry will look for to load the items in the view.
 Inside that grid we will be placing our elements, to be able to do this from Xamarin Forms with C#, string replacing will be performed, hence why we added the <strong>##ITEMS##</strong> tag.<br>
 There are also 2 other tags, one for adding custom CSS and one for adding extra inline JavaScript. ( more info on this later )</p>
 <p>Adding the first items to render inside the grid, is done with C# at the start of our application.</p>
-<pre tabindex="0"><code>private string InitHTMLSource()
-{
-    IEnumerable&lt;string&gt; artistPictures = _dataService.GetPhotos(Artists.Depechie, 0);
-    var body = MasonryHelper.GenerateHTMLSource();
-    var items = MasonryHelper.GenerateItemSource(artistPictures);
-
-    return MasonryHelper.InsertItems(body, items);
-}
-</code></pre><blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kt">string</span> <span class="n">InitHTMLSource</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">artistPictures</span> <span class="p">=</span> <span class="n">_dataService</span><span class="p">.</span><span class="n">GetPhotos</span><span class="p">(</span><span class="n">Artists</span><span class="p">.</span><span class="n">Depechie</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">body</span> <span class="p">=</span> <span class="n">MasonryHelper</span><span class="p">.</span><span class="n">GenerateHTMLSource</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">items</span> <span class="p">=</span> <span class="n">MasonryHelper</span><span class="p">.</span><span class="n">GenerateItemSource</span><span class="p">(</span><span class="n">artistPictures</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">MasonryHelper</span><span class="p">.</span><span class="n">InsertItems</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">items</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
 <p><strong>Spoiler alert: I&rsquo;m NOT the actual photographer of the demo pictures!</strong></p>
 </blockquote>
 <p>We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL&rsquo;s pointing to some pictures online. We then use regular find and replace to inject that list into the above provided HTML.</p>
-<pre tabindex="0"><code>public static string GenerateItemSource(IEnumerable&lt;string&gt; items)
-{
-    StringBuilder itemSource = new StringBuilder();
-    foreach (var item in items)
-    {
-        itemSource.AppendLine(_gridItem.Replace(SEARCHKEY_ITEMSOURCE, item));
-    }
-
-    return itemSource.ToString();
-}
-
-public static string InsertItems(string htmlSource, string itemSource)
-{
-    return htmlSource.Replace(SEARCHKEY_ITEMS, itemSource);
-}
-</code></pre><p>With that in place, we now have our full HTML source that we want to load into the WebView control we are using in our Xamarin Forms page.</p>
-<pre tabindex="0"><code>protected override void OnAppearing()
-{
-    base.OnAppearing();
-
-    webViewElement.RegisterAction(InvokeCSharpFromJS);
-    webViewElement.Source = new HtmlWebViewSource()
-    {
-        Html = InitHTMLSource()
-    };
-}
-</code></pre><p>You&rsquo;ll notice some extra code here as well, the <strong>RegisterAction</strong>. This is needed for the JavaScript bridge, but more on this later.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">GenerateItemSource</span><span class="p">(</span><span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">items</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">StringBuilder</span> <span class="n">itemSource</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">items</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">itemSource</span><span class="p">.</span><span class="n">AppendLine</span><span class="p">(</span><span class="n">_gridItem</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="n">SEARCHKEY_ITEMSOURCE</span><span class="p">,</span> <span class="n">item</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">itemSource</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">InsertItems</span><span class="p">(</span><span class="kt">string</span> <span class="n">htmlSource</span><span class="p">,</span> <span class="kt">string</span> <span class="n">itemSource</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">htmlSource</span><span class="p">.</span><span class="n">Replace</span><span class="p">(</span><span class="n">SEARCHKEY_ITEMS</span><span class="p">,</span> <span class="n">itemSource</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>With that in place, we now have our full HTML source that we want to load into the WebView control we are using in our Xamarin Forms page.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">OnAppearing</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">base</span><span class="p">.</span><span class="n">OnAppearing</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">webViewElement</span><span class="p">.</span><span class="n">RegisterAction</span><span class="p">(</span><span class="n">InvokeCSharpFromJS</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">webViewElement</span><span class="p">.</span><span class="n">Source</span> <span class="p">=</span> <span class="k">new</span> <span class="n">HtmlWebViewSource</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Html</span> <span class="p">=</span> <span class="n">InitHTMLSource</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>You&rsquo;ll notice some extra code here as well, the <strong>RegisterAction</strong>. This is needed for the JavaScript bridge, but more on this later.
 First let me show you the page XAML itself.</p>
-<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;
-&lt;ContentPage xmlns=&#34;http://xamarin.com/schemas/2014/forms&#34;
-             xmlns:x=&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;
-             xmlns:controls=&#34;clr-namespace:Masonry.Controls&#34;
-             x:Class=&#34;Masonry.MainPage&#34;&gt;
-
-    &lt;Grid RowDefinitions=&#34;auto, auto, *&#34;&gt;
-        &lt;Grid.Margin&gt;
-            &lt;OnPlatform x:TypeArguments=&#34;Thickness&#34;&gt;
-                &lt;On Platform=&#34;iOS&#34; Value=&#34;0,30,0,0&#34; /&gt;
-                &lt;On Platform=&#34;Android&#34; Value=&#34;0,10,0,0&#34; /&gt;
-            &lt;/OnPlatform&gt;
-        &lt;/Grid.Margin&gt;
-
-        &lt;StackLayout Orientation=&#34;Horizontal&#34;
-                     Margin=&#34;18,10,18,5&#34;
-                     HorizontalOptions=&#34;FillAndExpand&#34;
-                     Grid.Row=&#34;1&#34;&gt;
-            &lt;Label Text=&#34;Porfolio&#34;
-                   FontFamily=&#34;JosefinRegular&#34;
-                   FontSize=&#34;20&#34;
-                   TextColor=&#34;#4d4d4d&#34;
-                   HorizontalOptions=&#34;StartAndExpand&#34; VerticalOptions=&#34;End&#34;/&gt;
-
-            &lt;Label Text=&#34;Glenn Versweyveld&#34;
-                   FontFamily=&#34;JosefinRegular&#34;
-                   FontSize=&#34;16&#34;
-                   HorizontalOptions=&#34;EndAndExpand&#34; VerticalOptions=&#34;End&#34; /&gt;
-        &lt;/StackLayout&gt;
-
-        &lt;controls:HybridWebView x:Name=&#34;webViewElement&#34;
-                                Grid.Row=&#34;2&#34; /&gt;
-    &lt;/Grid&gt;
-&lt;/ContentPage&gt;
-</code></pre><p>Big thing to notice here is the fact that we are using a custom WebView control called HybridWebView. This is needed to enable the JavaScript interaction from the WebView to Xamarin Forms and the other way around.<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;ContentPage</span> <span class="na">xmlns=</span><span class="s">&#34;http://xamarin.com/schemas/2014/forms&#34;</span>
+</span></span><span class="line"><span class="cl">             <span class="na">xmlns:x=</span><span class="s">&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;</span>
+</span></span><span class="line"><span class="cl">             <span class="na">xmlns:controls=</span><span class="s">&#34;clr-namespace:Masonry.Controls&#34;</span>
+</span></span><span class="line"><span class="cl">             <span class="na">x:Class=</span><span class="s">&#34;Masonry.MainPage&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Grid</span> <span class="na">RowDefinitions=</span><span class="s">&#34;auto, auto, *&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;Grid.Margin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;OnPlatform</span> <span class="na">x:TypeArguments=</span><span class="s">&#34;Thickness&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;On</span> <span class="na">Platform=</span><span class="s">&#34;iOS&#34;</span> <span class="na">Value=</span><span class="s">&#34;0,30,0,0&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;On</span> <span class="na">Platform=</span><span class="s">&#34;Android&#34;</span> <span class="na">Value=</span><span class="s">&#34;0,10,0,0&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/OnPlatform&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/Grid.Margin&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;StackLayout</span> <span class="na">Orientation=</span><span class="s">&#34;Horizontal&#34;</span>
+</span></span><span class="line"><span class="cl">                     <span class="na">Margin=</span><span class="s">&#34;18,10,18,5&#34;</span>
+</span></span><span class="line"><span class="cl">                     <span class="na">HorizontalOptions=</span><span class="s">&#34;FillAndExpand&#34;</span>
+</span></span><span class="line"><span class="cl">                     <span class="na">Grid.Row=</span><span class="s">&#34;1&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;Label</span> <span class="na">Text=</span><span class="s">&#34;Porfolio&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">FontFamily=</span><span class="s">&#34;JosefinRegular&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">FontSize=</span><span class="s">&#34;20&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">TextColor=</span><span class="s">&#34;#4d4d4d&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">HorizontalOptions=</span><span class="s">&#34;StartAndExpand&#34;</span> <span class="na">VerticalOptions=</span><span class="s">&#34;End&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;Label</span> <span class="na">Text=</span><span class="s">&#34;Glenn Versweyveld&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">FontFamily=</span><span class="s">&#34;JosefinRegular&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">FontSize=</span><span class="s">&#34;16&#34;</span>
+</span></span><span class="line"><span class="cl">                   <span class="na">HorizontalOptions=</span><span class="s">&#34;EndAndExpand&#34;</span> <span class="na">VerticalOptions=</span><span class="s">&#34;End&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/StackLayout&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;controls:HybridWebView</span> <span class="na">x:Name=</span><span class="s">&#34;webViewElement&#34;</span>
+</span></span><span class="line"><span class="cl">                                <span class="na">Grid.Row=</span><span class="s">&#34;2&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/Grid&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/ContentPage&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Big thing to notice here is the fact that we are using a custom WebView control called HybridWebView. This is needed to enable the JavaScript interaction from the WebView to Xamarin Forms and the other way around.<br>
 I followed the great guide by <a href="https://github.com/UdaraAlwis">Udara Alwis</a>, he explained everything in his article about creating a bi-directional interop with a WebView here <a href="https://theconfuzedsourcecode.wordpress.com/2020/01/19/building-a-bi-directional-interop-bridge-with-webview-in-xamarin-forms/">https://theconfuzedsourcecode.wordpress.com/2020/01/19/building-a-bi-directional-interop-bridge-with-webview-in-xamarin-forms/</a>.<br>
 Although Microsoft also has posted an intro article about the same technique on their docs site here <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/hybridwebview?WT.mc_id=DT-MVP-5000533">https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/custom-renderer/hybridwebview</a>.</p>
 <p>In short, you need to create a custom WebView renderer on iOS and Android to enable the cross invoking functionality. Meaning you&rsquo;ll be able to call a C# function from within JavaScript but also call a JavaScript function from your C# code.
@@ -303,78 +423,159 @@ It is this InvokeCSharpFromJS method that needs to be injected into the custom W
 <p>In our case we want to tell the C# code when new images need to be loaded in. Remember the first images will already be presented, thanks to our HTML we generated and set as source of the WebView. But when the user scrolls down, we need to dynamically load extra pictures.<br>
 To get this going, we listen for the Scroll event in our JavaScript and use the bridge to signal back to our C# code that new pictures are requested.</p>
 <p>The complete inline JavaScript looks like this.</p>
-<pre tabindex="0"><code>let pageIndex = 0;
-let loadNext = false;
-
-window.addEventListener(&#39;scroll&#39;, () =&gt; {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if(clientHeight + scrollTop &gt;= scrollHeight - 100 &amp;&amp; loadNext) {
-        loadNext = false;
-        invokeCSharpAction(pageIndex);
-        pageIndex++;
-	}
-});
-
-var grid = document.querySelector(&#39;.grid&#39;);
-var msnry = new Masonry( grid, {
-    columnWidth: &#39;.grid__col-sizer&#39;,
-    itemSelector: &#39;none&#39;,
-    percentPosition: true,
-    stagger: 30,
-    visibleStyle: { transform: &#39;translateY(0)&#39;, opacity: 1 },
-    hiddenStyle: { transform: &#39;translateY(100px)&#39;, opacity: 0 },  
-});
-
-imagesLoaded( grid, function() {
-    grid.classList.remove(&#39;are-images-unloaded&#39;);
-    msnry.options.itemSelector = &#39;.grid__item&#39;;
-    let items = grid.querySelectorAll(&#39;.grid__item&#39;);
-    loadNext = true;
-    msnry.appended(items);
-});
-
-function invokeJSFromCSharp(data) {
-    var images = data.split(&#39;#&#39;);
-    var elems = [];
-    var fragment = document.createDocumentFragment();
-    var i;
-    for (i = 0; i &lt; images.length; i++) {
-        var elem = getItemElement(images[i]);
-        fragment.appendChild(elem);
-        elems.push(elem);
-    }
-
-    grid.appendChild(fragment);
-    var imageLoad = imagesLoaded(grid);
-    imageLoad.on( &#39;progress&#39;, function() {  msnry.layout(); });
-    loadNext = true;
-    msnry.appended(elems);
-}
-
-function getItemElement(content) {
-  var elem = document.createElement(&#39;div&#39;);
-  elem.className = &#39;grid__item&#39;;
-  elem.innerHTML = &#39;&lt;img class=&#34;&#34;image-grid__item&#34;&#34; src=&#34;&#34;&#39; + content + &#39;&#34;&#34;&gt;&#39;;
-  return elem;
-}
-</code></pre><p>There is small part for the Masonry grid initialization and options, the new Masonry call. At the top you&rsquo;ll notice the <strong>window.addEventListener</strong>, here the magic callback to C# will happen. As soon as the user has scrolled down and we are roughly 100px from the bottom, we request more images and pass in a <strong>pageIndex</strong> representing how many times the user has reached the bottom of our WebView.<br>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">pageIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">loadNext</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;scroll&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">{</span> <span class="nx">scrollTop</span><span class="p">,</span> <span class="nx">scrollHeight</span><span class="p">,</span> <span class="nx">clientHeight</span> <span class="p">}</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="nx">clientHeight</span> <span class="o">+</span> <span class="nx">scrollTop</span> <span class="o">&gt;=</span> <span class="nx">scrollHeight</span> <span class="o">-</span> <span class="mi">100</span> <span class="o">&amp;&amp;</span> <span class="nx">loadNext</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">loadNext</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">invokeCSharpAction</span><span class="p">(</span><span class="nx">pageIndex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">pageIndex</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">grid</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.grid&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">msnry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Masonry</span><span class="p">(</span> <span class="nx">grid</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">columnWidth</span><span class="o">:</span> <span class="s1">&#39;.grid__col-sizer&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">itemSelector</span><span class="o">:</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">percentPosition</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">stagger</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">visibleStyle</span><span class="o">:</span> <span class="p">{</span> <span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;translateY(0)&#39;</span><span class="p">,</span> <span class="nx">opacity</span><span class="o">:</span> <span class="mi">1</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">hiddenStyle</span><span class="o">:</span> <span class="p">{</span> <span class="nx">transform</span><span class="o">:</span> <span class="s1">&#39;translateY(100px)&#39;</span><span class="p">,</span> <span class="nx">opacity</span><span class="o">:</span> <span class="mi">0</span> <span class="p">},</span>  
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">imagesLoaded</span><span class="p">(</span> <span class="nx">grid</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">grid</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;are-images-unloaded&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">msnry</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">itemSelector</span> <span class="o">=</span> <span class="s1">&#39;.grid__item&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">let</span> <span class="nx">items</span> <span class="o">=</span> <span class="nx">grid</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.grid__item&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">loadNext</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">msnry</span><span class="p">.</span><span class="nx">appended</span><span class="p">(</span><span class="nx">items</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">invokeJSFromCSharp</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">images</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">elems</span> <span class="o">=</span> <span class="p">[];</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">fragment</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createDocumentFragment</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">images</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">var</span> <span class="nx">elem</span> <span class="o">=</span> <span class="nx">getItemElement</span><span class="p">(</span><span class="nx">images</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">fragment</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">elems</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">elem</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">grid</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">fragment</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">imageLoad</span> <span class="o">=</span> <span class="nx">imagesLoaded</span><span class="p">(</span><span class="nx">grid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">imageLoad</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span> <span class="s1">&#39;progress&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  <span class="nx">msnry</span><span class="p">.</span><span class="nx">layout</span><span class="p">();</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">loadNext</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">msnry</span><span class="p">.</span><span class="nx">appended</span><span class="p">(</span><span class="nx">elems</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getItemElement</span><span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">elem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">elem</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;grid__item&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">elem</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s1">&#39;&lt;img class=&#34;&#34;image-grid__item&#34;&#34; src=&#34;&#34;&#39;</span> <span class="o">+</span> <span class="nx">content</span> <span class="o">+</span> <span class="s1">&#39;&#34;&#34;&gt;&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">elem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>There is small part for the Masonry grid initialization and options, the new Masonry call. At the top you&rsquo;ll notice the <strong>window.addEventListener</strong>, here the magic callback to C# will happen. As soon as the user has scrolled down and we are roughly 100px from the bottom, we request more images and pass in a <strong>pageIndex</strong> representing how many times the user has reached the bottom of our WebView.<br>
 That way we enable the infinite scroll feature, as long as we are able to request a next set of images, the user will be able to keep scrolling down. The actual C# code to handle that request is show below.</p>
-<pre tabindex="0"><code>private void InvokeCSharpFromJS(string data)
-{
-    if (!string.IsNullOrWhiteSpace(data) &amp;&amp; int.Parse(data) is int pageIndex)
-    {
-        IEnumerable&lt;string&gt; artistPictures = _dataService.GetPhotos(Artists.Depechie, ++pageIndex);
-        if (artistPictures.Any())
-        {
-            var items = string.Join(&#34;#&#34;, artistPictures);
-            Device.BeginInvokeOnMainThread(async () =&gt;
-            {
-                string result = await webViewElement.EvaluateJavaScriptAsync($&#34;invokeJSFromCSharp(&#39;{items}&#39;)&#34;);
-            });
-        }
-    }
-}
-</code></pre><p>When we get a result back from the DataService with a potential new set of images for the requested pageIndex and artist, we will call back into JavaScript and pass that result list as one joined string. You can see in the inline JavaScript function invokeJSFromCSharp, that we unpack that string and use the Masonry <strong>appended</strong> function to dynamically add those new images.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">InvokeCSharpFromJS</span><span class="p">(</span><span class="kt">string</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(!</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="kt">int</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="k">is</span> <span class="kt">int</span> <span class="n">pageIndex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">artistPictures</span> <span class="p">=</span> <span class="n">_dataService</span><span class="p">.</span><span class="n">GetPhotos</span><span class="p">(</span><span class="n">Artists</span><span class="p">.</span><span class="n">Depechie</span><span class="p">,</span> <span class="p">++</span><span class="n">pageIndex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">artistPictures</span><span class="p">.</span><span class="n">Any</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">items</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Join</span><span class="p">(</span><span class="s">&#34;#&#34;</span><span class="p">,</span> <span class="n">artistPictures</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Device</span><span class="p">.</span><span class="n">BeginInvokeOnMainThread</span><span class="p">(</span><span class="kd">async</span> <span class="p">()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kt">string</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">webViewElement</span><span class="p">.</span><span class="n">EvaluateJavaScriptAsync</span><span class="p">(</span><span class="s">$&#34;invokeJSFromCSharp(&#39;{items}&#39;)&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>When we get a result back from the DataService with a potential new set of images for the requested pageIndex and artist, we will call back into JavaScript and pass that result list as one joined string. You can see in the inline JavaScript function invokeJSFromCSharp, that we unpack that string and use the Masonry <strong>appended</strong> function to dynamically add those new images.</p>
 <h3 id="final-result">Final result</h3>
 <p>With that everything is set and the final result looks like this ( notice the nice fade in animation provided by Masonry ):</p>
 <p><img src="images/masonry.gif" alt="alt text"></p>
@@ -426,10 +627,13 @@ That way we enable the infinite scroll feature, as long as we are able to reques
     
 
     
-    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
-        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
-        </svg>
+
+    
+	
+    <a class="social-icon" href="https://dotnet.social/@depechie" target="_blank" rel="me" title="Mastodon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+			<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+		</svg>
     </a>
     
 

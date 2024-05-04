@@ -1,38 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>html on Depechie’s outing</title>
+    <title>Html on Depechie’s outing</title>
     <link>https://blog.depechie.com/tags/html/</link>
-    <description>Recent content in html on Depechie’s outing</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Html on Depechie’s outing</description>
+    <generator>Hugo 0.125.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 13:49:55 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 13:49:55 +0000</lastBuildDate>
+    <atom:link href="https://blog.depechie.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maui Blazor Mobile Template</title>
       <link>https://blog.depechie.com/posts/2021-06-17-maui-blazor-mobiletemplate/</link>
       <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2021-06-17-maui-blazor-mobiletemplate/</guid>
       <description>When you want to try out the .Net MAUI Blazor template, you will be able to run the standard Blazor test website on your mobile phone without any issues.</description>
     </item>
-    
     <item>
       <title>Maui Blazor Staggered View</title>
       <link>https://blog.depechie.com/posts/2020-06-04-maui-blazor-staggered-view/</link>
       <pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2020-06-04-maui-blazor-staggered-view/</guid>
       <description>Do you remember my staggered view solution for Xamarin Forms? If not, I blogged about it here: https://blog.</description>
     </item>
-    
     <item>
       <title>Xamarin Forms staggered view - Masonry</title>
       <link>https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</link>
       <pubDate>Wed, 26 May 2021 12:01:17 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/</guid>
       <description>Some story background When developing mobile apps, you&amp;rsquo;ll often find different design trends that look great and sometimes you even want to adopt some of those trends in your own apps.</description>
     </item>
-    
   </channel>
 </rss>

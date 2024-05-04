@@ -54,7 +54,7 @@ You as a user of this js lib, need to provide at least 3 elements; some HTML wit
 
 First the HTML.
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -82,7 +82,7 @@ There are also 2 other tags, one for adding custom CSS and one for adding extra 
 
 Adding the first items to render inside the grid, is done with C# at the start of our application.
 
-```
+```csharp
 private string InitHTMLSource()
 {
     IEnumerable<string> artistPictures = _dataService.GetPhotos(Artists.Depechie, 0);
@@ -97,7 +97,7 @@ private string InitHTMLSource()
 
 We use a data service to retrieve an amount of pictures for a given artist, this results in a List of strings that are all URL's pointing to some pictures online. We then use regular find and replace to inject that list into the above provided HTML.
 
-```
+```csharp
 public static string GenerateItemSource(IEnumerable<string> items)
 {
     StringBuilder itemSource = new StringBuilder();
@@ -117,7 +117,7 @@ public static string InsertItems(string htmlSource, string itemSource)
 
 With that in place, we now have our full HTML source that we want to load into the WebView control we are using in our Xamarin Forms page.
 
-```
+```csharp
 protected override void OnAppearing()
 {
     base.OnAppearing();
@@ -133,7 +133,7 @@ protected override void OnAppearing()
 You'll notice some extra code here as well, the **RegisterAction**. This is needed for the JavaScript bridge, but more on this later.
 First let me show you the page XAML itself.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -183,7 +183,7 @@ To get this going, we listen for the Scroll event in our JavaScript and use the 
 
 The complete inline JavaScript looks like this.
 
-```
+```javascript
 let pageIndex = 0;
 let loadNext = false;
 
@@ -243,7 +243,7 @@ function getItemElement(content) {
 There is small part for the Masonry grid initialization and options, the new Masonry call. At the top you'll notice the **window.addEventListener**, here the magic callback to C# will happen. As soon as the user has scrolled down and we are roughly 100px from the bottom, we request more images and pass in a **pageIndex** representing how many times the user has reached the bottom of our WebView.  
 That way we enable the infinite scroll feature, as long as we are able to request a next set of images, the user will be able to keep scrolling down. The actual C# code to handle that request is show below.
 
-```
+```csharp
 private void InvokeCSharpFromJS(string data)
 {
     if (!string.IsNullOrWhiteSpace(data) && int.Parse(data) is int pageIndex)

@@ -29,28 +29,28 @@ What Martin already pointed out in his blogpost, is the fact that we need to dow
 It's this section that I had to further change to reflect the same setup as the one in my docker compose file.
 So my working configuration file looks like this:
 
-```
-  template:
-    containers:
-    - image: otel/opentelemetry-collector-contrib:0.61.0
-      name: acaoteltestdev
-      args:
-        - "--config=/etc/otel-config-test.yml"
-      resources:
-        cpu: 0.5
-        ephemeralStorage: ''
-        memory: 1Gi
-      volumeMounts:
-      - mountPath: /etc
-        volumeName: config
-    revisionSuffix: ''
-    scale:
-      maxReplicas: 1
-      minReplicas: 1
-    volumes:
-    - name: config
-      storageName: stsmountoteltestdev
-      storageType: AzureFile
+```yaml
+template:
+  containers:
+  - image: otel/opentelemetry-collector-contrib:0.61.0
+    name: acaoteltestdev
+    args:
+      - "--config=/etc/otel-config-test.yml"
+    resources:
+      cpu: 0.5
+      ephemeralStorage: ''
+      memory: 1Gi
+    volumeMounts:
+    - mountPath: /etc
+      volumeName: config
+  revisionSuffix: ''
+  scale:
+    maxReplicas: 1
+    minReplicas: 1
+  volumes:
+  - name: config
+    storageName: stsmountoteltestdev
+    storageType: AzureFile
 ```
 
 > **Note** The `args` section is the one that I had to add to make it work and with that I also had to change the `volumeMounts` section to reflect the same path.
@@ -63,7 +63,7 @@ But this also was not without some setbacks, because the logs from the `OpenTele
 
 In the end it was a combination of setting up the correct `Basic Authentication` header and skipping the `TLS` verification. So my working configuration file looks like this:
 
-```
+```yaml
 receivers:
   otlp:
     protocols:

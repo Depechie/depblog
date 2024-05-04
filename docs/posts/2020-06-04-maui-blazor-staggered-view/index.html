@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.e34415025514319010e741089e6920454053855755ba465f66943ad102d2cb08.css"/>
+    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.b7753b1ccb677a4ea5b9901c5cecc7c74b99003571f1e8ceee4bc0773ba94bc6.css"/>
 
     
     
@@ -28,7 +28,10 @@
     
     
  
-    </head>
+    
+  
+
+</head>
 
     <body>
         
@@ -45,7 +48,7 @@
   
     <a class="color-link nav-link" href="/archives/">Archives</a>
   
-  <a class="color-link nav-link" href="https://blog.depechie.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+  <a class="color-link nav-link" href="" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
 </div>
 <footer class="footer">
 	<div class="social-icons">
@@ -54,10 +57,13 @@
     
 
     
-    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
-        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
-        </svg>
+
+    
+	
+    <a class="social-icon" href="https://dotnet.social/@depechie" target="_blank" rel="me" title="Mastodon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+			<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+		</svg>
     </a>
     
 
@@ -161,99 +167,202 @@ Without any hassle, this is just mind blowing. And thanks to CSS media queries, 
 In these desktop cases, when we go over 768 pixels in width, we change from a 2 column to a 3 column masonry view. You can see the result below in the video.</p>
 <p>I can&rsquo;t stress this enough that having 1 dev environment for all possible targets is a big plus with .Net MAUI and now with all the web power thanks to Blazor we can create nice solutions.</p>
 <p>The principle of the code is the same as the Xamarin Forms version, our <strong>Index.razor</strong> now contains the setup of the image list.</p>
-<pre tabindex="0"><code>@page &#34;/&#34;
-@inherits IndexViewModel
-@implements IDisposable
-
-&lt;div class=&#34;grid are-images-unloaded&#34;&gt;
-    &lt;div class=&#39;grid__col-sizer&#39;&gt;&lt;/div&gt;
-    @foreach (var image in Images)
-    {
-        &lt;div class=&#34;grid__item&#34;&gt;&lt;img src=&#34;@image&#34;&gt;&lt;/div&gt;
-    }
-&lt;/div&gt;
-</code></pre><p>And the companion ViewModel handles the interaction with <strong>JavaScript</strong> and image loading.</p>
-<pre tabindex="0"><code>using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using masonrymauiblazor.Data;
-
-namespace masonrymauiblazor.ViewModels
-{
-    public class IndexViewModel : ComponentBase
-    {
-        protected string result;
-        private DotNetObjectReference&lt;IndexViewModel&gt; _objRef;
-        protected bool IsScrollTrackingEnabled { get; set; } = false;
-        protected List&lt;string&gt; Images { get; set;}
-
-        [Inject]
-        protected IJSRuntime JS { get; set; }
-
-        [Inject]
-        protected DataService DataService { get; set; }
-
-        public void Dispose()
-        {
-            _objRef?.Dispose();
-        }
-
-        [JSInvokable]
-        public bool IsAtWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
-        {
-            bool retVal = (contentScrollTop + contentHeight) &gt;= containerHeight;
-            return retVal;
-        }
-
-        [JSInvokable]
-        public bool IsNearWindowBottom(double contentScrollTop, double contentHeight, double containerHeight)
-        {
-            bool retVal = (contentScrollTop + contentHeight) &gt; (containerHeight - 100);
-            return retVal;
-        }
-
-        [JSInvokable]
-        public async Task LoadMoreImages(int pageIndex)
-        {
-            var newImages = DataService.GetPhotos(Artists.Depechie, pageIndex);
-
-            //TODO: Glenn - This list of new images should be added to the Blazor list with Images.AddRange(newImages)
-            //TODO: Glenn - But this will have the bad positioning effect, we need to trigger the imagesloaded function
-            //TODO: Glenn - Also this should be doable according to https://stackoverflow.com/questions/64593058/blazor-force-full-render-instead-of-differential-render
-            //TODO: Glenn - But I was not able to get it working correctly, hence the roundtrip and pushing the string to JavaScript
-            if (newImages != null &amp;&amp; newImages.Any())
-                _ = await JS.InvokeAsync&lt;string&gt;(&#34;blazorExtensions.triggerMasonry&#34;, string.Join(&#34;#&#34;, newImages));
-        }
-
-        public async Task ToggleDotNetTrackScroll()
-        {
-            _ = await JS.InvokeAsync&lt;string&gt;(&#34;blazorExtensions.toggleTrackScroll&#34;, _objRef);
-        }
-
-        [JSInvokable]
-        public bool ToggleTrackScroll() { IsScrollTrackingEnabled = !IsScrollTrackingEnabled; return IsScrollTrackingEnabled; }
-
-        protected override async Task OnInitializedAsync()
-        {
-            Images = DataService.GetPhotos(Artists.Depechie, 0);
-        }
-
-        protected async override Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                _objRef = DotNetObjectReference.Create(this);
-                await JS.InvokeVoidAsync(&#34;blazorExtensions.toggleTrackScroll&#34;, _objRef);
-                StateHasChanged();
-
-                await JS.InvokeVoidAsync(&#34;blazorExtensions.initMasonry&#34;, _objRef);
-            }
-        }
-    }
-}
-</code></pre><p>You can see there is one small issue with the loading more images. I had to go with the same Xamarin Forms solution and let JavaScript add the newer images, due to the imagesloaded function of Masonry. But I&rsquo;m sure someone with more <strong>Blazor</strong> knowledge than me could fix this and have the image adding functionality purely in the ViewModel.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="err">@</span><span class="n">page</span> <span class="s2">&#34;/&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="err">@</span><span class="n">inherits</span> <span class="n">IndexViewModel</span>
+</span></span><span class="line"><span class="cl"><span class="err">@</span><span class="n">implements</span> <span class="n">IDisposable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">&#34;grid are-images-unloaded&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s1">&#39;grid__col-sizer&#39;</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="err">@</span><span class="n">foreach</span> <span class="p">(</span><span class="k">var</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">Images</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">&#34;grid__item&#34;</span><span class="o">&gt;&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&#34;@image&#34;</span><span class="o">&gt;&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And the companion ViewModel handles the interaction with <strong>JavaScript</strong> and image loading.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">AspNetCore</span><span class="o">.</span><span class="n">Components</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">using</span> <span class="n">Microsoft</span><span class="o">.</span><span class="n">JSInterop</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Collections</span><span class="o">.</span><span class="n">Generic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Linq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">using</span> <span class="n">System</span><span class="o">.</span><span class="n">Threading</span><span class="o">.</span><span class="n">Tasks</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">using</span> <span class="n">masonrymauiblazor</span><span class="o">.</span><span class="n">Data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">namespace</span> <span class="n">masonrymauiblazor</span><span class="o">.</span><span class="n">ViewModels</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="k">class</span> <span class="n">IndexViewModel</span> <span class="p">:</span> <span class="n">ComponentBase</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="n">string</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">private</span> <span class="n">DotNetObjectReference</span><span class="o">&lt;</span><span class="n">IndexViewModel</span><span class="o">&gt;</span> <span class="n">_objRef</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="ne">bool</span> <span class="n">IsScrollTrackingEnabled</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="n">set</span><span class="p">;</span> <span class="p">}</span> <span class="o">=</span> <span class="bp">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">Images</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="n">set</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">Inject</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="n">IJSRuntime</span> <span class="n">JS</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="n">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">Inject</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="n">DataService</span> <span class="n">DataService</span> <span class="p">{</span> <span class="n">get</span><span class="p">;</span> <span class="n">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">public</span> <span class="n">void</span> <span class="n">Dispose</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_objRef</span><span class="err">?</span><span class="o">.</span><span class="n">Dispose</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">JSInvokable</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">public</span> <span class="ne">bool</span> <span class="n">IsAtWindowBottom</span><span class="p">(</span><span class="n">double</span> <span class="n">contentScrollTop</span><span class="p">,</span> <span class="n">double</span> <span class="n">contentHeight</span><span class="p">,</span> <span class="n">double</span> <span class="n">containerHeight</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="ne">bool</span> <span class="n">retVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">contentScrollTop</span> <span class="o">+</span> <span class="n">contentHeight</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">containerHeight</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">retVal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">JSInvokable</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">public</span> <span class="ne">bool</span> <span class="n">IsNearWindowBottom</span><span class="p">(</span><span class="n">double</span> <span class="n">contentScrollTop</span><span class="p">,</span> <span class="n">double</span> <span class="n">contentHeight</span><span class="p">,</span> <span class="n">double</span> <span class="n">containerHeight</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="ne">bool</span> <span class="n">retVal</span> <span class="o">=</span> <span class="p">(</span><span class="n">contentScrollTop</span> <span class="o">+</span> <span class="n">contentHeight</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">containerHeight</span> <span class="o">-</span> <span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">retVal</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">JSInvokable</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">public</span> <span class="n">async</span> <span class="n">Task</span> <span class="n">LoadMoreImages</span><span class="p">(</span><span class="ne">int</span> <span class="n">pageIndex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">var</span> <span class="n">newImages</span> <span class="o">=</span> <span class="n">DataService</span><span class="o">.</span><span class="n">GetPhotos</span><span class="p">(</span><span class="n">Artists</span><span class="o">.</span><span class="n">Depechie</span><span class="p">,</span> <span class="n">pageIndex</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="o">//</span><span class="n">TODO</span><span class="p">:</span> <span class="n">Glenn</span> <span class="o">-</span> <span class="n">This</span> <span class="n">list</span> <span class="n">of</span> <span class="n">new</span> <span class="n">images</span> <span class="n">should</span> <span class="n">be</span> <span class="n">added</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Blazor</span> <span class="n">list</span> <span class="n">with</span> <span class="n">Images</span><span class="o">.</span><span class="n">AddRange</span><span class="p">(</span><span class="n">newImages</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="o">//</span><span class="n">TODO</span><span class="p">:</span> <span class="n">Glenn</span> <span class="o">-</span> <span class="n">But</span> <span class="n">this</span> <span class="n">will</span> <span class="n">have</span> <span class="n">the</span> <span class="n">bad</span> <span class="n">positioning</span> <span class="n">effect</span><span class="p">,</span> <span class="n">we</span> <span class="n">need</span> <span class="n">to</span> <span class="n">trigger</span> <span class="n">the</span> <span class="n">imagesloaded</span> <span class="n">function</span>
+</span></span><span class="line"><span class="cl">            <span class="o">//</span><span class="n">TODO</span><span class="p">:</span> <span class="n">Glenn</span> <span class="o">-</span> <span class="n">Also</span> <span class="n">this</span> <span class="n">should</span> <span class="n">be</span> <span class="n">doable</span> <span class="n">according</span> <span class="n">to</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">stackoverflow</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">questions</span><span class="o">/</span><span class="mi">64593058</span><span class="o">/</span><span class="n">blazor</span><span class="o">-</span><span class="n">force</span><span class="o">-</span><span class="n">full</span><span class="o">-</span><span class="n">render</span><span class="o">-</span><span class="n">instead</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">differential</span><span class="o">-</span><span class="n">render</span>
+</span></span><span class="line"><span class="cl">            <span class="o">//</span><span class="n">TODO</span><span class="p">:</span> <span class="n">Glenn</span> <span class="o">-</span> <span class="n">But</span> <span class="n">I</span> <span class="n">was</span> <span class="ow">not</span> <span class="n">able</span> <span class="n">to</span> <span class="n">get</span> <span class="n">it</span> <span class="n">working</span> <span class="n">correctly</span><span class="p">,</span> <span class="n">hence</span> <span class="n">the</span> <span class="n">roundtrip</span> <span class="ow">and</span> <span class="n">pushing</span> <span class="n">the</span> <span class="n">string</span> <span class="n">to</span> <span class="n">JavaScript</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">newImages</span> <span class="o">!=</span> <span class="n">null</span> <span class="o">&amp;&amp;</span> <span class="n">newImages</span><span class="o">.</span><span class="n">Any</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_</span> <span class="o">=</span> <span class="n">await</span> <span class="n">JS</span><span class="o">.</span><span class="n">InvokeAsync</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&#34;blazorExtensions.triggerMasonry&#34;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">Join</span><span class="p">(</span><span class="s2">&#34;#&#34;</span><span class="p">,</span> <span class="n">newImages</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">public</span> <span class="n">async</span> <span class="n">Task</span> <span class="n">ToggleDotNetTrackScroll</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_</span> <span class="o">=</span> <span class="n">await</span> <span class="n">JS</span><span class="o">.</span><span class="n">InvokeAsync</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&#34;blazorExtensions.toggleTrackScroll&#34;</span><span class="p">,</span> <span class="n">_objRef</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">JSInvokable</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">public</span> <span class="ne">bool</span> <span class="n">ToggleTrackScroll</span><span class="p">()</span> <span class="p">{</span> <span class="n">IsScrollTrackingEnabled</span> <span class="o">=</span> <span class="o">!</span><span class="n">IsScrollTrackingEnabled</span><span class="p">;</span> <span class="k">return</span> <span class="n">IsScrollTrackingEnabled</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="n">override</span> <span class="n">async</span> <span class="n">Task</span> <span class="n">OnInitializedAsync</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Images</span> <span class="o">=</span> <span class="n">DataService</span><span class="o">.</span><span class="n">GetPhotos</span><span class="p">(</span><span class="n">Artists</span><span class="o">.</span><span class="n">Depechie</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">protected</span> <span class="n">async</span> <span class="n">override</span> <span class="n">Task</span> <span class="n">OnAfterRenderAsync</span><span class="p">(</span><span class="ne">bool</span> <span class="n">firstRender</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">firstRender</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">_objRef</span> <span class="o">=</span> <span class="n">DotNetObjectReference</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">await</span> <span class="n">JS</span><span class="o">.</span><span class="n">InvokeVoidAsync</span><span class="p">(</span><span class="s2">&#34;blazorExtensions.toggleTrackScroll&#34;</span><span class="p">,</span> <span class="n">_objRef</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">StateHasChanged</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="n">await</span> <span class="n">JS</span><span class="o">.</span><span class="n">InvokeVoidAsync</span><span class="p">(</span><span class="s2">&#34;blazorExtensions.initMasonry&#34;</span><span class="p">,</span> <span class="n">_objRef</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>You can see there is one small issue with the loading more images. I had to go with the same Xamarin Forms solution and let JavaScript add the newer images, due to the imagesloaded function of Masonry. But I&rsquo;m sure someone with more <strong>Blazor</strong> knowledge than me could fix this and have the image adding functionality purely in the ViewModel.</p>
 <p>All the code is up on my GitHub here <a href="https://github.com/Depechie/Masonry/tree/main/src/mauiblazor">https://github.com/Depechie/Masonry/tree/main/src/mauiblazor</a>.</p>
 <p>Major thanks to <a href="https://twitter.com/PaulBSchroeder">Paul Schroeder</a> and <a href="https://twitter.com/tossnet1">Christophe Peugnet</a> for their guidance on some of the Blazor code, without that I would have been lost ;)</p>
 <p><img src="images/masonrymauiblazor.gif" alt="alt text"></p>
@@ -300,10 +409,13 @@ namespace masonrymauiblazor.ViewModels
     
 
     
-    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
-        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
-        </svg>
+
+    
+	
+    <a class="social-icon" href="https://dotnet.social/@depechie" target="_blank" rel="me" title="Mastodon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+			<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+		</svg>
     </a>
     
 

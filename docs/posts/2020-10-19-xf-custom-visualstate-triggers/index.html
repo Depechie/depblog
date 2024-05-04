@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.e34415025514319010e741089e6920454053855755ba465f66943ad102d2cb08.css"/>
+    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.b7753b1ccb677a4ea5b9901c5cecc7c74b99003571f1e8ceee4bc0773ba94bc6.css"/>
 
     
     
@@ -28,7 +28,10 @@
     
     
  
-    </head>
+    
+  
+
+</head>
 
     <body>
         
@@ -45,7 +48,7 @@
   
     <a class="color-link nav-link" href="/archives/">Archives</a>
   
-  <a class="color-link nav-link" href="https://blog.depechie.com/index.xml" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
+  <a class="color-link nav-link" href="" target="_blank" rel="noopener" type="application/rss+xml">RSS</a>
 </div>
 <footer class="footer">
 	<div class="social-icons">
@@ -54,10 +57,13 @@
     
 
     
-    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
-        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
-        </svg>
+
+    
+	
+    <a class="social-icon" href="https://dotnet.social/@depechie" target="_blank" rel="me" title="Mastodon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+			<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+		</svg>
     </a>
     
 
@@ -163,174 +169,369 @@ This is not 100% true, because this whole process will only work because we firs
 <p>The setup of our example is as follows. You have a certain data structure that you need to present to the user, but each data element is of a certain category. In our case we are using Animal types ( Cat, Dog, Bird ).
 If we want to have a different view depending on the animal type, we can leverage control templates and swap the style of our ContentView based on our data. And because we are going to do it from XAML this should all be done through <strong>Data Binding</strong>.</p>
 <p>Let&rsquo;s start with the basics, how does our data look like.</p>
-<pre tabindex="0"><code>public class AnimalModel
-{
-    public AnimalType Animal { get; set; }
-    public string AnimalName { get; set; }
-    public string AnimalDescription { get; set; }
-}
-</code></pre><p>It&rsquo;s a simple class that could hold several data points, most important part for our demo is the <strong>AnimalType</strong> enum, this categorizes our data.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">public class AnimalModel
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">    public AnimalType Animal { get; set; }
+</span></span><span class="line"><span class="cl">    public string AnimalName { get; set; }
+</span></span><span class="line"><span class="cl">    public string AnimalDescription { get; set; }
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s a simple class that could hold several data points, most important part for our demo is the <strong>AnimalType</strong> enum, this categorizes our data.
 Currently it consists of 3 types.</p>
-<pre tabindex="0"><code>public enum AnimalType
-{
-    Dog,
-    Cat,
-    Bird
-}
-</code></pre><p>Depending on this enum we would like to present the data differently, a control template is a fine choice for this. You can have some layout depending on what type of animal it is and still show your regular content inside of it.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">public</span> <span class="k">enum</span> <span class="n">AnimalType</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Dog</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Cat</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Bird</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Depending on this enum we would like to present the data differently, a control template is a fine choice for this. You can have some layout depending on what type of animal it is and still show your regular content inside of it.
 For this to work, we need to create a ContentView that will act as host container for our Control Templates.</p>
-<pre tabindex="0"><code>&lt;ContentView xmlns=&#34;http://xamarin.com/schemas/2014/forms&#34;
-             xmlns:x=&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;
-             xmlns:models=&#34;clr-namespace:VisualStateTriggers.Models&#34;
-             xmlns:triggers=&#34;clr-namespace:VisualStateTriggers.Triggers&#34;
-             x:Class=&#34;VisualStateTriggers.Controls.AnimalView&#34;
-             x:Name=&#34;AnimalViewName&#34;
-             Padding=&#34;0,0,0,5&#34;&gt;
-    &lt;VisualStateManager.VisualStateGroups&gt;
-        &lt;VisualStateGroupList&gt;
-            &lt;VisualStateGroup&gt;
-                &lt;VisualState x:Name=&#34;CatVisualState&#34;&gt;
-                    &lt;VisualState.StateTriggers&gt;
-                        &lt;triggers:EnumStateTrigger EnumType=&#34;{x:Type models:AnimalType}&#34; EnumValue=&#34;{x:Static models:AnimalType.Cat}&#34; Value=&#34;{Binding Animal}&#34; /&gt;
-                    &lt;/VisualState.StateTriggers&gt;
-                    &lt;VisualState.Setters&gt;
-                        &lt;Setter Property=&#34;Style&#34; Value=&#34;{StaticResource CatTemplateStyle}&#34; /&gt;
-                    &lt;/VisualState.Setters&gt;
-                &lt;/VisualState&gt;
-                &lt;VisualState x:Name=&#34;DogVisualState&#34;&gt;
-                    &lt;VisualState.StateTriggers&gt;
-                        &lt;triggers:EnumStateTrigger EnumType=&#34;{x:Type models:AnimalType}&#34; EnumValue=&#34;{x:Static models:AnimalType.Dog}&#34; Value=&#34;{Binding Animal}&#34; /&gt;
-                    &lt;/VisualState.StateTriggers&gt;
-                    &lt;VisualState.Setters&gt;
-                        &lt;Setter Property=&#34;Style&#34; Value=&#34;{StaticResource DogTemplateStyle}&#34; /&gt;
-                    &lt;/VisualState.Setters&gt;
-                &lt;/VisualState&gt;
-                &lt;VisualState x:Name=&#34;BirdVisualState&#34;&gt;
-                    &lt;VisualState.StateTriggers&gt;
-                        &lt;triggers:EnumStateTrigger EnumType=&#34;{x:Type models:AnimalType}&#34; EnumValue=&#34;{x:Static models:AnimalType.Bird}&#34; Value=&#34;{Binding Animal}&#34; /&gt;
-                    &lt;/VisualState.StateTriggers&gt;
-                    &lt;VisualState.Setters&gt;
-                        &lt;Setter Property=&#34;Style&#34; Value=&#34;{StaticResource BirdTemplateStyle}&#34; /&gt;
-                    &lt;/VisualState.Setters&gt;
-                &lt;/VisualState&gt;
-            &lt;/VisualStateGroup&gt;
-        &lt;/VisualStateGroupList&gt;
-    &lt;/VisualStateManager.VisualStateGroups&gt;
-&lt;/ContentView&gt;
-</code></pre><p>There is a lot going on in this host container, so let&rsquo;s break it down a bit.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;ContentView xmlns=&#34;http://xamarin.com/schemas/2014/forms&#34;
+</span></span><span class="line"><span class="cl">             xmlns:x=&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;
+</span></span><span class="line"><span class="cl">             xmlns:models=&#34;clr-namespace:VisualStateTriggers.Models&#34;
+</span></span><span class="line"><span class="cl">             xmlns:triggers=&#34;clr-namespace:VisualStateTriggers.Triggers&#34;
+</span></span><span class="line"><span class="cl">             x:Class=&#34;VisualStateTriggers.Controls.AnimalView&#34;
+</span></span><span class="line"><span class="cl">             x:Name=&#34;AnimalViewName&#34;
+</span></span><span class="line"><span class="cl">             Padding=&#34;0,0,0,5&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;VisualStateManager.VisualStateGroups&gt;
+</span></span><span class="line"><span class="cl">        &lt;VisualStateGroupList&gt;
+</span></span><span class="line"><span class="cl">            &lt;VisualStateGroup&gt;
+</span></span><span class="line"><span class="cl">                &lt;VisualState x:Name=&#34;CatVisualState&#34;&gt;
+</span></span><span class="line"><span class="cl">                    &lt;VisualState.StateTriggers&gt;
+</span></span><span class="line"><span class="cl">                        &lt;triggers:EnumStateTrigger EnumType=&#34;{x:Type models:AnimalType}&#34; EnumValue=&#34;{x:Static models:AnimalType.Cat}&#34; Value=&#34;{Binding Animal}&#34; /&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/VisualState.StateTriggers&gt;
+</span></span><span class="line"><span class="cl">                    &lt;VisualState.Setters&gt;
+</span></span><span class="line"><span class="cl">                        &lt;Setter Property=&#34;Style&#34; Value=&#34;{StaticResource CatTemplateStyle}&#34; /&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/VisualState.Setters&gt;
+</span></span><span class="line"><span class="cl">                &lt;/VisualState&gt;
+</span></span><span class="line"><span class="cl">                &lt;VisualState x:Name=&#34;DogVisualState&#34;&gt;
+</span></span><span class="line"><span class="cl">                    &lt;VisualState.StateTriggers&gt;
+</span></span><span class="line"><span class="cl">                        &lt;triggers:EnumStateTrigger EnumType=&#34;{x:Type models:AnimalType}&#34; EnumValue=&#34;{x:Static models:AnimalType.Dog}&#34; Value=&#34;{Binding Animal}&#34; /&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/VisualState.StateTriggers&gt;
+</span></span><span class="line"><span class="cl">                    &lt;VisualState.Setters&gt;
+</span></span><span class="line"><span class="cl">                        &lt;Setter Property=&#34;Style&#34; Value=&#34;{StaticResource DogTemplateStyle}&#34; /&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/VisualState.Setters&gt;
+</span></span><span class="line"><span class="cl">                &lt;/VisualState&gt;
+</span></span><span class="line"><span class="cl">                &lt;VisualState x:Name=&#34;BirdVisualState&#34;&gt;
+</span></span><span class="line"><span class="cl">                    &lt;VisualState.StateTriggers&gt;
+</span></span><span class="line"><span class="cl">                        &lt;triggers:EnumStateTrigger EnumType=&#34;{x:Type models:AnimalType}&#34; EnumValue=&#34;{x:Static models:AnimalType.Bird}&#34; Value=&#34;{Binding Animal}&#34; /&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/VisualState.StateTriggers&gt;
+</span></span><span class="line"><span class="cl">                    &lt;VisualState.Setters&gt;
+</span></span><span class="line"><span class="cl">                        &lt;Setter Property=&#34;Style&#34; Value=&#34;{StaticResource BirdTemplateStyle}&#34; /&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/VisualState.Setters&gt;
+</span></span><span class="line"><span class="cl">                &lt;/VisualState&gt;
+</span></span><span class="line"><span class="cl">            &lt;/VisualStateGroup&gt;
+</span></span><span class="line"><span class="cl">        &lt;/VisualStateGroupList&gt;
+</span></span><span class="line"><span class="cl">    &lt;/VisualStateManager.VisualStateGroups&gt;
+</span></span><span class="line"><span class="cl">&lt;/ContentView&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>There is a lot going on in this host container, so let&rsquo;s break it down a bit.
 First thing to notice here, is that we are only using XAML to handle the different views, we leverage the <strong>Visual State Manager</strong> for this. It will, depending on the AnimalType enum, select the correct Control Template and apply it as <strong>Style</strong> to the ContentView!</p>
 <p>For the Visual State Manager to be able to know what Control Template to use, we use a <strong>Custom State Trigger</strong>, we will pass the enum type, 1 target enum value of that type and the actual enum value of the data item to the trigger.
 Inside this Custom State Trigger we will validate these parameters and set the trigger active or not if the needed criteria matches. In this case, if the current data item enum value equals the target enum value given in XAML.</p>
-<pre tabindex="0"><code>public class EnumStateTrigger : StateTriggerBase
-{
-    public static readonly BindableProperty EnumTypeProperty = BindableProperty.Create(nameof(EnumType), typeof(Type), typeof(EnumStateTrigger), null);
-
-    public static readonly BindableProperty EnumValueProperty = BindableProperty.Create(nameof(EnumValue), typeof(object), typeof(EnumStateTrigger), null, propertyChanged: OnBindablePropertyChanged);
-
-    public static readonly BindableProperty ValueProperty = BindableProperty.Create(nameof(Value), typeof(object), typeof(EnumStateTrigger), null, propertyChanged: OnBindablePropertyChanged);
-
-    public Type EnumType
-    {
-        get =&gt; (Type)GetValue(EnumTypeProperty);
-        set =&gt; SetValue(EnumTypeProperty, value);
-    }
-
-    public object EnumValue
-    {
-        get =&gt; (object)GetValue(EnumValueProperty);
-        set =&gt; SetValue(EnumValueProperty, value);
-    }
-
-    public object Value
-    {
-        get =&gt; (object)GetValue(ValueProperty);
-        set =&gt; SetValue(ValueProperty, value);
-    }
-
-    private static void OnBindablePropertyChanged(BindableObject bindable, object oldValue, object newValue)
-    {
-        var trigger = bindable as EnumStateTrigger;
-        trigger.UpdateTrigger();
-    }
-
-    private void UpdateTrigger()
-    {
-        if (EnumType is null || EnumValue is null || Value is null || !EnumType.IsEnum || !EnumType.IsEnumDefined(EnumValue) || !EnumType.IsEnumDefined(Value))
-            SetActive(false);
-        else
-            SetActive(Enum.Equals(EnumValue, Value));
-    }
-}
-</code></pre><p>Passing the actual enum type is not mandatory, but I wanted to show you how this could be done, so that you can also validate if the enum values are indeed contained in the given enum type.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">public</span> <span class="k">class</span> <span class="n">EnumStateTrigger</span> <span class="p">:</span> <span class="n">StateTriggerBase</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="k">static</span> <span class="n">readonly</span> <span class="n">BindableProperty</span> <span class="n">EnumTypeProperty</span> <span class="o">=</span> <span class="n">BindableProperty</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">EnumType</span><span class="p">),</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">Type</span><span class="p">),</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">EnumStateTrigger</span><span class="p">),</span> <span class="n">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="k">static</span> <span class="n">readonly</span> <span class="n">BindableProperty</span> <span class="n">EnumValueProperty</span> <span class="o">=</span> <span class="n">BindableProperty</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">EnumValue</span><span class="p">),</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">object</span><span class="p">),</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">EnumStateTrigger</span><span class="p">),</span> <span class="n">null</span><span class="p">,</span> <span class="n">propertyChanged</span><span class="p">:</span> <span class="n">OnBindablePropertyChanged</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="k">static</span> <span class="n">readonly</span> <span class="n">BindableProperty</span> <span class="n">ValueProperty</span> <span class="o">=</span> <span class="n">BindableProperty</span><span class="o">.</span><span class="n">Create</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Value</span><span class="p">),</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">object</span><span class="p">),</span> <span class="nb">typeof</span><span class="p">(</span><span class="n">EnumStateTrigger</span><span class="p">),</span> <span class="n">null</span><span class="p">,</span> <span class="n">propertyChanged</span><span class="p">:</span> <span class="n">OnBindablePropertyChanged</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="n">Type</span> <span class="n">EnumType</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">get</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">Type</span><span class="p">)</span><span class="n">GetValue</span><span class="p">(</span><span class="n">EnumTypeProperty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">set</span> <span class="o">=&gt;</span> <span class="n">SetValue</span><span class="p">(</span><span class="n">EnumTypeProperty</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="n">object</span> <span class="n">EnumValue</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">get</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="n">GetValue</span><span class="p">(</span><span class="n">EnumValueProperty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">set</span> <span class="o">=&gt;</span> <span class="n">SetValue</span><span class="p">(</span><span class="n">EnumValueProperty</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">public</span> <span class="n">object</span> <span class="n">Value</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">get</span> <span class="o">=&gt;</span> <span class="p">(</span><span class="n">object</span><span class="p">)</span><span class="n">GetValue</span><span class="p">(</span><span class="n">ValueProperty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">set</span> <span class="o">=&gt;</span> <span class="n">SetValue</span><span class="p">(</span><span class="n">ValueProperty</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">private</span> <span class="k">static</span> <span class="n">void</span> <span class="n">OnBindablePropertyChanged</span><span class="p">(</span><span class="n">BindableObject</span> <span class="n">bindable</span><span class="p">,</span> <span class="n">object</span> <span class="n">oldValue</span><span class="p">,</span> <span class="n">object</span> <span class="n">newValue</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">var</span> <span class="n">trigger</span> <span class="o">=</span> <span class="n">bindable</span> <span class="n">as</span> <span class="n">EnumStateTrigger</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">trigger</span><span class="o">.</span><span class="n">UpdateTrigger</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">private</span> <span class="n">void</span> <span class="n">UpdateTrigger</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">EnumType</span> <span class="n">is</span> <span class="n">null</span> <span class="o">||</span> <span class="n">EnumValue</span> <span class="n">is</span> <span class="n">null</span> <span class="o">||</span> <span class="n">Value</span> <span class="n">is</span> <span class="n">null</span> <span class="o">||</span> <span class="o">!</span><span class="n">EnumType</span><span class="o">.</span><span class="n">IsEnum</span> <span class="o">||</span> <span class="o">!</span><span class="n">EnumType</span><span class="o">.</span><span class="n">IsEnumDefined</span><span class="p">(</span><span class="n">EnumValue</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="n">EnumType</span><span class="o">.</span><span class="n">IsEnumDefined</span><span class="p">(</span><span class="n">Value</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">SetActive</span><span class="p">(</span><span class="bp">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">SetActive</span><span class="p">(</span><span class="n">Enum</span><span class="o">.</span><span class="n">Equals</span><span class="p">(</span><span class="n">EnumValue</span><span class="p">,</span> <span class="n">Value</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Passing the actual enum type is not mandatory, but I wanted to show you how this could be done, so that you can also validate if the enum values are indeed contained in the given enum type.
 Creating your own Custom State Triggers is not that difficult, you only need to inherit from <strong>StateTriggerBase</strong> and call the SetActive() method with true or false if your criteria is reached, inside the <strong>UpdateTrigger</strong>.</p>
 <p>The other thing to notice in the Visual State Manager code in the ContentView above, was the fact we can actually swap the way the ContentView is composed by applying a certain style!
 Each style is a Control Template on his own, where we can use the <strong>ContentPresenter</strong> tag to embed the XAML layout we defined in our <strong>CollectionView</strong> for our list item. Each ControlTemplate in this example, almost looks the same, I only changed the background color and the category image.</p>
-<pre tabindex="0"><code>&lt;ContentView xmlns=&#34;http://xamarin.com/schemas/2014/forms&#34;
-             xmlns:x=&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;
-             xmlns:markupextensions=&#34;clr-namespace:VisualStateTriggers.MarkupExtensions&#34;
-             x:Class=&#34;VisualStateTriggers.ControlTemplates.CatView&#34;
-             BackgroundColor=&#34;#ed675a&#34;&gt;
-    &lt;ContentView.Content&gt;
-        &lt;Grid ColumnSpacing=&#34;10&#34; RowSpacing=&#34;0&#34;
-              Margin=&#34;10&#34;&gt;
-            &lt;Grid.ColumnDefinitions&gt;
-                &lt;ColumnDefinition Width=&#34;50&#34; /&gt;
-                &lt;ColumnDefinition Width=&#34;*&#34; /&gt;
-            &lt;/Grid.ColumnDefinitions&gt;
-            &lt;Grid.RowDefinitions&gt;
-                &lt;RowDefinition Height=&#34;*&#34; /&gt;
-                &lt;RowDefinition Height=&#34;*&#34; /&gt;
-            &lt;/Grid.RowDefinitions&gt;
-
-            &lt;Image Source=&#34;{markupextensions:ImageResourceExtension VisualStateTriggers.bird.png}&#34;
-                   Grid.Column=&#34;0&#34; Grid.Row=&#34;0&#34; Grid.RowSpan=&#34;2&#34; /&gt;
-
-            &lt;ContentPresenter Grid.Column=&#34;1&#34; Grid.Row=&#34;0&#34; /&gt;
-            &lt;Label Text=&#34;{TemplateBinding AnimalDescription}&#34;
-                   Grid.Column=&#34;1&#34; Grid.Row=&#34;1&#34; /&gt;
-        &lt;/Grid&gt;
-    &lt;/ContentView.Content&gt;
-&lt;/ContentView&gt;
-</code></pre><p>Only thing left out, is how we now use the Content View container host in our list&hellip; in our MainPage we define a <strong>CollectionView</strong>, assign a List of AnimalModel items and use data binding to pass along the data points.</p>
-<pre tabindex="0"><code>&lt;CollectionView ItemsSource=&#34;{Binding Animals}&#34;&gt;
-    &lt;CollectionView.ItemTemplate&gt;
-        &lt;DataTemplate&gt;
-            &lt;controls:AnimalView Animal=&#34;{Binding Animal}&#34; AnimalDescription=&#34;{Binding AnimalDescription}&#34;&gt;
-                &lt;Label Text=&#34;{Binding AnimalName}&#34; /&gt;
-            &lt;/controls:AnimalView&gt;
-        &lt;/DataTemplate&gt;
-    &lt;/CollectionView.ItemTemplate&gt;
-&lt;/CollectionView&gt;
-</code></pre><p>The definition of the actual styles is done in the App.xaml, we set these as <strong>StaticResources</strong> in the global resource dictionary.</p>
-<pre tabindex="0"><code>&lt;Application.Resources&gt;
-    &lt;ControlTemplate x:Key=&#34;CatTemplate&#34;&gt;
-        &lt;controlTemplates:CatView /&gt;
-    &lt;/ControlTemplate&gt;
-
-    &lt;ControlTemplate x:Key=&#34;BirdTemplate&#34;&gt;
-        &lt;controlTemplates:BirdView /&gt;
-    &lt;/ControlTemplate&gt;
-
-    &lt;ControlTemplate x:Key=&#34;DogTemplate&#34;&gt;
-        &lt;controlTemplates:DogView /&gt;
-    &lt;/ControlTemplate&gt;
-
-    &lt;Style TargetType=&#34;controls:AnimalView&#34; x:Key=&#34;CatTemplateStyle&#34;&gt;
-        &lt;Setter Property=&#34;ControlTemplate&#34;
-                Value=&#34;{StaticResource CatTemplate}&#34; /&gt;
-    &lt;/Style&gt;
-
-    &lt;Style TargetType=&#34;controls:AnimalView&#34; x:Key=&#34;BirdTemplateStyle&#34;&gt;
-        &lt;Setter Property=&#34;ControlTemplate&#34;
-                Value=&#34;{StaticResource BirdTemplate}&#34; /&gt;
-    &lt;/Style&gt;
-
-    &lt;Style TargetType=&#34;controls:AnimalView&#34; x:Key=&#34;DogTemplateStyle&#34;&gt;
-        &lt;Setter Property=&#34;ControlTemplate&#34;
-                Value=&#34;{StaticResource DogTemplate}&#34; /&gt;
-    &lt;/Style&gt;
-&lt;/Application.Resources&gt;
-</code></pre><p>And with that, you&rsquo;ll have following layout:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;ContentView xmlns=&#34;http://xamarin.com/schemas/2014/forms&#34;
+</span></span><span class="line"><span class="cl">             xmlns:x=&#34;http://schemas.microsoft.com/winfx/2009/xaml&#34;
+</span></span><span class="line"><span class="cl">             xmlns:markupextensions=&#34;clr-namespace:VisualStateTriggers.MarkupExtensions&#34;
+</span></span><span class="line"><span class="cl">             x:Class=&#34;VisualStateTriggers.ControlTemplates.CatView&#34;
+</span></span><span class="line"><span class="cl">             BackgroundColor=&#34;#ed675a&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;ContentView.Content&gt;
+</span></span><span class="line"><span class="cl">        &lt;Grid ColumnSpacing=&#34;10&#34; RowSpacing=&#34;0&#34;
+</span></span><span class="line"><span class="cl">              Margin=&#34;10&#34;&gt;
+</span></span><span class="line"><span class="cl">            &lt;Grid.ColumnDefinitions&gt;
+</span></span><span class="line"><span class="cl">                &lt;ColumnDefinition Width=&#34;50&#34; /&gt;
+</span></span><span class="line"><span class="cl">                &lt;ColumnDefinition Width=&#34;*&#34; /&gt;
+</span></span><span class="line"><span class="cl">            &lt;/Grid.ColumnDefinitions&gt;
+</span></span><span class="line"><span class="cl">            &lt;Grid.RowDefinitions&gt;
+</span></span><span class="line"><span class="cl">                &lt;RowDefinition Height=&#34;*&#34; /&gt;
+</span></span><span class="line"><span class="cl">                &lt;RowDefinition Height=&#34;*&#34; /&gt;
+</span></span><span class="line"><span class="cl">            &lt;/Grid.RowDefinitions&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            &lt;Image Source=&#34;{markupextensions:ImageResourceExtension VisualStateTriggers.bird.png}&#34;
+</span></span><span class="line"><span class="cl">                   Grid.Column=&#34;0&#34; Grid.Row=&#34;0&#34; Grid.RowSpan=&#34;2&#34; /&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            &lt;ContentPresenter Grid.Column=&#34;1&#34; Grid.Row=&#34;0&#34; /&gt;
+</span></span><span class="line"><span class="cl">            &lt;Label Text=&#34;{TemplateBinding AnimalDescription}&#34;
+</span></span><span class="line"><span class="cl">                   Grid.Column=&#34;1&#34; Grid.Row=&#34;1&#34; /&gt;
+</span></span><span class="line"><span class="cl">        &lt;/Grid&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ContentView.Content&gt;
+</span></span><span class="line"><span class="cl">&lt;/ContentView&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Only thing left out, is how we now use the Content View container host in our list&hellip; in our MainPage we define a <strong>CollectionView</strong>, assign a List of AnimalModel items and use data binding to pass along the data points.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;CollectionView ItemsSource=&#34;{Binding Animals}&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;CollectionView.ItemTemplate&gt;
+</span></span><span class="line"><span class="cl">        &lt;DataTemplate&gt;
+</span></span><span class="line"><span class="cl">            &lt;controls:AnimalView Animal=&#34;{Binding Animal}&#34; AnimalDescription=&#34;{Binding AnimalDescription}&#34;&gt;
+</span></span><span class="line"><span class="cl">                &lt;Label Text=&#34;{Binding AnimalName}&#34; /&gt;
+</span></span><span class="line"><span class="cl">            &lt;/controls:AnimalView&gt;
+</span></span><span class="line"><span class="cl">        &lt;/DataTemplate&gt;
+</span></span><span class="line"><span class="cl">    &lt;/CollectionView.ItemTemplate&gt;
+</span></span><span class="line"><span class="cl">&lt;/CollectionView&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The definition of the actual styles is done in the App.xaml, we set these as <strong>StaticResources</strong> in the global resource dictionary.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;Application.Resources&gt;
+</span></span><span class="line"><span class="cl">    &lt;ControlTemplate x:Key=&#34;CatTemplate&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;controlTemplates:CatView /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ControlTemplate&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;ControlTemplate x:Key=&#34;BirdTemplate&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;controlTemplates:BirdView /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ControlTemplate&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;ControlTemplate x:Key=&#34;DogTemplate&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;controlTemplates:DogView /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ControlTemplate&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;Style TargetType=&#34;controls:AnimalView&#34; x:Key=&#34;CatTemplateStyle&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;Setter Property=&#34;ControlTemplate&#34;
+</span></span><span class="line"><span class="cl">                Value=&#34;{StaticResource CatTemplate}&#34; /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/Style&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;Style TargetType=&#34;controls:AnimalView&#34; x:Key=&#34;BirdTemplateStyle&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;Setter Property=&#34;ControlTemplate&#34;
+</span></span><span class="line"><span class="cl">                Value=&#34;{StaticResource BirdTemplate}&#34; /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/Style&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;Style TargetType=&#34;controls:AnimalView&#34; x:Key=&#34;DogTemplateStyle&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;Setter Property=&#34;ControlTemplate&#34;
+</span></span><span class="line"><span class="cl">                Value=&#34;{StaticResource DogTemplate}&#34; /&gt;
+</span></span><span class="line"><span class="cl">    &lt;/Style&gt;
+</span></span><span class="line"><span class="cl">&lt;/Application.Resources&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And with that, you&rsquo;ll have following layout:</p>
 
 
 
@@ -376,10 +577,13 @@ The potential they have is huge, so I would encourage you to try them out.</p>
     
 
     
-    <a class="social-icon" href="https://twitter.com/depechie" target="_blank" rel="noopener" title="Twitter">
-        <svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" fill="#ABABAB" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-            <path d="M8.991284,24.971612 C19.180436,24.971612 24.752372,16.530224 24.752372,9.210524 C24.752372,8.970656 24.747512,8.731868 24.736496,8.494376 C25.818008,7.712564 26.758256,6.737 27.5,5.62622 C26.507372,6.067076 25.439252,6.364292 24.318752,6.498212 C25.462472,5.812628 26.340512,4.727444 26.754584,3.434036 C25.684088,4.068536 24.499004,4.53002 23.23724,4.778528 C22.226468,3.701876 20.786828,3.028388 19.193828,3.028388 C16.134404,3.028388 13.653536,5.509256 13.653536,8.567492 C13.653536,9.0023 13.702244,9.424904 13.797176,9.830552 C9.19346,9.599108 5.11106,7.39472 2.3792,4.04294 C1.903028,4.861364 1.629032,5.812628 1.629032,6.827072 C1.629032,8.74904 2.606972,10.445612 4.094024,11.438132 C3.185528,11.41016 2.331788,11.160464 1.585184,10.745096 C1.583888,10.768208 1.583888,10.791428 1.583888,10.815728 C1.583888,13.49888 3.493652,15.738584 6.028088,16.246508 C5.562932,16.373084 5.07326,16.44134 4.56782,16.44134 C4.210988,16.44134 3.863876,16.406024 3.526484,16.34144 C4.231724,18.542264 6.276596,20.143796 8.701412,20.18894 C6.805148,21.674696 4.416836,22.56008 1.821488,22.56008 C1.374476,22.56008 0.93362,22.534592 0.5,22.4834 C2.951708,24.054476 5.862524,24.971612 8.991284,24.971612"></path>
-        </svg>
+
+    
+	
+    <a class="social-icon" href="https://dotnet.social/@depechie" target="_blank" rel="me" title="Mastodon">
+		<svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16">
+			<path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a3.614 3.614 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522c0-.859.22-1.541.66-2.046.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764.442.505.661 1.187.661 2.046v4.203z"/>
+		</svg>
     </a>
     
 

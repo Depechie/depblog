@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blazor on Depechie’s outing</title>
+    <title>Blazor on Depechie’s outing</title>
     <link>https://blog.depechie.com/tags/blazor/</link>
-    <description>Recent content in blazor on Depechie’s outing</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Blazor on Depechie’s outing</description>
+    <generator>Hugo 0.125.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Jun 2021 13:49:55 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 13:49:55 +0000</lastBuildDate>
+    <atom:link href="https://blog.depechie.com/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Maui Blazor Mobile Template</title>
       <link>https://blog.depechie.com/posts/2021-06-17-maui-blazor-mobiletemplate/</link>
       <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2021-06-17-maui-blazor-mobiletemplate/</guid>
       <description>When you want to try out the .Net MAUI Blazor template, you will be able to run the standard Blazor test website on your mobile phone without any issues.</description>
     </item>
-    
     <item>
       <title>Maui Blazor Staggered View</title>
       <link>https://blog.depechie.com/posts/2020-06-04-maui-blazor-staggered-view/</link>
       <pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2020-06-04-maui-blazor-staggered-view/</guid>
       <description>Do you remember my staggered view solution for Xamarin Forms? If not, I blogged about it here: https://blog.</description>
     </item>
-    
   </channel>
 </rss>

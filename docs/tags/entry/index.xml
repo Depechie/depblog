@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>entry on Depechie’s outing</title>
+    <title>Entry on Depechie’s outing</title>
     <link>https://blog.depechie.com/tags/entry/</link>
-    <description>Recent content in entry on Depechie’s outing</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Entry on Depechie’s outing</description>
+    <generator>Hugo 0.125.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Mar 2021 17:32:45 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/tags/entry/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Mar 2021 17:32:45 +0000</lastBuildDate>
+    <atom:link href="https://blog.depechie.com/tags/entry/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Xamarin Forms – Set entry clear icon color on iOS</title>
       <link>https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/</link>
       <pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-      
       <guid>https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/</guid>
       <description>Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.</description>
     </item>
-    
   </channel>
 </rss>

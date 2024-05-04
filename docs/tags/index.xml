@@ -4,161 +4,128 @@
     <title>Tags on Depechie’s outing</title>
     <link>https://blog.depechie.com/tags/</link>
     <description>Recent content in Tags on Depechie’s outing</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo 0.125.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2022 21:48:17 +0000</lastBuildDate><atom:link href="https://blog.depechie.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Oct 2022 21:48:17 +0000</lastBuildDate>
+    <atom:link href="https://blog.depechie.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>azure</title>
+      <title>Azure</title>
       <link>https://blog.depechie.com/tags/azure/</link>
-      <pubDate>Thu, 13 Oct 2022 21:48:17 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/azure/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>containerapps</title>
+      <title>Containerapps</title>
       <link>https://blog.depechie.com/tags/containerapps/</link>
-      <pubDate>Thu, 13 Oct 2022 21:48:17 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/containerapps/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>opentelemetry</title>
+      <title>Opentelemetry</title>
       <link>https://blog.depechie.com/tags/opentelemetry/</link>
-      <pubDate>Thu, 13 Oct 2022 21:48:17 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/opentelemetry/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>blazor</title>
+      <title>Blazor</title>
       <link>https://blog.depechie.com/tags/blazor/</link>
-      <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/blazor/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>css</title>
+      <title>Css</title>
       <link>https://blog.depechie.com/tags/css/</link>
-      <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/css/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>html</title>
+      <title>Html</title>
       <link>https://blog.depechie.com/tags/html/</link>
-      <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/html/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>maui</title>
+      <title>Maui</title>
       <link>https://blog.depechie.com/tags/maui/</link>
-      <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/maui/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>mobile</title>
+      <title>Mobile</title>
       <link>https://blog.depechie.com/tags/mobile/</link>
-      <pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/mobile/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>javascript</title>
+      <title>Javascript</title>
       <link>https://blog.depechie.com/tags/javascript/</link>
-      <pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>masonry</title>
+      <title>Masonry</title>
       <link>https://blog.depechie.com/tags/masonry/</link>
-      <pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/masonry/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>staggered view</title>
+      <title>Staggered View</title>
       <link>https://blog.depechie.com/tags/staggered-view/</link>
-      <pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/staggered-view/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>xamarin forms</title>
+      <title>Xamarin Forms</title>
       <link>https://blog.depechie.com/tags/xamarin-forms/</link>
-      <pubDate>Wed, 26 May 2021 12:01:17 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/xamarin-forms/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>effects</title>
+      <title>Effects</title>
       <link>https://blog.depechie.com/tags/effects/</link>
-      <pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/effects/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>entry</title>
+      <title>Entry</title>
       <link>https://blog.depechie.com/tags/entry/</link>
-      <pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/entry/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>iOS</title>
+      <title>IOS</title>
       <link>https://blog.depechie.com/tags/ios/</link>
-      <pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/ios/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>control template</title>
+      <title>Control Template</title>
       <link>https://blog.depechie.com/tags/control-template/</link>
-      <pubDate>Mon, 19 Oct 2020 17:32:45 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/control-template/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>visual state trigger</title>
+      <title>Visual State Trigger</title>
       <link>https://blog.depechie.com/tags/visual-state-trigger/</link>
-      <pubDate>Mon, 19 Oct 2020 17:32:45 +0000</pubDate>
-      
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://blog.depechie.com/tags/visual-state-trigger/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
