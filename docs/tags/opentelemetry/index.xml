@@ -6,8 +6,15 @@
     <description>Recent content in Opentelemetry on Depechie’s outing</description>
     <generator>Hugo 0.125.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Oct 2022 21:48:17 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 May 2024 21:49:31 +0000</lastBuildDate>
     <atom:link href="https://blog.depechie.com/tags/opentelemetry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenTelemetry on Azure Container Apps Revisited - Managed OpenTelemetry Agent</title>
+      <link>https://blog.depechie.com/posts/2024-05-05-opentelemetry-on-azure-container-apps-revisited/</link>
+      <pubDate>Sun, 05 May 2024 21:49:31 +0000</pubDate>
+      <guid>https://blog.depechie.com/posts/2024-05-05-opentelemetry-on-azure-container-apps-revisited/</guid>
+      <description>Last time I visited this topic, I was met with some challenges!</description>
+    </item>
     <item>
       <title>OpenTelemetry on Azure Container Apps</title>
       <link>https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/</link>

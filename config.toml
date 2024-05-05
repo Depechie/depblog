@@ -19,9 +19,20 @@ disqusShortname = ""
 [author]
 	name = "Glenn Versweyveld"
 
+[markup.highlight]
+      codeFences = true
+      guessSyntax = true
+      hl_Lines = ""
+      lineNoStart = 1
+      lineNos = true
+      lineNumbersInTable = true
+      tabWidth = 4
+      noClasses = false
+      style = 'solarized-dark'
+
 # Set to false to disallow raw HTML in markdown files
 [markup.goldmark.renderer]
-    unsafe = true
+  unsafe = true
 
 [params]
 	math = true
@@ -38,7 +49,8 @@ disqusShortname = ""
 	# Main
 	# email = "#"
   # facebook = "#"
-  twitter = "https://twitter.com/depechie"
+  # twitter = "https://twitter.com/depechie"
+  mastodon = "https://dotnet.social/@depechie"
 	# instagram = "#"
 	# tumblr = "#"
 	# reddit = "#"
