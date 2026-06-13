@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on Depechie’s outing</title>
-		<link>http://localhost:1313/tags/</link>
+		<link>https://blog.depechie.cc/tags/</link>
 		<description>Recent content in Tags on Depechie’s outing</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -12,124 +12,124 @@
 		
 			<lastBuildDate>Sun, 05 May 2024 21:49:31 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.depechie.cc/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Azure</title>
-				<link>http://localhost:1313/tags/azure/</link>
+				<link>https://blog.depechie.cc/tags/azure/</link>
 				<pubDate>Sun, 05 May 2024 21:49:31 +0000</pubDate>
-				<guid>http://localhost:1313/tags/azure/</guid>
+				<guid>https://blog.depechie.cc/tags/azure/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Containerapps</title>
-				<link>http://localhost:1313/tags/containerapps/</link>
+				<link>https://blog.depechie.cc/tags/containerapps/</link>
 				<pubDate>Sun, 05 May 2024 21:49:31 +0000</pubDate>
-				<guid>http://localhost:1313/tags/containerapps/</guid>
+				<guid>https://blog.depechie.cc/tags/containerapps/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Opentelemetry</title>
-				<link>http://localhost:1313/tags/opentelemetry/</link>
+				<link>https://blog.depechie.cc/tags/opentelemetry/</link>
 				<pubDate>Sun, 05 May 2024 21:49:31 +0000</pubDate>
-				<guid>http://localhost:1313/tags/opentelemetry/</guid>
+				<guid>https://blog.depechie.cc/tags/opentelemetry/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Blazor</title>
-				<link>http://localhost:1313/tags/blazor/</link>
+				<link>https://blog.depechie.cc/tags/blazor/</link>
 				<pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-				<guid>http://localhost:1313/tags/blazor/</guid>
+				<guid>https://blog.depechie.cc/tags/blazor/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Css</title>
-				<link>http://localhost:1313/tags/css/</link>
+				<link>https://blog.depechie.cc/tags/css/</link>
 				<pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-				<guid>http://localhost:1313/tags/css/</guid>
+				<guid>https://blog.depechie.cc/tags/css/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Html</title>
-				<link>http://localhost:1313/tags/html/</link>
+				<link>https://blog.depechie.cc/tags/html/</link>
 				<pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-				<guid>http://localhost:1313/tags/html/</guid>
+				<guid>https://blog.depechie.cc/tags/html/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Maui</title>
-				<link>http://localhost:1313/tags/maui/</link>
+				<link>https://blog.depechie.cc/tags/maui/</link>
 				<pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-				<guid>http://localhost:1313/tags/maui/</guid>
+				<guid>https://blog.depechie.cc/tags/maui/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Mobile</title>
-				<link>http://localhost:1313/tags/mobile/</link>
+				<link>https://blog.depechie.cc/tags/mobile/</link>
 				<pubDate>Thu, 17 Jun 2021 13:49:55 +0000</pubDate>
-				<guid>http://localhost:1313/tags/mobile/</guid>
+				<guid>https://blog.depechie.cc/tags/mobile/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Javascript</title>
-				<link>http://localhost:1313/tags/javascript/</link>
+				<link>https://blog.depechie.cc/tags/javascript/</link>
 				<pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-				<guid>http://localhost:1313/tags/javascript/</guid>
+				<guid>https://blog.depechie.cc/tags/javascript/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Masonry</title>
-				<link>http://localhost:1313/tags/masonry/</link>
+				<link>https://blog.depechie.cc/tags/masonry/</link>
 				<pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-				<guid>http://localhost:1313/tags/masonry/</guid>
+				<guid>https://blog.depechie.cc/tags/masonry/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Staggered View</title>
-				<link>http://localhost:1313/tags/staggered-view/</link>
+				<link>https://blog.depechie.cc/tags/staggered-view/</link>
 				<pubDate>Fri, 04 Jun 2021 13:02:12 +0000</pubDate>
-				<guid>http://localhost:1313/tags/staggered-view/</guid>
+				<guid>https://blog.depechie.cc/tags/staggered-view/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Xamarin Forms</title>
-				<link>http://localhost:1313/tags/xamarin-forms/</link>
+				<link>https://blog.depechie.cc/tags/xamarin-forms/</link>
 				<pubDate>Wed, 26 May 2021 12:01:17 +0000</pubDate>
-				<guid>http://localhost:1313/tags/xamarin-forms/</guid>
+				<guid>https://blog.depechie.cc/tags/xamarin-forms/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Effects</title>
-				<link>http://localhost:1313/tags/effects/</link>
+				<link>https://blog.depechie.cc/tags/effects/</link>
 				<pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-				<guid>http://localhost:1313/tags/effects/</guid>
+				<guid>https://blog.depechie.cc/tags/effects/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Entry</title>
-				<link>http://localhost:1313/tags/entry/</link>
+				<link>https://blog.depechie.cc/tags/entry/</link>
 				<pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-				<guid>http://localhost:1313/tags/entry/</guid>
+				<guid>https://blog.depechie.cc/tags/entry/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>IOS</title>
-				<link>http://localhost:1313/tags/ios/</link>
+				<link>https://blog.depechie.cc/tags/ios/</link>
 				<pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-				<guid>http://localhost:1313/tags/ios/</guid>
+				<guid>https://blog.depechie.cc/tags/ios/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Control Template</title>
-				<link>http://localhost:1313/tags/control-template/</link>
+				<link>https://blog.depechie.cc/tags/control-template/</link>
 				<pubDate>Mon, 19 Oct 2020 17:32:45 +0000</pubDate>
-				<guid>http://localhost:1313/tags/control-template/</guid>
+				<guid>https://blog.depechie.cc/tags/control-template/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Visual State Trigger</title>
-				<link>http://localhost:1313/tags/visual-state-trigger/</link>
+				<link>https://blog.depechie.cc/tags/visual-state-trigger/</link>
 				<pubDate>Mon, 19 Oct 2020 17:32:45 +0000</pubDate>
-				<guid>http://localhost:1313/tags/visual-state-trigger/</guid>
+				<guid>https://blog.depechie.cc/tags/visual-state-trigger/</guid>
 				<description></description>
 			</item>
 	</channel>

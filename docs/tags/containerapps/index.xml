@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Containerapps on Depechie’s outing</title>
-		<link>http://localhost:1313/tags/containerapps/</link>
+		<link>https://blog.depechie.cc/tags/containerapps/</link>
 		<description>Recent content in Containerapps on Depechie’s outing</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -12,19 +12,19 @@
 		
 			<lastBuildDate>Sun, 05 May 2024 21:49:31 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/containerapps/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.depechie.cc/tags/containerapps/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>OpenTelemetry on Azure Container Apps Revisited - Managed OpenTelemetry Agent</title>
-				<link>http://localhost:1313/posts/2024-05-05-opentelemetry-on-azure-container-apps-revisited/</link>
+				<link>https://blog.depechie.cc/posts/2024-05-05-opentelemetry-on-azure-container-apps-revisited/</link>
 				<pubDate>Sun, 05 May 2024 21:49:31 +0000</pubDate>
-				<guid>http://localhost:1313/posts/2024-05-05-opentelemetry-on-azure-container-apps-revisited/</guid>
+				<guid>https://blog.depechie.cc/posts/2024-05-05-opentelemetry-on-azure-container-apps-revisited/</guid>
 				<description>&lt;p&gt;Last time I &lt;a href=&#34;https://blog.depechie.cc/posts/2022-10-13-opentelemetry-on-azure-container-apps/&#34;&gt;visited this topic&lt;/a&gt;, I was met with some challenges! It took a lot of manual crafting to get the OpenTelemetry Collector configured correctly, both for receiving observability data as for sending it to Grafana Cloud.&#xA;Although it worked, it was far from ideal.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>OpenTelemetry on Azure Container Apps</title>
-				<link>http://localhost:1313/posts/2022-10-13-opentelemetry-on-azure-container-apps/</link>
+				<link>https://blog.depechie.cc/posts/2022-10-13-opentelemetry-on-azure-container-apps/</link>
 				<pubDate>Thu, 13 Oct 2022 21:48:17 +0000</pubDate>
-				<guid>http://localhost:1313/posts/2022-10-13-opentelemetry-on-azure-container-apps/</guid>
+				<guid>https://blog.depechie.cc/posts/2022-10-13-opentelemetry-on-azure-container-apps/</guid>
 				<description>&lt;p&gt;Lately I&amp;rsquo;ve been working with &lt;code&gt;OpenTelemetry&lt;/code&gt; to setup an observability environment for our running api services. Currently everything is deployed on-premises through use of &lt;code&gt;docker compose&lt;/code&gt; and is working perfectly, but of course we also wanted to try out a cloud hosted solution on &lt;code&gt;Azure&lt;/code&gt;.&lt;/p&gt;</description>
 			</item>
 	</channel>

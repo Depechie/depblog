@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Control Template on Depechie’s outing</title>
-		<link>http://localhost:1313/tags/control-template/</link>
+		<link>https://blog.depechie.cc/tags/control-template/</link>
 		<description>Recent content in Control Template on Depechie’s outing</description>
 		<generator>Hugo</generator>
 		<language>en-US</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Mon, 19 Oct 2020 17:32:45 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/control-template/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.depechie.cc/tags/control-template/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Xamarin Forms - Custom Visual State triggers and Control Templates</title>
-				<link>http://localhost:1313/posts/2020-10-19-xf-custom-visualstate-triggers/</link>
+				<link>https://blog.depechie.cc/posts/2020-10-19-xf-custom-visualstate-triggers/</link>
 				<pubDate>Mon, 19 Oct 2020 17:32:45 +0000</pubDate>
-				<guid>http://localhost:1313/posts/2020-10-19-xf-custom-visualstate-triggers/</guid>
+				<guid>https://blog.depechie.cc/posts/2020-10-19-xf-custom-visualstate-triggers/</guid>
 				<description>&lt;p&gt;Not so long ago there was this little online event called &lt;a href=&#34;https://expertday.forxamarin.com/&#34;&gt;Xamarin Expert Day&lt;/a&gt; that featured a bunch of awesome speakers.&#xA;Now one talk got my full attention, it was the one from &lt;a href=&#34;https://twitter.com/hussainnabbasi&#34;&gt;Hussain Abbasi&lt;/a&gt; about Supercharge You Custom Controls With Control Templates ( &lt;a href=&#34;https://youtu.be/YwdD7THttkw&#34;&gt;re-watch it here&amp;hellip;&lt;/a&gt; ).&lt;/p&gt;</description>
 			</item>
 	</channel>
