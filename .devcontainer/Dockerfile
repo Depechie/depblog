@@ -36,7 +36,8 @@ ARG HOME=/home/${USER}
 WORKDIR ${HOME}
 
 ARG PNPM_HOME=${HOME}/.local/share/pnpm
-ENV PATH="${PNPM_HOME}:$PATH"
+ENV PNPM_HOME="${PNPM_HOME}"
+ENV PATH="${PNPM_HOME}/bin:${PNPM_HOME}:$PATH"
 RUN <<EOT
     wget -qO- https://get.pnpm.io/install.sh | ENV="${HOME}/.zshrc" SHELL=/bin/zsh sh -
     pnpm env use -g lts

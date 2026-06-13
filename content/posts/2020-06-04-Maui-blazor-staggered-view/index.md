@@ -6,7 +6,7 @@ tags: [masonry,staggered view,html,javascript,css,maui,blazor]
 draft: false
 ---
 
-Do you remember my staggered view solution for Xamarin Forms? If not, I blogged about it here: [https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/](https://blog.depechie.com/posts/2021-05-26-xf-staggered-view/).
+Do you remember my staggered view solution for Xamarin Forms? If not, I blogged about it here: [https://blog.depechie.cc/posts/2021-05-26-xf-staggered-view/](https://blog.depechie.cc/posts/2021-05-26-xf-staggered-view/).
 
 But since we have preview 4 of .Net 6 we are able to do something even better! We can now create full HTML apps with **.Net MAUI Blazor** ( more details here: [https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-4/#net-maui-blazor-apps](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-4/#net-maui-blazor-apps)).
 

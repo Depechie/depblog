@@ -6,7 +6,7 @@ tags: [opentelemetry,azure,containerapps]
 draft: false
 ---
 
-Last time I [visited this topic](https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/), I was met with some challenges! It took a lot of manual crafting to get the OpenTelemetry Collector configured correctly, both for receiving observability data as for sending it to Grafana Cloud.
+Last time I [visited this topic](https://blog.depechie.cc/posts/2022-10-13-opentelemetry-on-azure-container-apps/), I was met with some challenges! It took a lot of manual crafting to get the OpenTelemetry Collector configured correctly, both for receiving observability data as for sending it to Grafana Cloud.
 Although it worked, it was far from ideal.
 
 But Microsoft is not standing still and just recently they announced the [Managed OpenTelemetry Agent](https://learn.microsoft.com/en-us/azure/container-apps/opentelemetry-agents?tabs=arm) for Azure Container Apps. This agent is a managed service, that can be used to collect telemetry data from your applications that reside in your Azure Container Apps Environment and send it to Azure Monitor or any other OTLP endpoint.  

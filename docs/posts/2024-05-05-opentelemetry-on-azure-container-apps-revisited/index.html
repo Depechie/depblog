@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-<html lang="en-us">
-    <head>
+<html lang="en-US">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
     
     
     
-    <link rel="stylesheet" href="https://blog.depechie.com/css/main.min.b7753b1ccb677a4ea5b9901c5cecc7c74b99003571f1e8ceee4bc0773ba94bc6.css"/>
+    <link rel="stylesheet" href="http://localhost:1313/css/main.min.93486e7c0679872393a9bf346268df177a785fa96315dcbc60879cc04cbfdad3.css"/>
 
     
     
@@ -28,10 +28,7 @@
     
     
  
-    
-  
-
-</head>
+    </head>
 
     <body>
         
@@ -145,7 +142,7 @@
     <p><a href="https://github.com/kimcc/hugo-theme-noteworthy" target="_blank" rel="noopener">Noteworthy theme</a></p>
     <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 
-	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
+	<script src="http://localhost:1313/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 
 </nav>
@@ -159,7 +156,7 @@
     
     <div>
         <p>
-        <p>Last time I <a href="https://blog.depechie.com/posts/2022-10-13-opentelemetry-on-azure-container-apps/">visited this topic</a>, I was met with some challenges! It took a lot of manual crafting to get the OpenTelemetry Collector configured correctly, both for receiving observability data as for sending it to Grafana Cloud.
+        <p>Last time I <a href="https://blog.depechie.cc/posts/2022-10-13-opentelemetry-on-azure-container-apps/">visited this topic</a>, I was met with some challenges! It took a lot of manual crafting to get the OpenTelemetry Collector configured correctly, both for receiving observability data as for sending it to Grafana Cloud.
 Although it worked, it was far from ideal.</p>
 <p>But Microsoft is not standing still and just recently they announced the <a href="https://learn.microsoft.com/en-us/azure/container-apps/opentelemetry-agents?tabs=arm">Managed OpenTelemetry Agent</a> for Azure Container Apps. This agent is a managed service, that can be used to collect telemetry data from your applications that reside in your Azure Container Apps Environment and send it to Azure Monitor or any other OTLP endpoint.<br>
 The huge gain here; due to the fact that it is a managed service; is that you only need to add a configuration section to your ACA setup and the agent will be automatically deployed, configured and maintained for you.</p>
@@ -304,7 +301,7 @@ Details on how to construct the correct command line syntax can be found on Micr
 </span></span></span><span class="line"><span class="cl"><span class="sd">      -r &#34;linux-amd64&#34;
 </span></span></span><span class="line"><span class="cl"><span class="sd">      -p:ContainerRepository=&#34;acaobservability.api&#34;
 </span></span></span><span class="line"><span class="cl"><span class="sd">      -p:ContainerImageTags=&#34;\&#34;$(dockerImageTag);latest\&#34;&#34;
-</span></span></span><span class="line"><span class="cl"><span class="sd">      -p:ContainerRegistry=yourawesomecontaineregistry.azurecr.io</span><span class="w">      
+</span></span></span><span class="line"><span class="cl"><span class="sd">      -p:ContainerRegistry=yourawesomecontaineregistry.azurecr.io</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Some important things to note here:</p>
@@ -380,17 +377,17 @@ Also not that you will first need to create a specific service connection, of th
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">trigger</span><span class="p">:</span><span class="w"> </span><span class="l">none</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">pool</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">pool</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">vmImage</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">variables</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">variables</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">serviceConnection</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Azure service connection&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">subscriptionId</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;subscriptionId&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">templateFile</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./.infra/main.bicep&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">templateParametersFile</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./.infra/main.parameters.dev.json&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">stages</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">DeployInfrastructurePart2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">stages</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl">- <span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l">DeployInfrastructurePart2</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">displayName</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;Deploy infrastructure&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">jobs</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">job</span><span class="p">:</span><span class="w"> </span><span class="l">DeployBicep</span><span class="w">
@@ -453,26 +450,26 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bicep" data-lang="bicep"><span class="line"><span class="cl"><span class="kd">targetScope</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;subscription&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">@</span><span class="nf">allowed</span><span class="p">([</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">@</span><span class="nf">allowed</span><span class="p">([</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s">&#39;dev&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;tst&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;acc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;prd&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">])</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">env</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;dev&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">env</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;dev&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">projectName</span><span class="w"> </span><span class="nv">string</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w"> </span><span class="nv">string</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationShort</span><span class="w"> </span><span class="nv">string</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">moduleNameAca</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;aca</span><span class="si">${</span><span class="nv">projectName</span><span class="si">}</span><span class="s">&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">projectName</span><span class="w"> </span><span class="nv">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w"> </span><span class="nv">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationShort</span><span class="w"> </span><span class="nv">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">moduleNameAca</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;aca</span><span class="si">${</span><span class="nv">projectName</span><span class="si">}</span><span class="s">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">@</span><span class="nf">secure</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">azureContainerRegistryPassword</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">@</span><span class="nf">secure</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">azureContainerRegistryPassword</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create a resource group</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">resource</span><span class="w"> </span><span class="nv">rg</span><span class="w"> </span><span class="s">&#39;Microsoft.Resources/resourceGroups@2023-07-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Create a resource group</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">resource</span><span class="w"> </span><span class="nv">rg</span><span class="w"> </span><span class="s">&#39;Microsoft.Resources/resourceGroups@2023-07-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;rg-</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">resourceLocationShort</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">projectName</span><span class="si">}</span><span class="s">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">location</span><span class="p">:</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">module</span><span class="w"> </span><span class="nv">acaModule</span><span class="w"> </span><span class="s">&#39;modules/ca.module.bicep&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">module</span><span class="w"> </span><span class="nv">acaModule</span><span class="w"> </span><span class="s">&#39;modules/ca.module.bicep&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="nv">moduleNameAca</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">params</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nv">env</span><span class="p">:</span><span class="w"> </span><span class="nv">env</span><span class="w">
@@ -481,7 +478,7 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nv">azureContainerRegistryPassword</span><span class="p">:</span><span class="w"> </span><span class="nv">azureContainerRegistryPassword</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">scope</span><span class="p">:</span><span class="w"> </span><span class="nv">rg</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>The submodule <strong>ca.module.bicep</strong> contains the actual setup for the Azure Container Apps. It will create the necessary resources, like the Azure Container Apps, the Managed OpenTelemetry Agent and the necessary configuration to get it all running.</p>
@@ -687,23 +684,23 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bicep" data-lang="bicep"><span class="line"><span class="cl"><span class="p">@</span><span class="nf">allowed</span><span class="p">([</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="s">&#39;dev&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;tst&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;acc&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;prd&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">])</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">env</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;dev&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">env</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;dev&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">projectName</span><span class="w"> </span><span class="nv">string</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">resourceGroup</span><span class="p">().</span><span class="nv">location</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationShort</span><span class="w"> </span><span class="nv">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">projectName</span><span class="w"> </span><span class="nv">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">resourceGroup</span><span class="p">().</span><span class="nv">location</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">resourceLocationShort</span><span class="w"> </span><span class="nv">string</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">containerRegistryName</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;yourawesomecontaineregistry&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">imageNameApi</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;acaobservability.api&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">imageNameWeb</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;acaobservability.web&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">containerRegistryName</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;yourawesomecontaineregistry&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">imageNameApi</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;acaobservability.api&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">imageNameWeb</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;acaobservability.web&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">azureContainerRegistryUsername</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nv">containerRegistryName</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">@</span><span class="nf">secure</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">param</span><span class="w"> </span><span class="nv">azureContainerRegistryPassword</span><span class="w"> </span><span class="nv">string</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">azureContainerRegistryUsername</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nv">containerRegistryName</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">@</span><span class="nf">secure</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">param</span><span class="w"> </span><span class="nv">azureContainerRegistryPassword</span><span class="w"> </span><span class="nv">string</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create Azure Log Analytics Workspace</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">resource</span><span class="w"> </span><span class="nv">logAnalyticsWorkspace</span><span class="w"> </span><span class="s">&#39;Microsoft.OperationalInsights/workspaces@2023-09-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Create Azure Log Analytics Workspace</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">resource</span><span class="w"> </span><span class="nv">logAnalyticsWorkspace</span><span class="w"> </span><span class="s">&#39;Microsoft.OperationalInsights/workspaces@2023-09-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;log-</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">resourceLocationShort</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">projectName</span><span class="si">}</span><span class="s">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">location</span><span class="p">:</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">properties</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -711,9 +708,9 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;PerGB2018&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">resource</span><span class="w"> </span><span class="nv">applicationInsights</span><span class="w"> </span><span class="s">&#39;Microsoft.Insights/components@2020-02-02&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">resource</span><span class="w"> </span><span class="nv">applicationInsights</span><span class="w"> </span><span class="s">&#39;Microsoft.Insights/components@2020-02-02&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ai-</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">resourceLocationShort</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">projectName</span><span class="si">}</span><span class="s">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">location</span><span class="p">:</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">kind</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;web&#39;</span><span class="w">
@@ -722,11 +719,11 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nv">Flow_Type</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;Bluefield&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nv">WorkspaceResourceId</span><span class="p">:</span><span class="w"> </span><span class="nv">logAnalyticsWorkspace</span><span class="p">.</span><span class="nv">id</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Create Azure Container Apps Environment</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// https://learn.microsoft.com/en-us/azure/container-apps/opentelemetry-agents?tabs=arm</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">resource</span><span class="w"> </span><span class="nv">environment</span><span class="w"> </span><span class="s">&#39;Microsoft.App/managedEnvironments@2023-11-02-preview&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Create Azure Container Apps Environment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// https://learn.microsoft.com/en-us/azure/container-apps/opentelemetry-agents?tabs=arm</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">resource</span><span class="w"> </span><span class="nv">environment</span><span class="w"> </span><span class="s">&#39;Microsoft.App/managedEnvironments@2023-11-02-preview&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;cae-</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">resourceLocationShort</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">projectName</span><span class="si">}</span><span class="s">&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">location</span><span class="p">:</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">properties</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -749,9 +746,9 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">resource</span><span class="w"> </span><span class="nv">containerAppApi</span><span class="w"> </span><span class="s">&#39;Microsoft.App/containerApps@2023-05-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">resource</span><span class="w"> </span><span class="nv">containerAppApi</span><span class="w"> </span><span class="s">&#39;Microsoft.App/containerApps@2023-05-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ca-</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">resourceLocationShort</span><span class="si">}</span><span class="s">-api&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">location</span><span class="p">:</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">properties</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -812,9 +809,9 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">resource</span><span class="w"> </span><span class="nv">containerAppWeb</span><span class="w"> </span><span class="s">&#39;Microsoft.App/containerApps@2023-05-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">resource</span><span class="w"> </span><span class="nv">containerAppWeb</span><span class="w"> </span><span class="s">&#39;Microsoft.App/containerApps@2023-05-01&#39;</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;ca-</span><span class="si">${</span><span class="nv">env</span><span class="si">}</span><span class="s">-</span><span class="si">${</span><span class="nv">resourceLocationShort</span><span class="si">}</span><span class="s">-web&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">location</span><span class="p">:</span><span class="w"> </span><span class="nv">resourceLocationLong</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nv">properties</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -879,7 +876,7 @@ The actual task will use the <strong>main.bicep</strong> file together with the 
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>Some important things to note here:</p>
@@ -1064,7 +1061,7 @@ And the best part, it is all managed for you, so you can focus on building your 
         <p><a href="https://gohugo.io" target="_blank" rel="noopener">Built with Hugo</a></p>
 	</div>
 
-	<script src="https://blog.depechie.com/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
+	<script src="http://localhost:1313/js/main.min.a7205ef73b078c8daed6fe1b0826e8ba229ffabbb69d299d9446cf41f2c7d8aa.js" integrity="sha256-pyBe9zsHjI2u1v4bCCbouiKf+ru2nSmdlEbPQfLH2Ko=" crossorigin="anonymous"></script>
 </footer>
 
     </body>

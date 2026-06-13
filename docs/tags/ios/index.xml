@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>IOS on Depechie’s outing</title>
-    <link>https://blog.depechie.com/tags/ios/</link>
-    <description>Recent content in IOS on Depechie’s outing</description>
-    <generator>Hugo 0.125.1</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 28 Mar 2021 17:32:45 +0000</lastBuildDate>
-    <atom:link href="https://blog.depechie.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Xamarin Forms – Set entry clear icon color on iOS</title>
-      <link>https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/</link>
-      <pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
-      <guid>https://blog.depechie.com/posts/2021-03-28-xf-clear-icon-color/</guid>
-      <description>Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>IOS on Depechie’s outing</title>
+		<link>http://localhost:1313/tags/ios/</link>
+		<description>Recent content in IOS on Depechie’s outing</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 28 Mar 2021 17:32:45 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Xamarin Forms – Set entry clear icon color on iOS</title>
+				<link>http://localhost:1313/posts/2021-03-28-xf-clear-icon-color/</link>
+				<pubDate>Sun, 28 Mar 2021 17:32:45 +0000</pubDate>
+				<guid>http://localhost:1313/posts/2021-03-28-xf-clear-icon-color/</guid>
+				<description>&lt;p&gt;Here is a small piece of code that you can use as a Xamarin Forms effect to hook into your entry.&#xA;It allows changing the color of the clear icon that is available inside the native entry control of iOS ( when enabled ).&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

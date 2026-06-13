@@ -198,6 +198,7 @@ PublishScripts/
 
 # Microsoft Azure Build Output
 csx/
+.pnpm-store/
 *.build.csdef
 
 # Microsoft Azure Emulator
